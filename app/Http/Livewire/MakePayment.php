@@ -60,6 +60,8 @@ class MakePayment extends Component
 
     private function generateInterSwitchPaymentGateWayTransactionDetails()
     {
+        $this->paymentSlipUrl = "";
+
         $checkTransaction = Transaction::where("application_id",$this->application->id)
             ->where("gateway","INTERSWITCH-PAYMENTGATEWAY")->first();
 
