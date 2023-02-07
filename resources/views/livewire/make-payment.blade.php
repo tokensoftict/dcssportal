@@ -61,7 +61,15 @@
                         </div>
                     @endif
 
-                    @if($this->paymentSlipUrl !== "")
+                    @if($this->paymentSlipUrl !== "" && $this->paymentGateWay ==="UPPERLINKPAYGATE")
+                        <div wire:target="generateTransactionDetails,paymentGateWay" wire:loading.remove>
+                            <div align="center">
+                                <button  type="button" wire:click="generateTransactionDetails" class="button -md  -outline-red-1 text-red-1">PAY &#8358; {{ number_format( $this->session->form_fee,2) }} NOW</button>
+                            </div>
+                        </div>
+                    @endif
+
+                    @if($this->paymentSlipUrl !== "" && $this->paymentGateWay ==="INTERSWITCH-PAYMENTGATEWAY")
                         <div>
                             <div align="center">
                                 <a href="{{ $this->paymentSlipUrl }}" target="_new"  class="button -md  -outline-green-1 text-green-1">Print Payment Slip</a>
