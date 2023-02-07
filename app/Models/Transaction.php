@@ -20,10 +20,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $country
  * @property string $email
  * @property string $phoneNumber
+ * @property string $surName
  * @property string $firstName
  * @property string $lastName
  * @property string $customerUrl
  * @property string $merchantId
+ * @property string $gateway
  * @property bool $status
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -50,10 +52,12 @@ class Transaction extends Model
 		'country',
 		'email',
 		'phoneNumber',
+		'surName',
 		'firstName',
 		'lastName',
 		'customerUrl',
 		'merchantId',
+		'gateway',
 		'status'
 	];
 

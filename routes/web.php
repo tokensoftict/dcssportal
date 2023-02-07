@@ -29,6 +29,18 @@ Route::post("/registerprocess",['as'=>'registerprocess', "uses"=>"HomeController
 
 Route::post("/loginprocess",['as'=>'loginprocess', "uses"=>"HomeController@loginprocess"]);
 
+//Route::get("/branchcollect_transaction_hook/{application}/{transaction}", ['as' => 'branchcollect_callback', "uses" => "HomeController@branchcollect_callback"]);
+
+//Route::get("/branchcollect_transaction_hook_thirdparty/{application}/{transaction}", ['as' => 'branchcollect_callback_thirldparty', "uses" => "HomeController@branchcollect_callback_thirldparty"]);
+
+Route::prefix("update")->as("update.")->group(function (){
+
+    Route::get('/url/{application}/{transaction}', ['as' => 'branchcollect_callback', "uses" => "HomeController@branchcollect_callback_thirldparty"]);
+
+    Route::get('/thirdpartyurl/{application}/{transaction}', ['as'=>'branchcollect_transaction_hook_thirdparty',"uses" => "HomeController@branchcollect_callback_thirldparty"]);
+
+});
+
 Route::group(['middleware' => ['auth']], function() {
 
     Route::prefix('account')->as('account.')->group(function () {
@@ -41,6 +53,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('{application}/print-photocard', ['as'=>'print_photocard',"uses"=>'AccountController@print_photocard']);
         Route::get('{application}/download-photocard', ['as'=>'download_photocard',"uses"=>'AccountController@download_photocard']);
         Route::get('{application}/download-payment-receipt', ['as'=>'download_payment_receipt',"uses"=>'AccountController@download_payment_receipt']);
+
+        Route::get('{transaction}/download-payment-slip', ['as'=>'download_payment_slip',"uses"=>'AccountController@download_payment_slip']);
     });
 
 });

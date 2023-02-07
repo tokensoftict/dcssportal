@@ -6,12 +6,21 @@ use App\Events\CompleteApplicationEvent;
 use App\Models\Application;
 use App\Models\Session;
 use App\Models\Transaction;
+use App\Repositories\ConfirmUpperlinkPaygateTransactionRepository;
 use Illuminate\Http\Request;
 use PDF;
 Use Alert;
 
 class AccountController extends Controller
 {
+
+    protected ConfirmUpperlinkPaygateTransactionRepository $confirmUpperlinkPaygateTransaction;
+
+
+    public function __construct(ConfirmUpperlinkPaygateTransactionRepository $confirmUpperlinkPaygateTransaction)
+    {
+        $this->confirmUpperlinkPaygateTransaction = $confirmUpperlinkPaygateTransaction;
+    }
 
     public function index()
     {
@@ -32,13 +41,21 @@ class AccountController extends Controller
         if(!isset($application->id))
         {
             Alert::error('Payment Confirmation', "Unable to determine application / Invalid Application ID");
-            return redirect()->route('account.dashboard');
+            return redirect()->route('account.make_payment');
         }
 
         if(!$request->get("reference"))
         {
             Alert::error('Payment Confirmation', "Invalid Transaction ID Supply");
-            return redirect()->route('account.dashboard')->with("error","Invalid Transaction ID Supply");
+            return redirect()->route('account.make_payment')->with("error","Invalid Transaction ID Supply");
+        }
+
+        $confirm = $this->confirmUpperlinkPaygateTransaction->confirmTransaction($request->get("reference"));
+
+        if(!is_bool($confirm))
+        {
+            Alert::error('Payment Confirmation Error', $confirm);
+            return redirect()->route('account.make_payment')->with("error",$confirm);
         }
 
         $transaction = Transaction::where('transactionId',$request->get("reference"))->first();
@@ -46,7 +63,7 @@ class AccountController extends Controller
         if(!$transaction)
         {
             Alert::error('Payment Confirmation', "Transaction not found");
-            return redirect()->route('account.dashboard')->with("error","Transaction not found");
+            return redirect()->route('account.make_payment')->with("error","Transaction not found");
         }
 
 
@@ -55,7 +72,7 @@ class AccountController extends Controller
 
         if($application->exam_number !== NULL) {
             Alert::success('Payment Confirmation', "Application has been completed, successfully");
-            return redirect()->route('account.dashboard')->with("success", "Application has been completed, successfully");
+            return redirect()->route('account.make_payment')->with("success", "Application has been completed, successfully");
         }
 
         event(new CompleteApplicationEvent($application));
@@ -80,7 +97,7 @@ class AccountController extends Controller
     {
         $transaction = Transaction::where('application_id',$application->id)->where("status",1)->first();
 
-        if(!$transaction) return view("account.no_payment_found");
+        if(!$transaction) abort("404");
 
         $session = Session::where("status",1)->first();
 
@@ -99,6 +116,19 @@ class AccountController extends Controller
     {
         auth()->logout();
         return redirect()->route("index")->with("success","Logout was successful");
+    }
+
+
+    public function download_payment_slip(Transaction $transaction)
+    {
+
+        if(!$transaction) abort("404");
+
+        $session = Session::where("status",1)->first();
+
+        $pdf = PDF::loadView("reciept.payment_slip",['payment' => $transaction, "session"=> $session]);
+
+        return $pdf->stream('payment_slip.pdf');
     }
 
 

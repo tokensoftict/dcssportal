@@ -115,7 +115,7 @@
             </td>
             <td width="30%" align="center">
                 <p>&nbsp;</p>
-                <img style="width: 35%;" src="{{ public_path("passport/".$application->passport_path) }}" alt='Passport'>
+                <img style="width: 35%;" src="{{ public_path($application->passport_path) }}" alt='Passport'>
             </td>
         </tr>
     </table>

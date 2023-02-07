@@ -1,3 +1,4 @@
+<div>
 <div class="row y-gap-30">
     <div class="col-sm-12 col-12">
         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100">
@@ -7,7 +8,7 @@
 
             <div class="py-30 px-30">
                     <div align="center">
-                        <img class="img-thumbnail img-fluid" style="width: 200px" alt="{{ $this->application->fullname  }}" src="{{ url('/passport/'.$this->application->passport_path)  }}" width="150"/>
+                        <img class="img-thumbnail img-fluid" style="width: 200px" alt="{{ $this->application->fullname  }}" src="{{ url('/'.$this->application->passport_path)  }}" width="150"/>
                     </div>
                 <table class="table table-bordered table-hover table-striped table-responsive mt-20">
                     <tr>
@@ -82,4 +83,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

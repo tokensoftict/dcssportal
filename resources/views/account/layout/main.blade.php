@@ -21,10 +21,16 @@
     <script src="https://devcheckout.paygate.upperlink.ng/assets/js/plugin.js"></script>
     @yield('css')
     <title>@yield('title')</title>
-    @livewireStyles
+
 </head>
 
 <body class="preloader-visible" data-barba="wrapper">
+@livewireStyles
+@livewireScripts
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<x-livewire-alert::scripts />
 
 @include('sweetalert::alert')
 
@@ -63,5 +69,5 @@
 <script src="{{ asset("js/main.js") }}"></script>
 @yield('js')
 
-@livewireScripts
+
 </body>

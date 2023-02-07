@@ -7978,7 +7978,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: white;
     padding: 10px 20px;
     width: 100%;
-    min-height: 150px;
+  /*  min-height: 150px;*/
     max-height: 290px;
     transition: all 0.2s ease;
     opacity: 0;

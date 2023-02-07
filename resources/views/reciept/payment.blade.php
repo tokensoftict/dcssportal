@@ -65,8 +65,8 @@
             <td width="100%" valign="top" align="center">
                 <p>&nbsp;</p>
                 <h1 align="center" style="text-align: center;margin-top: 40px" >COMMAND SECONDARY SCHOOLS</h1>
-                <h2 align="center" style="text-align: center;margin-top: 10px">PAYMENT RECEIPT</h2>
                 <h3 align="center" style="text-align: center;margin-top: 10px">{{ $session->session }}/{{ $session->session+1 }} ACADEMIC SESSION</h3>
+                <h2 align="center" style="text-align: center;margin-top: 10px; color:red">PAYMENT RECEIPT</h2>
             </td>
         </tr>
     </table>

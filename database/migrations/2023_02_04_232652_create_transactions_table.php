@@ -22,10 +22,12 @@ return new class extends Migration
             $table->string("country");
             $table->string("email");
             $table->string("phoneNumber");
+            $table->string("surName");
             $table->string("firstName");
             $table->string("lastName");
             $table->string("customerUrl");
             $table->string("merchantId");
+            $table->enum("gateway",['UPPERLINKPAYGATE',"INTERSWITCH-PAYMENTGATEWAY"]);
             $table->boolean("status")->default(0);
             $table->timestamps();
         });

@@ -20,10 +20,12 @@
     <link rel='shortcut icon' href='{{ asset("img/logo-3.png") }}'/>
     @yield('css')
     <title>@yield('title')</title>
-    @livewireStyles
+
 </head>
 
 <body class="preloader-visible" data-barba="wrapper">
+@livewireStyles
+@livewireScripts
 
 <div class="preloader js-preloader">
     <div class="preloader__bg"></div>
@@ -49,5 +51,4 @@
 <script src="{{ asset("js/main.js") }}"></script>
 @yield('js')
 
-@livewireScripts
 </body>
