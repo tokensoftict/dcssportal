@@ -38,14 +38,14 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => (defined('PUBLIC_DIR') ? PUBLIC_DIR :  storage_path('app')),//'/home/dcssuplsvcom/public_html',//storage_path('app/public'),
-            'url' => env('APP_URL'),///env('APP_URL').'/storage',
+            'root' => env("PUBLIC_DIR",storage_path('app')),
+            'url' => env('APP_URL'),
             'visibility' => 'public',
             'throw' => false,
         ],
         'real_public' => [
             'driver' => 'local',
-            'root' => (defined('PUBLIC_DIR') ? PUBLIC_DIR : storage_path('app')),//'/home/dcssuplsvcom/public_html',
+            'root' => env("PUBLIC_DIR",storage_path('app')),
             'url' => env('APP_URL'),
             'visibility' => 'public',
             'throw' => false,
