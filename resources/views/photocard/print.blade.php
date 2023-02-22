@@ -83,8 +83,8 @@
                         <td colspan="2"><strong>Examination Number:</strong> {{ $application->exam_number }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Examination Date:</strong>  Not Set</td>
-                        <td><strong>Examination Time:</strong> Not Set</td>
+                        <td><strong>Entrance Examination Date:</strong>  Saturday 17 June 2023</td>
+                        <td><strong>Entrance Examination Time:</strong> 8:00 AM</td>
                     </tr>
                     <tr>
                         <td colspan="2"><strong>Examination Center:</strong> {{ $application->center->name }}</td>

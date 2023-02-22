@@ -9,7 +9,12 @@
         <div class="masthead__bg"></div>
 
         <div class="pl-lg-45 pr-lg-30 pl-20 pr-15">
-            <div class="row y-gap-50 items-center">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center text-red-1">THIS IS TO INFORM THE GENERAL PUBLIC THAT ONLINE APPLICATIONS FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2023/2024 ACADEMIC SESSION WILL COMMENCE ON FRIDAY 24 FEBRUARY ,2023 AND END ON SATURDAY  10 JUNE 2023</h2>
+                </div>
+            </div>
+            <div class="row mt-1 y-gap-50 items-center">
                 <div class="col-lg-6">
                     <div class="masthead__content mt-30">
                         <div data-anim-child="slide-up delay-2" class="text-17 lh-15 text-orange-1 fw-500 mb-10">
@@ -87,7 +92,7 @@
 
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
-        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold">RELEASE OF LIST OF SUCCESSFUL CANDIDATES FOR ADMISSION INTO JSS1 IN COMMAND SECONDARY SCHOOLS 2023/2024 ACADEMIC SESSION. <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
+        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold">THIS IS TO INFORM THE GENERAL PUBLIC THAT ONLINE APPLICATIONS FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2023/2024 ACADEMIC SESSION WILL COMMENCE ON FRIDAY 24 FEBRUARY ,2023 AND END ON SATURDAY  10 JUNE 2023 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a></marquee>
     </div>
 @endsection

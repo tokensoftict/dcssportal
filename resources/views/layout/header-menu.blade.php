@@ -5,7 +5,7 @@
             <a data-barba href="{{ route("index") }}" style="font-weight: bolder">HOME</a>
         </li>
         <li>
-            <a data-barba href="{{ route("news") }}" style="font-weight: bolder">RECENT NEWS</a>
+            <a data-barba href="{{ route("news") }}" style="font-weight: bolder">NEWS</a>
         </li>
         <li>
             <a data-barba href="{{ route("contact") }}" style="font-weight: bolder">OUR CONTACT</a>
