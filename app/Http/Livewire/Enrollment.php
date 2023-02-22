@@ -198,7 +198,7 @@ class Enrollment extends Component
 
         event(new Registered($user));
 
-        if (!auth()->user()->isAdmin()){
+        if (!(auth()->check() && auth()->user()->isAdmin())){
             auth()->login($user);
         }
 
