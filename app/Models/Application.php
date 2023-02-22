@@ -30,6 +30,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $svc
  * @property string|null $svc_number
  * @property bool $retired
+ * @property bool $is_admin
  * @property string|null $retired_number
  * @property Carbon|null $dob
  * @property string|null $unitFormation
@@ -69,7 +70,8 @@ class Application extends Model
 		'center_id' => 'int',
 		'num_of_edits' => 'int',
 		'user_id' => 'int',
-		'session_id' => 'int'
+		'session_id' => 'int',
+        'is_admin' => 'bool'
 	];
 
 
@@ -105,10 +107,13 @@ class Application extends Model
 		'center_id',
 		'num_of_edits',
 		'user_id',
-		'session_id'
+		'session_id',
+        'is_admin'
 	];
 
     protected $appends = ['fullname'];
+
+
 
     public function getFullnameAttribute()
     {
@@ -139,6 +144,16 @@ class Application extends Model
 	{
 		return $this->belongsTo(School::class);
 	}
+
+    public function school_type()
+    {
+        return $this->belongsTo(SchoolType::class, 'school_type_id');
+    }
+
+    public function school_type2()
+    {
+        return $this->belongsTo(SchoolType::class, 'school_type_id2');
+    }
 
     public function school2()
     {

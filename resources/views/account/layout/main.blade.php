@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/vendors.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel='shortcut icon' href='{{ asset("img/logo-3.png") }}'/>
-    <script src="https://devcheckout.paygate.upperlink.ng/assets/js/plugin.js"></script>
+    <script src="https://checkout.paygate.upperlink.ng/assets/js/plugin.js"></script>
     @yield('css')
     <title>@yield('title')</title>
 

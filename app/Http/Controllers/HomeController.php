@@ -70,6 +70,10 @@ class HomeController extends Controller
 
         if(auth()->attempt($credentials))
         {
+            if(auth()->user()->isAdmin()) {
+
+                return redirect()->route('administrator.index')->with('success','Login Successful');
+            }
             return redirect()->route('account.dashboard')->with('success','Login Successful');
         }
 

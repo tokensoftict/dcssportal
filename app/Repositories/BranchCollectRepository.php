@@ -7,9 +7,9 @@ use RicorocksDigitalAgency\Soap\Facades\Soap;
 
 class BranchCollectRepository
 {
-    private String $bc_env = "test"; //live
+    private String $bc_env =  'live'; //"test";
     private String $test_url = "https://www.branchcollect.com/branchcollect_test/pay/?wsdl";
-    private String $live_url = "http://www.branchcollect.com/pay/?wsdl";
+    private String $live_url = "https://www.branchcollect.com/pay/?wsdl";
 
     private String $bc_wsdl_url = "";
 

@@ -69,27 +69,27 @@ class Enrollment extends Component
 
     protected function rules()
     {
-       $data =  [
-           'firstname' => 'required',
-           'othernames' => 'required',
-           'surname' => 'required',
-           'email' => 'required|unique:users,email',
-           'password' => 'required|confirmed|min:6|max:32',
-           'gender' => 'required',
-           'passport' => 'required|mimes:jpg,jpeg|max:2048',
-           'age' => 'required|numeric',
-           'telephone' =>'required',
-           'address' => 'required',
-           'dob' => 'required',
-           'parental_status_id' => 'required',
-           'state_id' => 'required',
-           'exam_state_id' => 'required',
-           'center_id' => 'required',
-           'school_id' => 'required',
-           'school2_id' => 'required',
-           'school_type_id' => 'required',
-           'school_type_id2' => 'required',
-       ];
+        $data =  [
+            'firstname' => 'required',
+            'othernames' => 'required',
+            'surname' => 'required',
+            'email' => 'required|unique:users,email',
+            'password' => 'required|confirmed|min:6|max:32',
+            'gender' => 'required',
+            'passport' => 'required|mimes:jpg,jpeg|max:2048',
+            'age' => 'required|numeric',
+            'telephone' =>'required',
+            'address' => 'required',
+            'dob' => 'required',
+            'parental_status_id' => 'required',
+            'state_id' => 'required',
+            'exam_state_id' => 'required',
+            'center_id' => 'required',
+            'school_id' => 'required',
+            'school2_id' => 'required',
+            'school_type_id' => 'required',
+            'school_type_id2' => 'required',
+        ];
 
         if($this->parental_status_id === "1" || $this->parental_status_id === "2")
         {
@@ -137,7 +137,7 @@ class Enrollment extends Component
 
     public function processForm()
     {
-        $this->dispatchBrowserEvent("scrollToTop",[]);
+        $this->dispatchBrowserEvent("scrollToTop", []);
 
         $this->validate();
 
@@ -145,7 +145,7 @@ class Enrollment extends Component
 
         $this->session_id = 1;
 
-        $user =  User::create(
+        $user = User::create(
             [
                 'firstname' => $this->firstname,
                 'surname' => $this->surname,
@@ -158,11 +158,11 @@ class Enrollment extends Component
 
         $this->user_id = $user->id;
 
-        $file = $this->passport->store('passport','real_public');
+        $file = $this->passport->store('passport', 'real_public');
 
         $application = Application::create(
             [
-                'firstname' => $this->firstname ,
+                'firstname' => $this->firstname,
                 'surname' => $this->surname,
                 'othernames' => $this->othernames,
                 'email' => $this->email,
@@ -180,7 +180,7 @@ class Enrollment extends Component
                 'svc_number' => $this->svc_number,
                 'retired' => $this->select_retired == "Yes" ? 1 : 0,
                 'retired_number' => $this->retired_number,
-                'dob' => date("Y-m-d",strtotime($this->dob)),
+                'dob' => date("Y-m-d", strtotime($this->dob)),
                 'unitFormation' => $this->unitFormation,
                 'school_id' => $this->school_id,
                 'school2_id' => $this->school2_id,
@@ -191,13 +191,16 @@ class Enrollment extends Component
                 'exam_state_id' => $this->exam_state_id,
                 'center_id' => $this->center_id,
                 'user_id' => $this->user_id,
-                'session_id' => $this->session_id
+                'session_id' => $this->session_id,
+                'is_admin' => (auth()->user()->isAdmin() ? 1 : 0)
             ]
         );
 
         event(new Registered($user));
 
-        auth()->login($user);
+        if (!auth()->user()->isAdmin()){
+            auth()->login($user);
+        }
 
         return redirect()->route('account.make_payment', $application->id);
     }

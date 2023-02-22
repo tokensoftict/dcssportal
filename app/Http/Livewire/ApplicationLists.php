@@ -13,8 +13,8 @@ class ApplicationLists extends Component
 
     public function mount()
     {
-        $this->pendingApplications = Application::whereNull("exam_number")->where('user_id',auth()->id())->get();
-        $this->completedApplications = Application::whereNotNull("exam_number")->where('user_id',auth()->id())->get();
+        $this->pendingApplications = Application::whereNull("exam_number")->where('is_admin',1)->get();
+        $this->completedApplications = Application::whereNotNull("exam_number")->where('is_admin',1)->get();
     }
 
     public function render()

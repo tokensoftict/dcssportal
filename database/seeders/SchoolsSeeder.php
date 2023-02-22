@@ -16,44 +16,25 @@ class SchoolsSeeder extends Seeder
     public function run()
     {
         $nmc_schools = array(
-            array('name' => 'Command Day Secondary School Kaduna
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Jos
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Makurdi
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Enugu
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Ede
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Ijebu-ode
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Odogbo Ibadan
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Mokola Ibadan
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Ikeja Lagos
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Oshodi Lagos
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Ojo Lagos
-','school_type_id' => '1'),
-            array('name' => 'Command Day Secondary School Abuja
-','school_type_id' => '1'),
-            array('name' => 'Command Secondary School Kaduna
-','school_type_id' => '2'),
-            array('name' => 'Command Secondary School Jos
-','school_type_id' => '2'),
-            array('name' => 'Command Secondary School Makurdi
-','school_type_id' => '2'),
-            array('name' => 'Command Secondary School Abakaliki
-','school_type_id' => '2'),
-            array('name' => 'Command Secondary School Mbiri
-','school_type_id' => '2'),
-            array('name' => 'Command Secondary School Ohafia
-','school_type_id' => '2'),
-            array('name' => 'Command Secondary School Ibadan
-','school_type_id' => '2'),
+            array('name' => 'Command Day Secondary School Kaduna','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Jos','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Makurdi','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Enugu','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Ede','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Ijebu-ode','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Odogbo Ibadan','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Mokola Ibadan','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Ikeja Lagos','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Oshodi Lagos','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Ojo Lagos','school_type_id' => '1'),
+            array('name' => 'Command Day Secondary School Abuja','school_type_id' => '1'),
+            array('name' => 'Command Secondary School Kaduna','school_type_id' => '2'),
+            array('name' => 'Command Secondary School Jos','school_type_id' => '2'),
+            array('name' => 'Command Secondary School Makurdi','school_type_id' => '2'),
+            array('name' => 'Command Secondary School Abakaliki','school_type_id' => '2'),
+            array('name' => 'Command Secondary School Mbiri','school_type_id' => '2'),
+            array('name' => 'Command Secondary School Ohafia','school_type_id' => '2'),
+            array('name' => 'Command Secondary School Ibadan','school_type_id' => '2'),
             array('name' => 'Command Secondary School, Ipaja Lagos','school_type_id' => '2'),
             array('name' => 'Command Secondary School Suleja','school_type_id' => '2'),
             array('name' => 'Command Science Secondary School Boys, Jega, Kebbi','school_type_id' => '2'),
@@ -80,9 +61,8 @@ class SchoolsSeeder extends Seeder
             array('name' => 'Command Day Secondary School,Biu,Borno State.','school_type_id' => '1'),
             array('name' => 'Command Secondary School,Orba,Udenu Enugu','school_type_id' => '2'),
             array('name' => 'Command Secondary School,Mpu Aninri,Enugu','school_type_id' => '2'),
-            array('name' => 'Command Day Secondary School Chindit,Zaria','school_type_id' => '1')
+            array('name' => 'Command Day Secondary School Chindit Zaria','school_type_id' => '1')
         );
-
 
         DB::table("schools")
             ->insert($nmc_schools);

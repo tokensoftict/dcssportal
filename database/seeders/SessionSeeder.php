@@ -16,12 +16,15 @@ class SessionSeeder extends Seeder
      */
     public function run()
     {
+        $closing_date = Carbon::create(date('Y'),date('m'),date('d'));
+        $closing_date->addDays(24);
+
         DB::table("sessions")
             ->insert([
                 [
-                    "name" => "Testing Session",
+                    "name" => "2023/2024 SESSION",
                     "registration_begins" => Carbon::now(),
-                    "registration_ends" =>Carbon::now(),
+                    "registration_ends" =>$closing_date->toDateTimeLocalString(),
                     "session" => date("Y"),
                     "form_fee" => 2000,
                     "split_one" => 1000,

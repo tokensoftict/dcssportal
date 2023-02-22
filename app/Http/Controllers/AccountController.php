@@ -41,30 +41,56 @@ class AccountController extends Controller
         if(!isset($application->id))
         {
             Alert::error('Payment Confirmation', "Unable to determine application / Invalid Application ID");
-            return redirect()->route('account.make_payment');
+            if(auth()->user()->isAdmin()){
+                return redirect()->route('administrator.index');
+            }else {
+                return redirect()->route('account.dashboard');
+            }
         }
 
         if(!$request->get("reference"))
         {
             Alert::error('Payment Confirmation', "Invalid Transaction ID Supply");
-            return redirect()->route('account.make_payment')->with("error","Invalid Transaction ID Supply");
+            if(auth()->user()->isAdmin()){
+                return redirect()->route('administrator.index');
+            }else {
+                return redirect()->route('account.dashboard');
+            }
         }
 
-        $confirm = $this->confirmUpperlinkPaygateTransaction->confirmTransaction($request->get("reference"));
-
-        if(!is_bool($confirm))
-        {
-            Alert::error('Payment Confirmation Error', $confirm);
-            return redirect()->route('account.make_payment')->with("error",$confirm);
-        }
 
         $transaction = Transaction::where('transactionId',$request->get("reference"))->first();
 
         if(!$transaction)
         {
             Alert::error('Payment Confirmation', "Transaction not found");
-            return redirect()->route('account.make_payment')->with("error","Transaction not found");
+            if(auth()->user()->isAdmin()){
+                return redirect()->route('administrator.index');
+            }else {
+                return redirect()->route('account.dashboard');
+            }
         }
+
+
+        if($application->id !== $transaction->application_id)
+        {
+            Alert::error('Payment Confirmation', "Transaction not found");
+            if(auth()->user()->isAdmin()){
+                return redirect()->route('administrator.index');
+            }else {
+                return redirect()->route('account.dashboard');
+            }
+        }
+
+
+        $confirm = $this->confirmUpperlinkPaygateTransaction->confirmTransaction($request->get("reference"));
+
+        if(!is_bool($confirm))
+        {
+            Alert::error('Payment Confirmation Error', $confirm);
+            return redirect()->route('account.make_payment',$transaction->application_id)->with("error",$confirm);
+        }
+
 
 
         $transaction->status = "1";
@@ -72,7 +98,7 @@ class AccountController extends Controller
 
         if($application->exam_number !== NULL) {
             Alert::success('Payment Confirmation', "Application has been completed, successfully");
-            return redirect()->route('account.make_payment')->with("success", "Application has been completed, successfully");
+            return redirect()->route('account.make_payment',$transaction->application_id)->with("success", "Application has been completed, successfully");
         }
 
         event(new CompleteApplicationEvent($application));
@@ -85,6 +111,8 @@ class AccountController extends Controller
     public function download_photocard(Application $application)
     {
 
+        ini_set('memory_limit', '5M');
+
         $session = Session::where("status",1)->first();
 
         $pdf = PDF::loadView("photocard.print",['application'=>$application, "session"=> $session]);
@@ -95,6 +123,8 @@ class AccountController extends Controller
 
     public function download_payment_receipt(Application $application)
     {
+        ini_set('memory_limit', '5M');
+
         $transaction = Transaction::where('application_id',$application->id)->where("status",1)->first();
 
         if(!$transaction) abort("404");
@@ -121,6 +151,8 @@ class AccountController extends Controller
 
     public function download_payment_slip(Transaction $transaction)
     {
+
+        ini_set('memory_limit', '5M');
 
         if(!$transaction) abort("404");
 

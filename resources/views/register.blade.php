@@ -4,7 +4,7 @@
 @section('content')
     <section class="form-page  mt-60">
 
-        <div class="form-page__content lg:py-50 mt-30 offset-1">
+        <div class="form-page__content lg:py-50 mt-30 offset-lg-1 offset-0">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

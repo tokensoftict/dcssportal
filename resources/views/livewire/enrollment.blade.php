@@ -5,40 +5,40 @@
         <div class="row">
             <div class="col-lg-10">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mt-lg-0 mt-2">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Surname *</label>
-                        <input type="text" requireds wire:model="surname" name="surname" value="{{ old('surname',"") }}" placeholder="Enter Your Surname">
+                        <input type="text" required wire:model="surname" name="surname" value="{{ old('surname',"") }}" placeholder="Enter Your Surname">
                         @if ($errors->has('surname'))
                             <span class="text-red-3">{{ $errors->first('surname') }}</span>
                         @endif
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mt-lg-0 mt-2">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">First Name *</label>
-                        <input type="text" requireds wire:model="firstname" name="firstname" value="{{ old('firstname',"") }}" placeholder="Enter Your First Name">
+                        <input type="text" required wire:model="firstname" name="firstname" value="{{ old('firstname',"") }}" placeholder="Enter Your First Name">
                         @if ($errors->has('firstname'))
                             <span class="text-red-3">{{ $errors->first('firstname') }}</span>
                         @endif
                     </div>
                 </div>
                 <div class="row mt-25">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mt-lg-0 mt-2">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Other Names *</label>
-                        <input type="text" requireds wire:model="othernames" name="othernames" value="{{ old('othernames',"") }}" placeholder="Enter Your Other Names">
+                        <input type="text" required wire:model="othernames" name="othernames" value="{{ old('othernames',"") }}" placeholder="Enter Your Other Names">
                         @if ($errors->has('othernames'))
                             <span class="text-red-3">{{ $errors->first('othernames') }}</span>
                         @endif
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mt-lg-0 mt-2">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Email address *</label>
-                        <input type="email" requireds wire:model="email" name="email" value="{{ old('email',"") }}" placeholder="Email Address">
+                        <input type="email" required wire:model="email" name="email" value="{{ old('email',"") }}" placeholder="Email Address">
                         @if ($errors->has('email'))
                             <span class="text-red-3">{{ $errors->first('email') }}</span>
                         @endif
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2">
-                <img id="frame"  src="{{ $this->passport !== NULL ? $this->passport->temporaryUrl() : "https://dcss.sch.ng/asset/images/defaultavatar.jpg" }}"  style="width:120px;height:auto;" class="img-fluid img-thumbnail pull-right mt-5" alt="Passport">
+            <div class="col-lg-2 col-12 mt-lg-0 mt-2">
+                <img id="frame"  src="{{ $this->passport !== NULL ? $this->passport->temporaryUrl() : "https://dcss.sch.ng/asset/images/defaultavatar.jpg" }}"  style="width:100%;height:auto;" class="img-fluid img-thumbnail pull-right mt-5" alt="Passport">
                 <input class="form-control" style="width: 0;height: 0;padding: 0; margin: 0" type="file" wire:model="passport" name="passport" id="formFile" onchange="preview()">
                 <div wire:loading wire:target="passport">Uploading...</div>
                 <button type="button" onclick="formFile.click()" class="button -icon -purple-1 text-white pull-right mt-15">Upload</button>
@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Gender *</label>
-                <select requireds name="gender" wire:model="gender" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                <select required name="gender" wire:model="gender" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
                     <option value="">Select Gender</option>
                     <option {{ old('gender',"") == 'Male' ? 'selected' : ''}} value="Male">Male</option>
                     <option {{ old('gender',"") == 'Female' ? 'selected' : ''}} value="Female">Female</option>
@@ -63,14 +63,14 @@
             </div>
             <div class="col-lg-4">
                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Age *</label>
-                <input type="number" requireds wire:model="age" class="text-16 lh-1 fw-500 text-dark-1 mb-10" name="age" value="{{ old('age',"") }}" placeholder="Age">
+                <input type="number" required wire:model="age" class="text-16 lh-1 fw-500 text-dark-1 mb-10" name="age" value="{{ old('age',"") }}" placeholder="Age">
                 @if ($errors->has('age'))
                     <span class="text-red-3">{{ $errors->first('age') }}</span>
                 @endif
             </div>
             <div class="col-lg-4">
                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Date Of Birth *</label>
-                <input type="date" wire:model="dob" class="text-16 lh-1 fw-500 text-dark-1 mb-10" requireds name="dob" value="{{ old('dob',"") }}" placeholder="Date of Birth">
+                <input type="date" wire:model="dob" class="text-16 lh-1 fw-500 text-dark-1 mb-10" required name="dob" value="{{ old('dob',"") }}" placeholder="Date of Birth">
                 @if ($errors->has('dob'))
                     <span class="text-red-3">{{ $errors->first('dob') }}</span>
                 @endif
@@ -83,7 +83,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Telephone *</label>
-                <input type="text" requireds  wire:model="telephone" name="telephone" value="{{ old('telephone',"") }}" placeholder="Telephone">
+                <input type="text" required  wire:model="telephone" name="telephone" value="{{ old('telephone',"") }}" placeholder="Telephone">
                 @if ($errors->has('telephone'))
                     <span class="text-red-3">{{ $errors->first('telephone') }}</span>
                 @endif
@@ -102,7 +102,7 @@
             </div>
             <div class="col-lg-4">
                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Address</label>
-                <input type="text" requireds wire:model="address" name="address" value="{{ old('address',"") }}" placeholder="Address">
+                <input type="text" required wire:model="address" name="address" value="{{ old('address',"") }}" placeholder="Address">
                 @if ($errors->has('address'))
                     <span class="text-red-3">{{ $errors->first('address') }}</span>
                 @endif
@@ -204,7 +204,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Parental Status *</label>
-                <select wire:model="parental_status_id" requireds class="" name="parental_status_id">
+                <select wire:model="parental_status_id" required class="" name="parental_status_id">
                     <option value="">-- Please Select --</option>
                     @foreach($parental_statuses as $parental_statuse)
                         <option value="{{ $parental_statuse->id }}">{{ $parental_statuse->name }}</option>
@@ -219,7 +219,7 @@
                 <div class="row mt-30">
                     <div class="col-lg-6">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">  Parent Names</label>
-                        <input type="text" requireds wire:model="parent_names" name="parent_names" value="{{ old('parent_names',"") }}" placeholder="Parent Names">
+                        <input type="text" required wire:model="parent_names" name="parent_names" value="{{ old('parent_names',"") }}" placeholder="Parent Names">
                         @error('parent_names')  <span class="text-red-3">{{ $message }}</span> @enderror
                         @if ($errors->has('parent_names'))
 
@@ -227,14 +227,14 @@
                     </div>
                     <div class="col-lg-3">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"> Rank</label>
-                        <input type="text" requireds wire:model="rank" name="rank" value="{{ old('rank',"") }}" placeholder="Rank">
+                        <input type="text" required wire:model="rank" name="rank" value="{{ old('rank',"") }}" placeholder="Rank">
                         @if ($errors->has('rank'))
                             <span class="text-red-3">{{ $errors->first('rank') }}</span>
                         @endif
                     </div>
                     <div class="col-lg-3">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"> SVC</label>
-                        <input type="text" requireds wire:model="svc" name="svc" value="{{ old('svc',"") }}" placeholder="SVC">
+                        <input type="text" required wire:model="svc" name="svc" value="{{ old('svc',"") }}" placeholder="SVC">
                         @if ($errors->has('svc'))
                             <span class="text-red-3">{{ $errors->first('svc') }}</span>
                         @endif
@@ -243,14 +243,14 @@
                 <div class="row mt-25">
                     <div class="col-lg-6">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">SVC Number *</label>
-                        <input type="text" requireds wire:model="svc_number" name="svc_number" value="{{ old('svc_number',"") }}" placeholder="SVC Number">
+                        <input type="text" required wire:model="svc_number" name="svc_number" value="{{ old('svc_number',"") }}" placeholder="SVC Number">
                         @if ($errors->has('svc_number'))
                             <span class="text-red-3">{{ $errors->first('svc_number') }}</span>
                         @endif
                     </div>
                     <div class="col-lg-3">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Unit/Formation *</label>
-                        <input type="text" requireds  wire:model="unitFormation" name="unitFormation" value="{{ old('unitFormation',"") }}" placeholder="Unit / Formation">
+                        <input type="text" required  wire:model="unitFormation" name="unitFormation" value="{{ old('unitFormation',"") }}" placeholder="Unit / Formation">
                         @if ($errors->has('unitFormation'))
                             <span class="text-red-3">{{ $errors->first('unitFormation') }}</span>
                         @endif
@@ -290,7 +290,7 @@
                     <div class="row mt-25">
                         <div class="col-lg-6">
                             <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Retired Number *</label>
-                            <input type="text" requireds wire:model="retired_number" name="retired_number" value="{{ old('retired_number',"") }}" placeholder="Retired Number">
+                            <input type="text" required wire:model="retired_number" name="retired_number" value="{{ old('retired_number',"") }}" placeholder="Retired Number">
                             @if ($errors->has('retired_number'))
                                 <span class="text-red-3">{{ $errors->first('retired_number') }}</span>
                             @endif
@@ -303,21 +303,21 @@
                 <div class="row mt-30">
                     <div class="col-lg-6">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"> Parent Names</label>
-                        <input type="text" requireds name="parent_names" wire:model="parent_names" value="{{ old('parent_names',"") }}" placeholder="Parent Names">
+                        <input type="text" required name="parent_names" wire:model="parent_names" value="{{ old('parent_names',"") }}" placeholder="Parent Names">
                         @if ($errors->has('parent_names'))
                             <span class="text-red-3">{{ $errors->first('parent_names') }}</span>
                         @endif
                     </div>
                     <div class="col-lg-3">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"> Rank</label>
-                        <input type="text" requireds name="rank" wire:model="rank" value="{{ old('rank',"") }}" placeholder="Rank">
+                        <input type="text" required name="rank" wire:model="rank" value="{{ old('rank',"") }}" placeholder="Rank">
                         @if ($errors->has('rank'))
                             <span class="text-red-3">{{ $errors->first('rank') }}</span>
                         @endif
                     </div>
                     <div class="col-lg-3">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"> SVC</label>
-                        <input type="text" requireds name="svc"  wire:model="svc" value="{{ old('svc',"") }}" placeholder="SVC">
+                        <input type="text" required name="svc"  wire:model="svc" value="{{ old('svc',"") }}" placeholder="SVC">
                         @if ($errors->has('svc'))
                             <span class="text-red-3">{{ $errors->first('svc') }}</span>
                         @endif
@@ -326,7 +326,7 @@
                 <div class="row mt-25">
                     <div class="col-lg-12">
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">SVC Number *</label>
-                        <input type="text" requireds name="svc_number" wire:model="svc_number" value="{{ old('svc_number',"") }}" placeholder="SVC Number">
+                        <input type="text" required name="svc_number" wire:model="svc_number" value="{{ old('svc_number',"") }}" placeholder="SVC Number">
                         @if ($errors->has('svc_number'))
                             <span class="text-red-3">{{ $errors->first('svc_number') }}</span>
                         @endif
@@ -339,14 +339,14 @@
         <div class="row mt-20">
             <div class="col-lg-6">
                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Password *</label>
-                <input type="password" requireds name="password" wire:model="password" placeholder="Password">
+                <input type="password" required name="password" wire:model="password" placeholder="Password">
                 @if ($errors->has('password'))
                     <span class="text-red-3">{{ $errors->first('password') }}</span>
                 @endif
             </div>
             <div class="col-lg-6">
                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Confirm Password *</label>
-                <input type="password" requireds name="password_confirmation" wire:model="password_confirmation" placeholder="Confirm Password">
+                <input type="password" required name="password_confirmation" wire:model="password_confirmation" placeholder="Confirm Password">
                 @if ($errors->has('password_confirmation'))
                     <span class="text-red-3">{{ $errors->first('password_confirmation') }}</span>
                 @endif

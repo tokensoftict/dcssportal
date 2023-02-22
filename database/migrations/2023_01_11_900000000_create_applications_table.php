@@ -44,6 +44,7 @@ return new class extends Migration
             $table->unsignedBigInteger("exam_state_id")->nullable();
             $table->foreignId("center_id")->nullable()->constrained()->nullOnDelete();
             $table->integer("num_of_edits")->default(0);
+            $table->boolean('is_admin')->default(0);
             $table->foreignId("user_id")->nullable()->constrained()->nullOnDelete();
             $table->foreignId("session_id")->nullable()->constrained()->nullOnDelete();
             $table->timestamps();

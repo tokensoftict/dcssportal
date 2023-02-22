@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(StateSeeders::class);
         $this->call(ParentalStatusSeeder::class);
         $this->call(SchoolTypesSeeder::class);
-        $this->call(CentersSeeder::class);
+        //$this->call(CentersSeeder::class);
+        $this->call(NewCenterSeeder::class);
         $this->call(SchoolsSeeder::class);
         $this->call(SessionSeeder::class);
     }

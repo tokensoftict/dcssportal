@@ -44,7 +44,7 @@ class CompleteApplicationEventListener
 
         if($session)
         {
-            $year = $session->session;
+            $year = date('y',strtotime($session->session));
         }
         else {
             $year = date('y');
