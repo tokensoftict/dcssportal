@@ -204,7 +204,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Parental Status *</label>
-                <select wire:model.defer="parental_status_id" requireds class="" name="parental_status_id">
+                <select wire:model="parental_status_id" requireds class="" name="parental_status_id">
                     <option value="">-- Please Select --</option>
                     @foreach($parental_statuses as $parental_statuse)
                         <option value="{{ $parental_statuse->id }}">{{ $parental_statuse->name }}</option>
