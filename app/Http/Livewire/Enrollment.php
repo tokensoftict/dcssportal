@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Requests\RegistrationRequest;
+
 use App\Models\Application;
 use App\Models\Center;
 use App\Models\ParentalStatus;
@@ -12,7 +12,7 @@ use App\Models\Session;
 use App\Models\State;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
