@@ -183,7 +183,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Mccarlosen\LaravelMpdf\LaravelMpdfServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
-        //Maatwebsite\Excel\ExcelServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -213,7 +213,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'PDF' => Mccarlosen\LaravelMpdf\Facades\LaravelMpdf::class,
-        //'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
