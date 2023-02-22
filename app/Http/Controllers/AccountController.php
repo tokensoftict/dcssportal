@@ -151,7 +151,6 @@ class AccountController extends Controller
     public function download_payment_slip(Transaction $transaction)
     {
 
-        ini_set('memory_limit', '5M');
 
         if(!$transaction) abort("404");
 
