@@ -68,9 +68,9 @@
                     <div data-anim-child="slide-up delay-6" class="masthead__image">
                         <section data-anim-wrap class="mainSlider -type-1 js-mainSlider">
                             <div id="owl-carousel" class="owl-carousel owl-theme">
-                                <div class="item"><img src="{{ asset('banner/banner1.jpeg') }}"/></div>
-                                <div class="item"><img src="{{ asset('banner/banner2.jpeg') }}"/></div>
-                                <div class="item"><img src="{{ asset('banner/banner3.jpeg') }}"/> </div>
+                                <div class="item"><img height="300" style="height: 550px;" src="{{ asset('banner/banner1.jpeg') }}"/></div>
+                                <div class="item"><img height="300" style="height: 550px;" src="{{ asset('banner/banner2.jpeg') }}"/></div>
+                                <div class="item"><img height="300" style="height: 550px;"   src="{{ asset('banner/banner3.jpeg') }}"/> </div>
                             </div>
                         </section>
                     </div>

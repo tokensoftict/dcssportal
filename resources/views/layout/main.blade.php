@@ -60,6 +60,7 @@
                 items : 1,
                 loop:true,
                 autoWidth : true,
+                autoHeight: false,
                 autoplay: true,
                 itemsDesktop : false,
                 itemsDesktopSmall : false,
