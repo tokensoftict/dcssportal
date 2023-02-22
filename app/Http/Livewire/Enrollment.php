@@ -192,7 +192,7 @@ class Enrollment extends Component
                 'center_id' => $this->center_id,
                 'user_id' => $this->user_id,
                 'session_id' => $this->session_id,
-                'is_admin' => (auth()->user()->isAdmin() ? 1 : 0)
+                'is_admin' => ((auth()->check() && auth()->user()->isAdmin()) ? 1 : 0)
             ]
         );
 
