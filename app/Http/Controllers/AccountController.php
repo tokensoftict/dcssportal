@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use PDF;
 Use Alert;
 
-ini_set('memory_limit', '5M');
 
 class AccountController extends Controller
 {
