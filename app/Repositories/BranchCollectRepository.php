@@ -158,6 +158,8 @@ class BranchCollectRepository
 
         $response = Soap::to($this->bc_wsdl_url)->GenerateTransactionTP($xml)->response;
 
+        app('log')->info("Branchcollect Response", $response);
+
         $service_response = simplexml_load_string($response); //response from service
 
         if($service_response && $service_response->RespCode == "00")
