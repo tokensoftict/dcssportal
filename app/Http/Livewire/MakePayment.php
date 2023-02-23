@@ -161,7 +161,7 @@ class MakePayment extends Component
                 "firstName" => $this->application->surname,
                 "lastName" => $this->application->firstname,
                 "customerUrl" => route("account.complete_application",$this->application->id),
-                "merchantId" => env("MERCHANT_ID","UPLADMINMERCH"),
+                "merchantId" => env("MERCHANT_ID","UPLHSEM"),
             ]
         );
 
