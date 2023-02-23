@@ -18,7 +18,7 @@ class ConfirmUpperlinkPaygateTransactionRepository
 
       $reponseCollection = $response->object();
 
-      //dd($response->body());
+
         if(!isset($reponseCollection->transactionStatus)){
             return "Unable able to confirm transaction status";
         }
