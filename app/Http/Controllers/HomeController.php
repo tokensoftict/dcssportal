@@ -132,13 +132,13 @@ class HomeController extends Controller
     public function branchcollect_callback_thirldparty(Application $application, $transaction)
     {
 
-        if (!$application) return "Invalid Application id sent";
+        if (!$application) return "1";
 
-        if (!$transaction) return "Invalid transaction id";
+        if (!$transaction) return "1";
 
         $transaction = Transaction::where("transactionId", $transaction)->first();
 
-        if (!$transaction) return "Invalid transaction id";
+        if (!$transaction) return "1";
 
         $final_rcd = request()->get("final_rcd") ? request()->get("final_rcd") : 0;
 
@@ -157,7 +157,7 @@ class HomeController extends Controller
 
         }
 
-        return "0";
+        return "1";
     }
 
 }
