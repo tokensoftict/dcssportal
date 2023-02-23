@@ -157,8 +157,8 @@ class BranchCollectRepository
         $xml = str_replace($var, $values, $xml);
 
         $response = Soap::to($this->bc_wsdl_url)->GenerateTransactionTP($xml)->response;
-
-        app('log')->info("Branchcollect Response", $response);
+        dump($response);
+        //app('log')->info("Branchcollect Response", );
 
         $service_response = simplexml_load_string($response); //response from service
 

@@ -129,12 +129,14 @@ class HomeController extends Controller
 
     }
 
-    public function branchcollect_callback_thirldparty(Application $application, $transaction)
+    public function branchcollect_callback_thirldparty($application, $transaction)
     {
 
         if (!$application) return "1";
 
         if (!$transaction) return "1";
+
+        $application = Application::find($application);
 
         $transaction = Transaction::where("transactionId", $transaction)->first();
 
