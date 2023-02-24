@@ -11,6 +11,8 @@
                 <div class="row">
                     <div class="col-12">
                         <h2 class="text-center text-24 text-red-1">THIS IS TO INFORM THE GENERAL PUBLIC THAT ONLINE APPLICATIONS FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2023/2024 ACADEMIC SESSION WILL COMMENCE ON FRIDAY 24 FEBRUARY ,2023 AND END ON SATURDAY  10 JUNE 2023</h2>
+                        <h4>Interested candidates are to purchase the form at Two Thousand Naira. (2000)</h4>
+                        <br/>
                         <br/>
                         <p class="text-17 text-center">Entrance Examination will take place on Saturday 17 June 2023 by 8am in all designated examination centres nationwide.
                             For Inquiries and support please call 08113856079 or send an email to support@dcss.sch.ng or commandentrance@gmail.com.</p>

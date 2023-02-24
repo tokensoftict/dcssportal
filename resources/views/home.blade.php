@@ -8,10 +8,11 @@
     <section data-anim-wrap class="masthead -type-5 mt-50">
         <div class="masthead__bg"></div>
 
-        <div class="pl-lg-45 pr-lg-30 pl-20 pr-15">
+        <div data-anim-child="slide-up delay-2" class="pl-lg-45 pr-lg-30 pl-20 pr-15">
             <div class="row">
                 <div class="col-12">
                     <h2 class="text-center text-red-1">THIS IS TO INFORM THE GENERAL PUBLIC THAT ONLINE APPLICATIONS FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2023/2024 ACADEMIC SESSION WILL COMMENCE ON FRIDAY 24 FEBRUARY ,2023 AND END ON SATURDAY  10 JUNE 2023</h2>
+                    <h4>Interested candidates are to purchase the form at Two Thousand Naira. (2000)</h4>
                 </div>
             </div>
             <div class="row mt-1 y-gap-50 items-center">
