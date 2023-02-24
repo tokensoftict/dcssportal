@@ -44,7 +44,7 @@ class ApplicantExport implements FromView
 
         if(isset($this->filter['payment_status']) && $this->filter['payment_status'] == "2")
         {
-            $apps>whereNotNull('exam_number');
+            $apps->whereNotNull('exam_number');
         }
 
         $apps = $apps->get();
