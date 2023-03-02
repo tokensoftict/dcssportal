@@ -74,6 +74,10 @@
                             <div align="center">
                                 <a href="{{ $this->paymentSlipUrl }}" target="_new"  class="button -md  -outline-green-1 text-green-1">Print Payment Slip</a>
                             </div>
+                            <br/>
+                            <div align="center">
+                                <a href="https://quickteller.com/dcss" target="_new"  class="button -md  -outline-blue-1 text-dark-1">Pay Now With Interswitch</a>
+                            </div>
                         </div>
                     @endif
                 </div>
