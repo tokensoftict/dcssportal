@@ -80,6 +80,8 @@
                         </tr>
                     @endif
                 </table>
+
+                <a href="{{ route('account.edit_application',$this->application->id) }}" class="button -icon -purple-1 text-white">Edit Application</a>
             </div>
         </div>
     </div>

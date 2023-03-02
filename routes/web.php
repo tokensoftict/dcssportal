@@ -47,9 +47,11 @@ Route::group(['middleware' => ['auth']], function() {
 
         Route::get('/', ['as'=>'dashboard',"uses"=>'AccountController@index']);
         Route::get('/logout', ['as'=>'logout',"uses"=>'AccountController@logout']);
-        Route::get('/profile', ['as'=>'profile',"uses"=>'AccountController@profile']);
+        Route::get('{user}/profile', ['as'=>'profile',"uses"=>'AccountController@profile']);
         Route::get('{application}/make-payment', ['as'=>'make_payment',"uses"=>'AccountController@make_payment']);
+        Route::get('{application}/transactions', ['as'=>'transactions',"uses"=>'AccountController@transactions']);
         Route::get('{application}/complete-application', ['as'=>'complete_application',"uses"=>'AccountController@complete_application']);
+        Route::get('{application}/edit-application', ['as'=>'edit_application',"uses"=>'AccountController@edit_application']);
         Route::get('{application}/print-photocard', ['as'=>'print_photocard',"uses"=>'AccountController@print_photocard']);
         Route::get('{application}/download-photocard', ['as'=>'download_photocard',"uses"=>'AccountController@download_photocard']);
         Route::get('{application}/download-payment-receipt', ['as'=>'download_payment_receipt',"uses"=>'AccountController@download_payment_receipt']);
@@ -62,7 +64,11 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get('/', ['as'=>'index',"uses"=>'AdministratorController@index']);
             Route::get('/new-application', ['as'=>'new-application',"uses"=>'AdministratorController@new_application']);
             Route::get('/myapplication', ['as'=>'myapplication',"uses"=>'AdministratorController@myapplication']);
+            Route::get('/view-application', ['as'=>'view_application',"uses"=>'AdministratorController@view_application']);
             Route::get('/reports', ['as'=>'reports',"uses"=>'AdministratorController@reports']);
+            Route::get('/reports_by_center', ['as'=>'reports_by_center',"uses"=>'AdministratorController@reports_by_center']);
+            Route::get('/reports_by_school', ['as'=>'reports_by_school',"uses"=>'AdministratorController@reports_by_school']);
+            Route::get('/reports_by_status', ['as'=>'reports_by_status',"uses"=>'AdministratorController@reports_by_status']);
             Route::get('/settings', ['as'=>'settings',"uses"=>'AdministratorController@settings']);
         });
     });

@@ -12,14 +12,16 @@ use App\Models\Session;
 use App\Models\State;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Enrollment extends Component
 {
 
-    use WithFileUploads;
+    use WithFileUploads, LivewireAlert;
 
     public String    $surname = "";
     public String    $firstname = "";
@@ -48,6 +50,9 @@ class Enrollment extends Component
     public String  $parental_status_id = "";
     public String   $exam_state_id = "";
     public int $user_id = 0;
+
+
+    public Application $application;
 
     public $passport;
 
@@ -114,12 +119,68 @@ class Enrollment extends Component
             $data['retired_number'] = 'required';
         }
 
+        if(isset($this->application->id))
+        {
+            Arr::forget($data,['password','passport']);
+
+            $data['email'] = 'required|unique:users,email,'.$this->application->user_id;
+        }
+
+
         return $data;
     }
 
     public function mount()
     {
         $this->session_id = Session::where('status',1)->first()->id;
+
+        if(isset($this->application->id))
+        {
+            // boostrap all public variable properties
+
+            $properties =  [
+                'firstname',
+                'surname',
+                'othernames',
+                'email',
+                //'password',
+                'gender',
+                //'passport_path',
+                'age',
+                'telephone',
+                'local_govt',
+                'address',
+                'parental_status_id',
+                'parent_names',
+                'rank',
+                'svc',
+                'svc_number',
+                //'retired',
+                'retired_number',
+                'dob',
+                'unitFormation',
+                'school_id',
+                'school2_id',
+                'school3_id',
+                'school_type_id',
+                'school_type_id2',
+                'state_id',
+                'exam_state_id',
+                'center_id',
+            ];
+
+            foreach ($properties as $property)
+            {
+                $this->{$property} = $this->application->{$property};
+
+            }
+
+            $this->retired = $this->application->retired == 'Yes' ? 1 : 0;
+
+            $this->passport = url('/'.$this->application->passport_path);
+
+        }
+
     }
 
     public function render()
@@ -204,4 +265,60 @@ class Enrollment extends Component
 
         return redirect()->route('account.make_payment', $application->id);
     }
+
+    public function updateApplication()
+    {
+        $this->dispatchBrowserEvent("scrollToTop", []);
+
+        $this->validate();
+
+        $data = [
+            'firstname' => $this->firstname,
+            'surname' => $this->surname,
+            'othernames' => $this->othernames,
+            'email' => $this->email,
+            'password' => $this->password,
+            'gender' => $this->gender,
+            'age' => $this->age,
+            'telephone' => $this->telephone,
+            'local_govt' => "",
+            'address' => $this->address,
+            'parental_status_id' => $this->parental_status_id,
+            'parent_names' => $this->parent_names,
+            'rank' => $this->rank,
+            'svc' => $this->svc,
+            'svc_number' => $this->svc_number,
+            'retired' => $this->select_retired == "Yes" ? 1 : 0,
+            'retired_number' => $this->retired_number,
+            'dob' => date("Y-m-d", strtotime($this->dob)),
+            'unitFormation' => $this->unitFormation,
+            'school_id' => $this->school_id,
+            'school2_id' => $this->school2_id,
+            'school_type_id' => $this->school_type_id,
+            'school_type_id2' => $this->school_type_id2,
+            'state_id' => $this->state_id,
+            'exam_state_id' => $this->exam_state_id,
+            'center_id' => $this->center_id,
+        ];
+
+        if(!is_string($this->passport)){
+            $file = $this->passport->store('passport', 'real_public');
+            $data['passport_path'] = $file;
+        }
+
+        $this->application->update($data);
+
+        $this->alert(
+            "success",
+            "Application Update",
+            [
+                'position' => 'center',
+                'timer' => 6000,
+                'toast' => false,
+                'text' =>  "Application has been updated successfully!.",
+            ]
+        );
+
+    }
+
 }

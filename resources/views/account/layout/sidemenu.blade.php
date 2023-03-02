@@ -28,14 +28,20 @@
                             Print Photo Card
                         </a>
                     </div>
-                    <!--
+                    <div class="sidebar__item">
+                        <a  href="{{ route('account.transactions',$application->id) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                            <i class="text-20 icon-list-2 mr-15"></i>
+                            Transactions
+                        </a>
+                    </div>
+
                 <div class="sidebar__item ">
-                    <a href="{{ route('account.profile') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                    <a href="{{ route('account.profile',$application->user_id) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                         <i class="text-20 icon-person-3 mr-15"></i>
                         My Profile
                     </a>
                 </div>
--->
+
                     <div class="sidebar__item ">
                         <a href="{{ route("account.logout") }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                             <i class="text-20 icon-access mr-15"></i>
@@ -69,14 +75,38 @@
                     </div>
                     <div class="sidebar__item">
                         <a  href="{{ route('administrator.new-application') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                            <i class="text-20 icon-document mr-15"></i>
+                            <i class="text-20 icon-access mr-15"></i>
                            New Application
+                        </a>
+                    </div>
+                    <div class="sidebar__item">
+                        <a  href="{{ route('administrator.view_application') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                            <i class="text-20 icon-explore mr-15"></i>
+                            Query Application
                         </a>
                     </div>
                     <div class="sidebar__item">
                         <a  href="{{ route('administrator.reports') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                             <i class="text-20 icon-bar-chart mr-15"></i>
                             Reports
+                        </a>
+                    </div>
+                    <div class="sidebar__item">
+                        <a  href="{{ route('administrator.reports_by_center') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                            <i class="text-20 icon-bar-chart mr-15"></i>
+                            Reports By Center
+                        </a>
+                    </div>
+                    <div class="sidebar__item">
+                        <a  href="{{ route('administrator.reports_by_school') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                            <i class="text-20 icon-bar-chart mr-15"></i>
+                            Reports By School
+                        </a>
+                    </div>
+                    <div class="sidebar__item">
+                        <a  href="{{ route('administrator.reports_by_status') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                            <i class="text-20 icon-bar-chart-2 mr-15"></i>
+                            Reports By Payment
                         </a>
                     </div>
                     <!--

@@ -170,4 +170,34 @@ class BranchCollectRepository
         return false;
     }
 
+
+    public function requeryTransaction(Transaction $transaction)
+    {
+        $salt = "$this->MerchantID|$this->MerchantCode|$transaction->transactionId";
+
+        $MAC = hash('sha512', $salt);
+
+        $xml = file_get_contents(storage_path("app/branchcollect/requery-branch-collect.xml"));
+
+        $var = array("{MerchantID}", "{MerchantCode}", "{TransactionID}", "{MAC}");
+
+        $values = array($this->MerchantID, $this->MerchantCode, $transaction->transactionId, $MAC);
+
+        $xml = str_replace($var, $values, $xml);
+
+        $response = Soap::to($this->bc_wsdl_url)->PaidTransactionDetails($xml)->response;
+
+        app('log')->info('Re-query Transaction ---'.$transaction->id."-".$transaction->email."-->".$response);
+
+        $service_response = simplexml_load_string($response); //response from service
+
+        if($service_response && $service_response->RespCode == "00"){
+
+            return true;
+        }
+        else {
+            return "Invalid or pending transaction, please try again.";
+        }
+
+    }
 }

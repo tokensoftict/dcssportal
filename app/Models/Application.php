@@ -7,6 +7,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -52,7 +53,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property School|null $school
  * @property Session|null $session
  * @property User|null $user
- *
+ * @property Collection|Transaction[] $transactions
  * @package App\Models
  */
 class Application extends Model
@@ -169,4 +170,9 @@ class Application extends Model
 	{
 		return $this->belongsTo(User::class);
 	}
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }

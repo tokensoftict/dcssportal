@@ -40,15 +40,22 @@
                                 <div class="px-30 py-30">
 
                                     <div class="sidebar -dashboard">
-<!--
+                                        @if(auth()->user()->isAdmin())
+                                            <div class="sidebar__item ">
+                                                <a href="{{ route('account.profile',auth()->id()) }}" class="d-flex items-center text-17 lh-1 fw-500 ">
+                                                    <i class="text-20 icon-person-3 mr-15"></i>
+                                                    My Profile
+                                                </a>
+                                            </div>
+                                         @else
                                         <div class="sidebar__item ">
-                                            <a href="{{ route('account.profile') }}" class="d-flex items-center text-17 lh-1 fw-500 ">
-                                                <i class="text-20 icon-setting mr-15"></i>
+                                            <a href="{{ route('account.profile',(isset($application->user_id) ? $application->user_id : $user->id)) }}" class="d-flex items-center text-17 lh-1 fw-500 ">
+                                                <i class="text-20 icon-person-3 mr-15"></i>
                                                 My Profile
                                             </a>
                                         </div>
--->
-                                        <div class="sidebar__item ">
+                                       @endif
+                                            <div class="sidebar__item ">
                                             <a href="{{ route('account.logout') }}" class="d-flex items-center text-17 lh-1 fw-500 ">
                                                 <i class="text-20 icon-power mr-15"></i>
                                                 Logout

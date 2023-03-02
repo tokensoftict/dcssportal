@@ -12,7 +12,7 @@
                             <h3 class="text-30 lh-13 mt-20">Enroll Now</h3>
                             <p class="mt-10">Already have an account? <a href="{{ asset("login") }}" class="text-purple-1">Log in</a></p>
                             @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
-                            <livewire:enrollment/>
+                            <livewire:enrollment :application="$application"/>
                             @else
                                 <div style="height: 50vh">
                                     <br/>  <br/>  <br/>  <br/>

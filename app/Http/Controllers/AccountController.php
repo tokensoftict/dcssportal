@@ -6,6 +6,7 @@ use App\Events\CompleteApplicationEvent;
 use App\Models\Application;
 use App\Models\Session;
 use App\Models\Transaction;
+use App\Models\User;
 use App\Repositories\ConfirmUpperlinkPaygateTransactionRepository;
 use Illuminate\Http\Request;
 use PDF;
@@ -30,6 +31,15 @@ class AccountController extends Controller
         return view('account.home',['application' => $application]);
     }
 
+
+    public function edit_application(Application $application)
+    {
+        if(!$application) abort('404');
+
+        $session = Session::where('status',1)->first();
+
+        return view("account.editapplication",['session' => $session, 'application'=> $application]);
+    }
 
     public function make_payment(Application $application)
     {
@@ -149,8 +159,6 @@ class AccountController extends Controller
 
     public function download_payment_slip(Transaction $transaction)
     {
-
-
         if(!$transaction) abort("404");
 
         $session = Session::where("status",1)->first();
@@ -161,8 +169,20 @@ class AccountController extends Controller
     }
 
 
-    public function profile()
+    public function transactions(Application $application)
     {
+        if(!$application) abort("404");
 
+        return view('account.transaction', ['application'=>$application]);
+    }
+
+    public function profile(User $user)
+    {
+        if(!auth()->user()->isAdmin())
+        {
+            $user = auth()->user();
+        }
+
+        return view('account.profile', ['user'=>$user]);
     }
 }

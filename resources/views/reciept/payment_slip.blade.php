@@ -98,9 +98,11 @@
             <td><b>Transaction ID for Bank/Online Payment: </b></td>
             <td><span style="color: #F00; !important"><strong>{{ $payment->transactionId }}</strong></span></td>
         </tr>
+        <!--
         <tr style="text-align: left;">
-            <td colspan="2" style="text-align: center"><span style="color: #F00 !important; padding: 5px; text-align:center"><strong><i class="fa fa-info-circle fa-2x" style="vertical-align:middle"></i><!-- You may proceed to pay by Card or -->Visit any Bank Branch with this slip to make payment to PAYCHOICE on <span class="red">PAYDIRECT</span>.</strong></span></td>
+            <td colspan="2" style="text-align: center"><span style="color: #F00 !important; padding: 5px; text-align:center"><strong><i class="fa fa-info-circle fa-2x" style="vertical-align:middle"></i> You may proceed to pay by Card or Visit any Bank Branch with this slip to make payment to PAYCHOICE on <span class="red">PAYDIRECT</span>.</strong></span></td>
         </tr>
+        -->
     </table>
 </div>
 </body>

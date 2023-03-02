@@ -23,6 +23,8 @@ class ApplicantsReport extends Component
 
     public $payment_status = "";
 
+    public array $filter;
+
     public function mount()
     {
         $this->centers = Center::all();
@@ -37,11 +39,24 @@ class ApplicantsReport extends Component
 
     public function generateReport()
     {
-        $filter = [
-            'center_id' => $this->center,
-            'school_id' => $this->school,
-            'payment_status' => $this->payment_status
-        ];
+        $filter = [];
+
+        if(!empty($this->center))
+        {
+            $filter['center_id'] = $this->center;
+        }
+
+        if(!empty($this->school))
+        {
+            $filter['school_id'] = $this->school;
+        }
+
+        if(!empty($this->payment_status))
+        {
+            $filter['payment_status'] = $this->payment_status;
+        }
+
+
 
         return Excel::download(new ApplicantExport($filter), 'applicants-'.time().'-export.xlsx');
     }

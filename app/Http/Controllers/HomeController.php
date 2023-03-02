@@ -38,7 +38,9 @@ class HomeController extends Controller
     {
         $session = Session::where('status',1)->first();
 
-        return view("register",['session' => $session]);
+        $application = new Application();
+
+        return view("register",['session' => $session, 'application'=> $application]);
     }
 
     /**

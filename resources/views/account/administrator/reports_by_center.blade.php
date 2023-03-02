@@ -5,8 +5,8 @@
 
     <div class="row pb-50 mb-10 ">
         <div class="col-auto">
-            <h1 class="text-30 lh-12 fw-700">Application Reports</h1>
-            <div class="mt-10">Generate Applicants Excel Reports</div>
+            <h1 class="text-30 lh-12 fw-700">Application Reports By Center</h1>
+            <div class="mt-10">Generate Applicants Excel Reports By Center</div>
         </div>
     </div>
 

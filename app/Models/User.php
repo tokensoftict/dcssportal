@@ -3,10 +3,32 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+
+/**
+ * Class User
+ *
+ * @property int $id
+ * @property string $firstname
+ * @property string $othernames
+ * @property bool $is_admin
+ * @property string|null $phone
+ * @property string $password
+ * @property string $email
+ * @property Carbon|null $email_verified_at
+ * @property string|null $remember_token
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ *
+ * @property Collection|Application[] $applications
+ *
+ * @package App\Models
+ */
 
 class User extends Authenticatable
 {
@@ -26,6 +48,10 @@ class User extends Authenticatable
         'password'
     ];
 
+
+    protected $with = ['applications'];
+
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -41,11 +67,13 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 
     public function isAdmin(){
         return $this->is_admin === 1;
+    }
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
     }
 }
