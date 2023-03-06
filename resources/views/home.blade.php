@@ -44,7 +44,7 @@
                                     <div class="mr-10">
                                         <img src="{{ asset("img/home-8/hero/icons/1.svg") }}" alt="icon">
                                     </div>
-                                    <div class="fw-500 lh-11 mt-10">30<br> BOARDING SCHOOLS</div>
+                                    <div class="fw-500 lh-11 mt-10">31<br> BOARDING SCHOOLS</div>
                                 </div>
                             </div>
 
@@ -62,7 +62,7 @@
                                     <div class="mr-10">
                                         <img src="{{ asset("img/home-8/hero/icons/1.svg") }}" alt="icon">
                                     </div>
-                                    <div class="fw-500 lh-11 mt-10">46<br> TOTAL SCHOOLS</div>
+                                    <div class="fw-500 lh-11 mt-10">47<br> TOTAL SCHOOLS</div>
                                 </div>
                             </div>
 
