@@ -8,7 +8,7 @@
                         @if(in_array('centers',$this->filter))
                             <div >
                                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Select Centers</label>
-                                <select required name="center" wire:model.defer="center" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                <select required name="center" wire:model="center" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
                                     <option value="">Select Center</option>
                                     @foreach($this->centers as $center_)
                                         <option value="{{ $center_->id }}">{{ $center_->name }}</option>
@@ -19,7 +19,7 @@
                         @if(in_array('schools',$this->filter))
                             <div>
                                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">School First Choice</label>
-                                <select required name="school" wire:model.defer="school" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                <select required name="school" wire:model="school" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
                                     <option value="">Select School</option>
                                     @foreach($this->schools as $school_)
                                         <option value="{{ $school_->id }}">{{ $school_->name }}</option>
@@ -30,7 +30,7 @@
                         @if(in_array('status',$this->filter))
                             <div>
                                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Payment Status</label>
-                                <select required  name="payment_status" wire:model.defer="payment_status" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                <select required  name="payment_status" wire:model="payment_status" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
                                     <option value="">Select Payment Status</option>
                                     @foreach($this->statuses as $key=>$sta)
                                         <option value="{{ $key }}">{{ $sta }}</option>
@@ -44,12 +44,49 @@
                                 <h5 align="center"> Please wait...</h5>
                             </div>
                             <div wire:loading.remove wire:target="generateReport">
-                                <button type="submit" class="button -md -blue-1 align-content-center text-white fw-500 w-1/4">Export </button>
+                                <button type="submit" class="button -md -blue-1 align-content-center text-white fw-500 w-1/1">Export </button>
+                            </div>
+                            <br/>
+                            <div wire:loading.remove wire:target="viewReport">
+                                <button type="button" wire:click="viewReport" class="button -md -green-1 align-content-center text-white fw-500 w-1/1">Generate Report </button>
                             </div>
                         </div>
 
                     </div>
                 </form>
+
+                <div class="row">
+                    <div class="table-responsive">
+                    <table class="table mt-4 table-striped table-bordered" style="width: 100%">
+                        <thead class="text-13">
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th  class="text-center">Passport</th>
+                            <th  class="text-center">Full Name</th>
+                            <th  class="text-center">Exam Number</th>
+                            <th  class="text-center">Center</th>
+                            <th  class="text-center">First School</th>
+                            <th  class="text-center">Second School</th>
+                            <th  class="text-center">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($this->applications as $application)
+                            <tr class="text-12">
+                                <td  class="text-center">{{ $loop->iteration }}</td>
+                                <td  class="text-center"><img class="img-thumbnail img-fluid" style="width: 80px" alt="{{ $application->fullname  }}" src="{{ url('/'.$application->passport_path)  }}" width="100"/> </td>
+                                <td  class="text-center">{{ $application->fullname }}</td>
+                                <td  class="text-center">{{ $application->exam_number }}</td>
+                                <td  class="text-center">{{ $application->center->name }}</td>
+                                <td  class="text-center">{{ $application->school->name }}</td>
+                                <td  class="text-center">{{ $application->school2->name }}</td>
+                                <td  class="text-center">{!!   $application->exam_number === NULL ? "<b class='text-red-1'>Pending</b>" : "<b class='text-blue-1'>Completed</b>" !!}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

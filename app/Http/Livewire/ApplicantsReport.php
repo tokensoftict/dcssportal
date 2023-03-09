@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Exports\ApplicantExport;
+use App\Models\Application;
 use App\Models\Center;
 use App\Models\School;
 use Livewire\Component;
@@ -25,6 +26,8 @@ class ApplicantsReport extends Component
 
     public array $filter;
 
+    private $applications = [];
+
     public function mount()
     {
         $this->centers = Center::all();
@@ -33,7 +36,8 @@ class ApplicantsReport extends Component
 
     public function render()
     {
-        return view('livewire.applicants-report');
+        $data = ['applications' => []];
+        return view('livewire.applicants-report', $data);
     }
 
 
@@ -59,6 +63,34 @@ class ApplicantsReport extends Component
 
 
         return Excel::download(new ApplicantExport($filter), 'applicants-'.time().'-export.xlsx');
+    }
+
+    public function viewReport()
+    {
+        $apps =  Application::query()->with(['center','state','examState','parental_status','school','school_type','school_type2','school2']);
+
+
+        if(isset($this->center) && $this->center !="")
+        {
+            $apps->where('center_id',$this->center);
+        }
+
+        if(isset($this->school)  && $this->school !="")
+        {
+            $apps->where('school_id',$this->school);
+        }
+
+        if(isset($this->filter['payment_status']) && $this->filter['payment_status'] == "1")
+        {
+            $apps->whereNull('exam_number');
+        }
+
+        if(isset($this->payment_status) && $this->payment_status == "2")
+        {
+            $apps->whereNotNull('exam_number');
+        }
+
+        $this->applications = $apps->get();
     }
 
 }
