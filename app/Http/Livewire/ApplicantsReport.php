@@ -80,10 +80,19 @@ class ApplicantsReport extends Component
 
         if(isset( $this->payment_status) &&  $this->payment_status == "1")
         {
-            $apps->whereNull('exam_number');
+            if(!auth()->user()->isDcssAdmin()){
+
+                $apps->whereNull('exam_number');
+            }
+
         }
 
         if(isset($this->payment_status) && $this->payment_status == "2")
+        {
+            $apps->whereNotNull('exam_number');
+        }
+
+        if(auth()->user()->isDcssAdmin() && $this->payment_status != "2")
         {
             $apps->whereNotNull('exam_number');
         }
