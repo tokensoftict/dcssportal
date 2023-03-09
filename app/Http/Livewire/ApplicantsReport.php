@@ -60,8 +60,6 @@ class ApplicantsReport extends Component
             $filter['payment_status'] = $this->payment_status;
         }
 
-
-
         return Excel::download(new ApplicantExport($filter), 'applicants-'.time().'-export.xlsx');
     }
 
@@ -80,7 +78,7 @@ class ApplicantsReport extends Component
             $apps->where('school_id',$this->school);
         }
 
-        if(isset($this->filter['payment_status']) && $this->filter['payment_status'] == "1")
+        if(isset( $this->payment_status) &&  $this->payment_status == "1")
         {
             $apps->whereNull('exam_number');
         }

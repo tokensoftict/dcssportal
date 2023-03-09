@@ -40,12 +40,14 @@
                         @endif
                         <div>
                             <label class="text-16 lh-1 fw-500 text-dark-1 mb-10" style="visibility: hidden">Payment Status</label>
-                            <div wire:loading.block wire:target="generateReport">
+                            <div wire:loading.block wire:target="generateReport,viewReport">
                                 <h5 align="center"> Please wait...</h5>
                             </div>
+                            @if(auth()->user()->isAdmin())
                             <div wire:loading.remove wire:target="generateReport">
                                 <button type="submit" class="button -md -blue-1 align-content-center text-white fw-500 w-1/1">Export </button>
                             </div>
+                            @endif
                             <br/>
                             <div wire:loading.remove wire:target="viewReport">
                                 <button type="button" wire:click="viewReport" class="button -md -green-1 align-content-center text-white fw-500 w-1/1">Generate Report </button>

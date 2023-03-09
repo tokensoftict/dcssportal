@@ -1,4 +1,4 @@
-@if(!auth()->user()->isAdmin())
+@if(!(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin() ))
     @php
         $application = \App\Models\Application::where("user_id",auth()->user()->id)->first();
     @endphp
@@ -35,12 +35,12 @@
                         </a>
                     </div>
 
-                <div class="sidebar__item ">
-                    <a href="{{ route('account.profile',$application->user_id) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                        <i class="text-20 icon-person-3 mr-15"></i>
-                        My Profile
-                    </a>
-                </div>
+                    <div class="sidebar__item ">
+                        <a href="{{ route('account.profile',$application->user_id) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                            <i class="text-20 icon-person-3 mr-15"></i>
+                            My Profile
+                        </a>
+                    </div>
 
                     <div class="sidebar__item ">
                         <a href="{{ route("account.logout") }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
@@ -61,63 +61,79 @@
             <div>
                 <div class="text-16 lh-1 fw-500 text-dark-1 mb-30">My Menu</div>
                 <div>
-                    <div class="sidebar__item">
-                        <a href="{{ route('administrator.index') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                            <i class="text-20 icon-discovery mr-15"></i>
-                            Dashboard
-                        </a>
-                    </div>
-                    <div class="sidebar__item">
-                        <a  href="{{ route('administrator.myapplication') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                            <i class="text-20 icon-list-2 mr-15"></i>
-                            My Application(s)
-                        </a>
-                    </div>
-                    <div class="sidebar__item">
-                        <a  href="{{ route('administrator.new-application') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                            <i class="text-20 icon-access mr-15"></i>
-                           New Application
-                        </a>
-                    </div>
-                    <div class="sidebar__item">
-                        <a  href="{{ route('administrator.view_application') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                            <i class="text-20 icon-explore mr-15"></i>
-                            Query Application
-                        </a>
-                    </div>
-                    <div class="sidebar__item">
-                        <a  href="{{ route('administrator.reports') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                            <i class="text-20 icon-bar-chart mr-15"></i>
-                            Reports
-                        </a>
-                    </div>
-                    <div class="sidebar__item">
-                        <a  href="{{ route('administrator.reports_by_center') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                            <i class="text-20 icon-bar-chart mr-15"></i>
-                            Reports By Center
-                        </a>
-                    </div>
-                    <div class="sidebar__item">
-                        <a  href="{{ route('administrator.reports_by_school') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                            <i class="text-20 icon-bar-chart mr-15"></i>
-                            Reports By School
-                        </a>
-                    </div>
-                    <div class="sidebar__item">
-                        <a  href="{{ route('administrator.reports_by_status') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                            <i class="text-20 icon-bar-chart-2 mr-15"></i>
-                            Reports By Payment
-                        </a>
-                    </div>
+                    @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin())
+                        <div class="sidebar__item">
+                            <a href="{{ route('administrator.index') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-discovery mr-15"></i>
+                                Dashboard
+                            </a>
+                        </div>
+                    @endif
+                    @if(auth()->user()->isAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.myapplication') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-list-2 mr-15"></i>
+                                My Application(s)
+                            </a>
+                        </div>
+                    @endif
+                    @if(auth()->user()->isAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.new-application') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-access mr-15"></i>
+                                New Application
+                            </a>
+                        </div>
+                    @endif
+                    @if(auth()->user()->isAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.view_application') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-explore mr-15"></i>
+                                Query Application
+                            </a>
+                        </div>
+                    @endif
+                    @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.reports') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-bar-chart mr-15"></i>
+                                Reports
+                            </a>
+                        </div>
+                    @endif
+                    @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.reports_by_center') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-bar-chart mr-15"></i>
+                                Reports By Center
+                            </a>
+                        </div>
+                    @endif
+                    @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.reports_by_school') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-bar-chart mr-15"></i>
+                                Reports By School
+                            </a>
+                        </div>
+                    @endif
+                    @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.reports_by_status') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-bar-chart-2 mr-15"></i>
+                                Reports By Payment
+                            </a>
+                        </div>
+                    @endif
                     <!--
-                    <div class="sidebar__item">
-                        <a  href="{{ route('administrator.settings',1) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                            <i class="text-20 icon-setting mr-15"></i>
-                            System Settings
-                        </a>
-                    </div>
+<div class="sidebar__item">
+<a  href="{{ route('administrator.settings',1) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+<i class="text-20 icon-setting mr-15"></i>
+System Settings
+</a>
+</div>
 
-                    -->
+-->
                 </div>
             </div>
         </div>

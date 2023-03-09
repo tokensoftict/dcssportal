@@ -40,7 +40,7 @@
                                 <div class="px-30 py-30">
 
                                     <div class="sidebar -dashboard">
-                                        @if(auth()->user()->isAdmin())
+                                        @if(auth()->user()->isAdmin() || auth()->user()->isDcssAdmin())
                                             <div class="sidebar__item ">
                                                 <a href="{{ route('account.profile',auth()->id()) }}" class="d-flex items-center text-17 lh-1 fw-500 ">
                                                     <i class="text-20 icon-person-3 mr-15"></i>

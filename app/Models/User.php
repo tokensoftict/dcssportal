@@ -72,6 +72,11 @@ class User extends Authenticatable
         return $this->is_admin === 1;
     }
 
+    public function isDcssAdmin(){
+        return $this->is_admin === 2;
+    }
+
+
     public function applications()
     {
         return $this->hasMany(Application::class);
