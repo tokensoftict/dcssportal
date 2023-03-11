@@ -25,7 +25,7 @@ class Enrollment extends Component
 
     public String    $surname = "";
     public String    $firstname = "";
-    public String    $othernames = "";
+    public String    $othernames = "  ";
     public String    $email = "";
     public String    $gender = "";
     public String     $age = "";
@@ -76,7 +76,7 @@ class Enrollment extends Component
     {
         $data =  [
             'firstname' => 'required',
-            'othernames' => 'required',
+            //'othernames' => 'required',
             'surname' => 'required',
             'email' => 'required|unique:users,email',
             'password' => 'required|confirmed|min:6|max:32',
