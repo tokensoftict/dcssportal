@@ -83,7 +83,7 @@
                 @if(auth()->user()->isAdmin())
                     <a href="{{ route('account.edit_application',$this->application->id) }}" class="button -icon -purple-1 text-white">Edit Application</a>
                 @endif
-                @if($this->application->exam_number == NULL)
+                @if($this->application->exam_number == NULL && !auth()->user()->isAdmin())
                     <a href="{{ route('account.edit_application',$this->application->id) }}" class="button -icon -purple-1 text-white">Edit Application</a>
                 @endif
             </div>
