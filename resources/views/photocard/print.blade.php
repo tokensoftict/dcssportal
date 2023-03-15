@@ -51,6 +51,7 @@
         .text-center {
             text-align: center;
         }
+
     </style>
 </head>
 <body>
@@ -59,7 +60,7 @@
     <table width="80%" align="center">
         <tr>
             <td width="100%" valign="top" align="center">
-                <img  src="{{ public_path("img/logo.png") }}" alt='Logo'>
+                <img  src="{{ public_path("img/logo.png") }}"  alt='Logo'>
             </td>
         </tr>
         <tr>
@@ -77,45 +78,45 @@
     <hr/>
     <table width="100%">
         <tr>
-            <td width="70%">
+            <td width="80%">
                 <table width="100%"  id="products" style=" font-size: 12pt;">
                     <tr>
-                        <td colspan="2"><strong>Examination Number:</strong> {{ $application->exam_number }}</td>
+                        <td colspan="2" style="font-size: 11pt;"><strong>Examination Number:</strong> {{ $application->exam_number }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Entrance Examination Date:</strong>  Saturday 17 June 2023</td>
-                        <td><strong>Entrance Examination Time:</strong> 8:00 AM</td>
+                        <td style="font-size: 11pt;"><strong>Entrance Examination Date:</strong>  Saturday 17 June 2023</td>
+                        <td style="font-size: 11pt;"><strong>Entrance Examination Time:</strong> 8:00 AM</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><strong>Examination Center:</strong> {{ $application->center->name }}</td>
+                        <td colspan="2" style="font-size: 11pt;"><strong>Examination Center:</strong> {{ $application->center->name }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><strong>Interview Date:</strong> Will Be Communicated</td>
+                        <td colspan="2" style="font-size: 11pt;"><strong>Interview Date:</strong> Will Be Communicated</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><strong>Surname:</strong> {{  strtoupper($application->surname) }}</td>
+                        <td colspan="2" style="font-size: 11pt;"><strong>Surname:</strong> {{  strtoupper($application->surname) }}</td>
                     </tr>
                     <tr>
-                        <td><strong>First Name:</strong> {{ strtoupper($application->firstname) }}</td>
-                        <td><strong>Other Names:</strong> {{ strtoupper($application->othernames) }}</td>
+                        <td style="font-size: 11pt;"><strong>First Name:</strong> {{ strtoupper($application->firstname) }}</td>
+                        <td style="font-size: 11pt;"><strong>Other Names:</strong> {{ strtoupper($application->othernames) }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><strong>Gender:</strong> {{ $application->gender }}</td>
+                        <td colspan="2" style="font-size: 11pt;"><strong>Gender:</strong> {{ $application->gender }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><strong>School - First Choice: </strong> {{ $application->school->name }}</td>
+                        <td colspan="2" style="font-size: 11pt;"><strong>School - First Choice: </strong> {{ $application->school->name }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><strong>School - Second Choice: </strong> {{ $application->school2->name }}</td>
+                        <td colspan="2" style="font-size: 11pt;"><strong>School - Second Choice: </strong> {{ $application->school2->name }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><strong>Parental Status: </strong> {{ $application->parental_status->name }}</td>
+                        <td colspan="2" style="font-size: 11pt;"><strong>Parental Status: </strong> {{ $application->parental_status->name }}</td>
                     </tr>
                 </table>
             </td>
-            <td width="30%" align="center">
-                <p>&nbsp;</p>
-                <img style="width: 35%;" src="{{ public_path($application->passport_path) }}" alt='Passport'>
+            <td width="20%" align="center">
+
+                <img style="width: 23%;" src="{{ public_path($application->passport_path) }}" alt='Passport'>
             </td>
         </tr>
     </table>
