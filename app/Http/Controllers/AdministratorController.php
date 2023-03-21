@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -51,7 +53,7 @@ class AdministratorController extends Controller
     {
         $data = [];
 
-        if($request->get('email'))
+        if($request->get('email') && !is_numeric($request->get('email')))
         {
             $user = User::where('email',$request->get('email'))->first();
 
@@ -59,6 +61,18 @@ class AdministratorController extends Controller
 
             $data['application'] = $user->applications->first();
         }
+
+        if($request->get('email') && is_numeric($request->get('email')))
+        {
+            $transaction_id = Transaction::where('transactionId', $request->get('email'))->first();
+
+            if(!$transaction_id) return  redirect()->back();
+
+            $data['application'] = Application::findorfail($transaction_id->application_id);
+
+            $data['user'] = User::findorfail( $data['application']->user_id);
+        }
+
 
         return view('account.administrator.view_application', $data);
     }

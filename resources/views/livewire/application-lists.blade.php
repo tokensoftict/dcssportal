@@ -68,21 +68,11 @@
                                         <td  class="text-center">{{ $completedApplication->email }}</td>
                                         <td  class="text-center">{!!   $completedApplication->exam_number === NULL ? "<b class='text-red-1'>Pending</b>" : "<b class='text-blue-1'>Completed</b>" !!}</td>
                                         <td  class="text-center">
-                                            <div class="dropdown js-dropdown ">
-                                                <div class="dropdown__button d-flex items-center text-14 bg-white -dark-bg-dark-2 border-light rounded-8 px-20 py-10 text-14 lh-12" data-el-toggle=".js-review-toggle" data-el-toggle-active=".js-review-active">
-                                                    <span class="js-dropdown-title">Action</span>
-                                                    <i class="icon text-9 ml-40 icon-chevron-down"></i>
-                                                </div>
 
-                                                <div class="toggle-element -dropdown -dark-bg-dark-2 -dark-border-white-10 js-click-dropdown js-review-toggle">
-                                                    <div class="text-14 y-gap-15 js-dropdown-list">
+                                            <a onclick="window.open(this.href,'_new')" href="{{ route('account.download_photocard',$completedApplication->id) }}" class="d-block js-dropdown-link">Print Photo Card</a>
+                                            &nbsp; | &nbsp;
+                                            <a onclick="window.open(this.href,'_new')" href="{{ route('account.download_payment_receipt',$completedApplication->id) }}" class="d-block js-dropdown-link">Print Payment Receipt</a>
 
-                                                        <div><a onclick="window.open(this.href,'_new')" href="{{ route('account.download_photocard',$completedApplication->id) }}" class="d-block js-dropdown-link">Print Photo Card</a></div>
-
-                                                        <div><a onclick="window.open(this.href,'_new')" href="{{ route('account.download_payment_receipt',$completedApplication->id) }}" class="d-block js-dropdown-link">Print Payment Receipt</a></div>
-
-                                                </div>
-                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

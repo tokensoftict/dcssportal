@@ -82,9 +82,13 @@
                 </table>
                 @if(auth()->user()->isAdmin())
                     <a href="{{ route('account.edit_application',$this->application->id) }}" class="button -icon -purple-1 text-white">Edit Application</a>
+
+                    <a target="_new" href="{{ route('account.download_photocard',$this->application->id) }}" class="mt-2 button -icon -dark-1 text-white">Print Photocard</a>
+
+                    <a target="_new" href="{{ route('account.download_payment_receipt',$this->application->id) }}" class="mt-2 button -icon -blue-1 text-white">Print Payment Receipt</a>
                 @endif
                 @if($this->application->exam_number == NULL && !auth()->user()->isAdmin())
-                    <a href="{{ route('account.edit_application',$this->application->id) }}" class="button -icon -purple-1 text-white">Edit Application</a>
+                    <a  href="{{ route('account.edit_application',$this->application->id) }}" class="mt-2 button -icon -purple-1 text-white">Edit Application</a>
                 @endif
             </div>
         </div>
