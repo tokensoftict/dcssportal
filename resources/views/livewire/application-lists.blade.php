@@ -53,7 +53,6 @@
                                     <th  class="text-center">Full Name</th>
                                     <th  class="text-center">Telephone</th>
                                     <th  class="text-center">Email</th>
-                                    <th  class="text-center">Status</th>
                                     <td  class="text-center"></td>
                                 </tr>
                                 </thead>
@@ -66,7 +65,7 @@
                                         <td  class="text-center">{{ $completedApplication->fullname }}</td>
                                         <td  class="text-center">{{ $completedApplication->telephone }}</td>
                                         <td  class="text-center">{{ $completedApplication->email }}</td>
-                                        <td  class="text-center">{!!   $completedApplication->exam_number === NULL ? "<b class='text-red-1'>Pending</b>" : "<b class='text-blue-1'>Completed</b>" !!}</td>
+
                                         <td  class="text-center">
 
                                             <a  onclick="window.open(this.href,'_new')" href="{{ route('account.download_photocard',$completedApplication->id) }}" class="button">Photo Card</a>
