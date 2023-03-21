@@ -69,9 +69,9 @@
                                         <td  class="text-center">{!!   $completedApplication->exam_number === NULL ? "<b class='text-red-1'>Pending</b>" : "<b class='text-blue-1'>Completed</b>" !!}</td>
                                         <td  class="text-center">
 
-                                            <a  onclick="window.open(this.href,'_new')" href="{{ route('account.download_photocard',$completedApplication->id) }}" class="btn">Print Photo Card</a>
+                                            <a  onclick="window.open(this.href,'_new')" href="{{ route('account.download_photocard',$completedApplication->id) }}" class="button">Photo Card</a>
                                             &nbsp; | &nbsp;
-                                            <a onclick="window.open(this.href,'_new')" href="{{ route('account.download_payment_receipt',$completedApplication->id) }}" class="btn">Print Payment Receipt</a>
+                                            <a onclick="window.open(this.href,'_new')" href="{{ route('account.download_payment_receipt',$completedApplication->id) }}" class="button">Receipt</a>
 
                                         </td>
                                     </tr>
