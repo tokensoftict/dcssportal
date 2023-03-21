@@ -68,9 +68,9 @@
 
                                         <td  class="text-center">
 
-                                            <a  onclick="window.open(this.href,'_new')" href="{{ route('account.download_photocard',$completedApplication->id) }}" class="button">Photo Card</a>
-                                            &nbsp; | &nbsp;
-                                            <a onclick="window.open(this.href,'_new')" href="{{ route('account.download_payment_receipt',$completedApplication->id) }}" class="button">Receipt</a>
+                                            <a  target="_blank" href="{{ route('account.download_photocard',$completedApplication->id) }}" class="button">Photo Card</a>
+                                            |
+                                            <a target="_blank" href="{{ route('account.download_payment_receipt',$completedApplication->id) }}" class="button">Receipt</a>
 
                                         </td>
                                     </tr>
