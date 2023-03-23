@@ -21,8 +21,8 @@
                     <div class="py-30 px-30">
                         <form class="contact-form row y-gap-30" method="get">
                             <div class="col-12">
-                                <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Email Address or Transaction ID</label>
-                                <input type="text" name="email" placeholder="Email Address or Transaction ID">
+                                <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Email Address or Transaction Reference</label>
+                                <input type="text" name="email" placeholder="Email Address or Transaction Reference">
                             </div>
 
                             <div class="row y-gap-20 justify-between pt-30">
