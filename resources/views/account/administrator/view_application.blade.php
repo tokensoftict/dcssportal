@@ -21,6 +21,9 @@
                     <div class="py-30 px-30">
                         <form class="contact-form row y-gap-30" method="get">
                             <div class="col-12">
+                                @if($errors->any())
+                                    <span class="text-red-1">{{$errors->first()}}</span> <br/> <br/>
+                                @endif
                                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Email Address or Transaction Reference</label>
                                 <input type="text" name="email" placeholder="Email Address or Transaction Reference">
                             </div>

@@ -1,4 +1,4 @@
-@if(!(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin() ))
+@if(!(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin() ||  auth()->user()->isUpperlinkAdmin() ))
     @php
         $application = \App\Models\Application::where("user_id",auth()->user()->id)->first();
     @endphp
@@ -61,7 +61,7 @@
             <div>
                 <div class="text-16 lh-1 fw-500 text-dark-1 mb-30">My Menu</div>
                 <div>
-                    @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin())
+                    @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin() || auth()->user()->isUpperlinkAdmin())
                         <div class="sidebar__item">
                             <a href="{{ route('administrator.index') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                                 <i class="text-20 icon-discovery mr-15"></i>
@@ -85,7 +85,7 @@
                             </a>
                         </div>
                     @endif
-                    @if(auth()->user()->isAdmin())
+                    @if(auth()->user()->isAdmin() || auth()->user()->isUpperlinkAdmin())
                         <div class="sidebar__item">
                             <a  href="{{ route('administrator.view_application') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                                 <i class="text-20 icon-explore mr-15"></i>
@@ -125,6 +125,23 @@
                             </a>
                         </div>
                     @endif
+                    @if(auth()->user()->isAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.new_user') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-person-3 mr-15"></i>
+                                New Administrator
+                            </a>
+                        </div>
+                    @endif
+                        @if(auth()->user()->isAdmin())
+                            <div class="sidebar__item">
+                                <a  href="{{ route('administrator.list_user') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                    <i class="text-20 icon-person-2 mr-15"></i>
+                                    List Administrator
+                                </a>
+                            </div>
+                        @endif
+
                     <!--
 <div class="sidebar__item">
 <a  href="{{ route('administrator.settings',1) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">

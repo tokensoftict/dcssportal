@@ -57,6 +57,8 @@ class AdministratorController extends Controller
         {
             $user = User::where('email',$request->get('email'))->first();
 
+            if(!$user) return  redirect()->back()->withErrors(['message' => 'Candidate Account Not Found, Please check and try again']);
+
             $data['user'] = $user;
 
             $data['application'] = $user->applications->first();
@@ -66,7 +68,7 @@ class AdministratorController extends Controller
         {
             $transaction_id = Transaction::where('transactionId', $request->get('email'))->first();
 
-            if(!$transaction_id) return  redirect()->back();
+            if(!$transaction_id) return  redirect()->back()->withErrors(['message' => 'Transaction Reference does not exist in the system']);
 
             $data['application'] = Application::findorfail($transaction_id->application_id);
 
@@ -77,6 +79,23 @@ class AdministratorController extends Controller
         return view('account.administrator.view_application', $data);
     }
 
+
+
+    public function new_user()
+    {
+        return view('account.administrator.new_user',['user'=> new User()]);
+    }
+
+
+    public function list_user()
+    {
+        return view('account.administrator.list_user');
+    }
+
+    public function edit_user(User $user)
+    {
+        return view('account.administrator.new_user', ['user'=> $user]);
+    }
 
 
 }

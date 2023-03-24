@@ -76,6 +76,9 @@ class User extends Authenticatable
         return $this->is_admin === 2;
     }
 
+    public function isUpperlinkAdmin(){
+        return $this->is_admin === 3;
+    }
 
     public function applications()
     {

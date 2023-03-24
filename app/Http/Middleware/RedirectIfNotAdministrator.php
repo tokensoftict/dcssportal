@@ -16,7 +16,7 @@ class RedirectIfNotAdministrator
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!(auth()->user()->isAdmin() || auth()->user()->isDcssAdmin()))
+        if(!(auth()->user()->isAdmin() || auth()->user()->isDcssAdmin() || auth()->user()->isUpperlinkAdmin()))
         {
             return redirect()->route('account.dashboard');
         }

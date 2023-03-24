@@ -62,6 +62,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::group(['middleware' => ['isnotadmin']], function() {
         Route::prefix('administrator')->as('administrator.')->group(function () {
             Route::get('/', ['as'=>'index',"uses"=>'AdministratorController@index']);
+            Route::get('/user/create', ['as'=>'new_user',"uses"=>'AdministratorController@new_user']);
+            Route::get('/user/list', ['as'=>'list_user',"uses"=>'AdministratorController@list_user']);
+            Route::get('/user/{user}/edit', ['as'=>'edit_user',"uses"=>'AdministratorController@edit_user']);
             Route::get('/new-application', ['as'=>'new-application',"uses"=>'AdministratorController@new_application']);
             Route::get('/myapplication', ['as'=>'myapplication',"uses"=>'AdministratorController@myapplication']);
             Route::get('/view-application', ['as'=>'view_application',"uses"=>'AdministratorController@view_application']);
