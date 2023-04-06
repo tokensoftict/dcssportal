@@ -81,7 +81,9 @@
                         @endif
                     </table>
                     @if(auth()->user()->isAdmin() || auth()->user()->isUpperlinkAdmin())
-                        <a href="{{ route('account.edit_application',$this->application->id) }}" class="button -icon -purple-1 text-white">Edit Application</a>
+                        @if(auth()->user()->isAdmin())
+                            <a href="{{ route('account.edit_application',$this->application->id) }}" class="button -icon -purple-1 text-white">Edit Application</a>
+                        @endif
                         @if($this->application->exam_number !== NULL)
                             <a target="_new" href="{{ route('account.download_photocard',$this->application->id) }}" class="mt-2 button -icon -dark-1 text-white">Print Photocard</a>
 
