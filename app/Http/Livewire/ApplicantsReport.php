@@ -60,7 +60,9 @@ class ApplicantsReport extends Component
             $filter['payment_status'] = $this->payment_status;
         }
 
-        return Excel::download(new ApplicantExport($filter), 'applicants-'.time().'-export.xlsx');
+        $center = Center::find( $this->center)->name;
+
+        return Excel::download(new ApplicantExport($filter),  $center.'.xlsx');
     }
 
     public function viewReport()
