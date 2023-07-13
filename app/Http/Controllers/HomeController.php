@@ -20,7 +20,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view("home");
+        $session = Session::where('status',1)->first();
+
+        return view("home", compact('session'));
     }
 
 
@@ -30,7 +32,9 @@ class HomeController extends Controller
 
     public function login()
     {
-        return view("login");
+        $session = Session::where('status',1)->first();
+
+        return view("login", compact('session'));
     }
 
 
@@ -85,12 +89,47 @@ class HomeController extends Controller
 
     public function news()
     {
-        return view("news");
+        $session = Session::where('status',1)->first();
+
+        return view("news", compact('session'));
     }
 
     public function contact()
     {
-        return view("contact");
+        $session = Session::where('status',1)->first();
+
+        return view("contact", compact('session'));
+    }
+
+    public function candidates()
+    {
+        $session = Session::where('status',1)->first();
+
+        $files = scandir(public_path('results'));
+
+        $cdss = [];
+        $css = [];
+
+        foreach ($files as $filename) {
+            $file_url = asset('results')."/" . $filename;
+            if (preg_match('~\.pdf$~', $filename)) {
+                $filename = str_replace('.pdf', '', $filename);
+                if(str_starts_with($filename, 'CSS')){
+                    $css[] = [
+                        'name' => str_replace('CSS', 'COMMAND SECONDARY SCHOOL ', $filename),
+                        'url' => $file_url
+                    ];
+                }
+                if(str_starts_with($filename, 'CDSS')){
+                    $cdss[] = [
+                        'name' =>  str_replace('CDSS', 'COMMAND DAY SECONDARY SCHOOL ', $filename),
+                        'url' => $file_url
+                    ];
+                }
+            }
+        }
+
+        return view("candidates", compact('session', 'cdss', 'css'));
     }
 
 

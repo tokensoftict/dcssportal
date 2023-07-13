@@ -3,16 +3,12 @@
 
 @section('content')
 
-
-
     <section data-anim-wrap class="masthead -type-5 mt-50">
-        <div class="masthead__bg"></div>
-
         <div data-anim-child="slide-up delay-2" class="pl-lg-45 pr-lg-30 pl-20 pr-15">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="text-center text-red-1">THIS IS TO INFORM THE GENERAL PUBLIC THAT ONLINE APPLICATIONS FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2023/2024 ACADEMIC SESSION WILL COMMENCE ON FRIDAY 24 FEBRUARY ,2023 AND END ON SATURDAY  10 JUNE 2023</h2>
-                    <h4 class="text-center">Interested candidates are to purchase the form at Two Thousand Naira. (2000)</h4>
+                    <h2 class="text-center text-red-1 uppercase">The Final Selection Interview for successful candidates is scheduled to hold from Wed 9 to Fri 11 Aug 23 in all the schools nationwide. Candidates are advised to check their various schools of choice, Divs Edn, or https://dcss.sch.ng/news for more information on the interview.</h2>
+                    <!--<h4 class="text-center">Interested candidates are to purchase the form at Two Thousand Naira. (2000)</h4>-->
                 </div>
             </div>
             <div class="row mt-1 y-gap-50 items-center">
@@ -31,11 +27,13 @@
                             professional trainers for free
                         </p>
                         -->
+                        @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
                         <div data-anim-child="slide-up delay-4" class="row items-center x-gap-20 y-gap-20 pt-20">
                             <div class="col-auto">
                                 <a href="{{ route("register") }}" class="button -md -orange-1 text-white">Enroll Now</a>
                             </div>
                         </div>
+                        @endif
 
                         <div data-anim-child="slide-up delay-5" class="row x-gap-20 y-gap-20 items-center pt-60 lg:pt-30">
 
@@ -93,7 +91,7 @@
 
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
-        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold">THIS IS TO INFORM THE GENERAL PUBLIC THAT ONLINE APPLICATIONS FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2023/2024 ACADEMIC SESSION WILL COMMENCE ON FRIDAY 24 FEBRUARY ,2023 AND END ON SATURDAY  10 JUNE 2023 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
+        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">The Final Selection Interview for successful candidates is scheduled to hold from Wed 9 to Fri 11 Aug 23 in all the schools nationwide. <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a></marquee>
     </div>
 @endsection

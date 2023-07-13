@@ -25,6 +25,8 @@ Route::get('/news', ['as'=>'news',"uses"=>'HomeController@news']);
 
 Route::get('/contact', ['as'=>'contact',"uses"=>'HomeController@contact']);
 
+Route::get('/candidates', ['as'=>'candidates',"uses"=>'HomeController@candidates']);
+
 Route::post("/registerprocess",['as'=>'registerprocess', "uses"=>"HomeController@registerprocess"]);
 
 Route::post("/loginprocess",['as'=>'loginprocess', "uses"=>"HomeController@loginprocess"]);

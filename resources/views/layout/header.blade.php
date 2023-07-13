@@ -66,7 +66,9 @@
 
                             <div class="d-none xl:d-flex items-center px-20 py-20 border-bottom-light">
                                 <a href="{{ route("login") }}" class="text-dark-1">Log in</a>
-                                <a href="{{ route("register") }}" class="text-dark-1 ml-30">Enroll Now</a>
+                                @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
+                                    <a href="{{ route("register") }}" class="text-dark-1 ml-30">Enroll Now</a>
+                                @endif
                             </div>
 
                             @include("layout.header-menu")
@@ -127,7 +129,9 @@
 
                     <div class="header-right__buttons d-flex items-center ml-30 xl:ml-20 lg:d-none">
                         <a href="{{ route("login") }}" class="button -underline text-dark-1">Log in</a>
+                        @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
                         <a href="{{ route("register") }}" class="button px-25 h-50 -dark-1 text-white ml-20">Enroll Now</a>
+                        @endif
                     </div>
                 </div>
             </div>
