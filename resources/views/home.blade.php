@@ -7,7 +7,7 @@
         <div data-anim-child="slide-up delay-2" class="pl-lg-45 pr-lg-30 pl-20 pr-15">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="text-center text-red-1 uppercase">The Final Selection Interview for successful candidates is scheduled to hold from Wed 9 to Fri 11 Aug 23 in all the schools nationwide. Candidates are advised to check their various schools of choice, Divs Edn, or https://dcss.sch.ng/news for more information on the interview.</h2>
+                    <h2 class="text-center text-red-1 uppercase">The Final Selection Interview for successful candidates is scheduled to hold from Wed 9 to Fri 11 Aug 23 in all the schools nationwide. Candidates are advised to check their various schools of choice, Divs Edn, or <a style="text-transform: lowercase" href="https://dcss.sch.ng/news">https://dcss.sch.ng/news</a> for more information on the interview.</h2>
                     <!--<h4 class="text-center">Interested candidates are to purchase the form at Two Thousand Naira. (2000)</h4>-->
                 </div>
             </div>
