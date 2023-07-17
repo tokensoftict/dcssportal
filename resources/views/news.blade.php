@@ -37,7 +37,7 @@
         -->
     <section data-anim-wrap class="masthead -type-5 mt-50">
 
-        <div class="pl-45 pr-30" style="height: 80vh">
+        <div class="pl-45 pr-30">
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-lg-7  offset-lg-3 col-12">
