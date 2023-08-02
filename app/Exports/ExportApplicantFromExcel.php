@@ -30,7 +30,6 @@ class ExportApplicantFromExcel implements FromView
     {
         $apps =  Application::query()->with(['center','state','examState','parental_status','school','school_type','school_type2','school2'])->whereIn('exam_number', $this->exam_numbers)->get();
 
-        dd($apps->count());
 
         if($this->minimalInfo === true)
         {
