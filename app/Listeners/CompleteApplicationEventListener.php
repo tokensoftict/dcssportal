@@ -6,6 +6,7 @@ use App\Events\CompleteApplicationEvent;
 use App\Models\Session;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Storage;
 
 class CompleteApplicationEventListener
 {
@@ -35,6 +36,8 @@ class CompleteApplicationEventListener
         $event->application->exam_number = $exam_number;
 
         $event->application->update();
+
+        Storage::disk('local')->append('exam_number.txt', "{$exam_number},");
     }
 
 
