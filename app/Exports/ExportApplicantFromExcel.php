@@ -39,7 +39,11 @@ class ExportApplicantFromExcel implements FromView
 
         foreach ($this->exam_numbers as $number)
         {
-            $apps[] =  Application::query()->with(['center','state','examState','parental_status','school','school_type','school_type2','school2'])->where('exam_number', $number)->first();
+            $ap = Application::query()->with(['center','state','examState','parental_status','school','school_type','school_type2','school2'])->where('exam_number', $number)->first();
+
+            if(!$ap) dd('not found '.$number);
+
+            $apps[] = $ap;
         }
 
         if($this->minimalInfo === true)
