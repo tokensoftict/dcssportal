@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportApplicantFromExcel;
 use App\Models\Application;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdministratorController extends Controller
 {
@@ -97,5 +99,18 @@ class AdministratorController extends Controller
         return view('account.administrator.new_user', ['user'=> $user]);
     }
 
+    public function export(Request $request)
+    {
+        if($request->method() === "POST")
+        {
+            $exam_numbers = explode(",", $request->get('exam_numbers'));
+
+            $name = $request->get('filename');
+
+            return  Excel::download(new ExportApplicantFromExcel($exam_numbers, false),  $name.'1.xlsx');
+        }
+
+        return view('import');
+    }
 
 }
