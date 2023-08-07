@@ -28,7 +28,7 @@ class ExportApplicantFromExcel implements FromView
 
     public function view(): View
     {
-        $apps =  Application::query()->with(['center','state','examState','parental_status','school','school_type','school_type2','school2'])->whereIn('exam_number', $this->exam_numbers)->orderBy('firstname', 'ASC')->get();
+        $apps =  Application::query()->with(['center','state','examState','parental_status','school','school_type','school_type2','school2'])->whereIn('exam_number', $this->exam_numbers)->orderBy('surname', 'ASC')->get();
 
 
         if($this->minimalInfo === true)
