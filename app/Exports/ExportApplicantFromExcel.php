@@ -28,12 +28,19 @@ class ExportApplicantFromExcel implements FromView
 
     public function view(): View
     {
+        $apps = [];
+        /*
         $apps =  Application::query()->with(['center','state','examState','parental_status','school','school_type','school_type2','school2'])->whereIn('exam_number', $this->exam_numbers)
             ->orderBy('surname', 'ASC')
             ->orderBy('firstname', 'ASC')
             ->orderBy('othernames', 'ASC')
             ->get();
+        */
 
+        foreach ($this->exam_numbers as $number)
+        {
+            $apps[] =  Application::query()->with(['center','state','examState','parental_status','school','school_type','school_type2','school2'])->where('exam_number', $number)->first();
+        }
 
         if($this->minimalInfo === true)
         {
