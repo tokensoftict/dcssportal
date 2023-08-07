@@ -103,7 +103,11 @@ class AdministratorController extends Controller
     {
         if($request->method() === "POST")
         {
-            $exam_numbers = explode(",", $request->get('exam_numbers'));
+            $numbers = str_replace("\n", "", $request->get('exam_numbers'));
+            $numbers = str_replace("\r", "", $numbers);
+
+            $exam_numbers = explode(",", $numbers);
+
 
             $name = $request->get('filename');
 
