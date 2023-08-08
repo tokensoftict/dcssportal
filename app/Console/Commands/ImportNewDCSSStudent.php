@@ -36,7 +36,7 @@ class ImportNewDCSSStudent extends Command
 
         Excel::import($dcssImport, public_path('newdcss.xlsx'));
 
-        Excel::store(new ExportApplicantFromExcel($dcssImport->exam_numbers, 0),  'New_export'.time().'.xlsx');
+        Excel::store(new ExportApplicantFromExcel($dcssImport->exam_numbers, 0),  public_path('New_export'.time().'.xlsx'));
 
         return Command::SUCCESS;
     }
