@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Exports\ExportApplicantFromExcel;
 use App\Imports\DcssImport;
 use Illuminate\Console\Command;
 use Maatwebsite\Excel\Facades\Excel;
@@ -31,7 +32,11 @@ class ImportNewDCSSStudent extends Command
     public function handle()
     {
 
-        Excel::import(new DcssImport(), public_path('newdcss.xlsx'));
+        $dcssImport = new DcssImport();
+
+        Excel::import($dcssImport, public_path('newdcss.xlsx'));
+
+        Excel::store(new ExportApplicantFromExcel($dcssImport->exam_numbers, 0),  'New_export'.time().'.xlsx');
 
         return Command::SUCCESS;
     }

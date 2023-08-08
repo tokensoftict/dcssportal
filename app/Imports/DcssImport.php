@@ -11,6 +11,8 @@ use Maatwebsite\Excel\Concerns\WithHeadingRow;
 class DcssImport implements ToModel, WithHeadingRow
 {
 
+    public array $exam_numbers = [];
+
     public function model(array $row)
     {
 
@@ -50,6 +52,8 @@ class DcssImport implements ToModel, WithHeadingRow
        ]);
 
        event(new CompleteApplicationEvent($application));
+
+       $this->exam_numbers[] = $application->exam_number;
 
        return $application;
     }
