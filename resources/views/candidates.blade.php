@@ -9,7 +9,7 @@
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="text-center text-24 text-red-1"> LIST OF SUCCESSFUL CANDIDATES FOR INTERVIEW INTO JSS 1</h2>
+                        <h2 class="text-center text-24 text-red-1"> LIST OF SUCCESSFUL CANDIDATES FOR ADMISSION INTO JSS1 IN COMMAND SECONDARY SCHOOLS 2023/2024 ACADEMIC SESSION</h2>
                         <div class="row mt-4">
                             <div class="col-lg-6 col-12">
                                 <h6 class="text-center text-17 text-red-1">COMMAND DAY SECONDARY SCHOOL LISTS</h6>
@@ -70,7 +70,7 @@
 
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
-        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">The Final Selection Interview for successful candidates is scheduled to hold from Wed 9 to Fri 11 Aug 23 in all the schools nationwide. <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
+        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">RELEASE OF LIST OF SUCCESSFUL CANDIDATES FOR ADMISSION INTO JSS1 IN COMMAND SECONDARY SCHOOLS 2023/2024 ACADEMIC SESSION <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a></marquee>
     </div>
 @endsection

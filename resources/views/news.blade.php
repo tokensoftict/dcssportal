@@ -35,6 +35,7 @@
         </div>
           </section>
         -->
+
     <section data-anim-wrap class="masthead -type-5 mt-50">
 
         <div class="pl-45 pr-30">
@@ -43,9 +44,9 @@
                     <div class="col-lg-7  offset-lg-3 col-12">
                         <h2 class="text-center text-24 text-red-1"></h2>
                         <p>
-                            Please be informed that the result of the Common Entrance Examination for admission into Junior Secondary Schools (JSS1) in Command Secondary Schools for the 2023/2024 Academic Session which was held on Sat 17 Jun 23 has been released. The Final Selection Interview for successful candidates is scheduled to hold from Wed 9 to Fri 11 Aug 23 in all the schools nationwide. Candidates are advised to check their various schools of choice, Divs Edn, for more information on the interview.
+                            Please be informed that the result of the Command Secondary Schools Selection Interview for admission of candidates into JSS 1 2023/2024 Academic Session is out. Successful candidates are requested to check their names at the schools of choice and NA Divisional Education Services nationwide.
                         </p>
-                        <p>     Furthermore, shortlisted candidates are requested to come along with the under-listed items to the interview centre:</p>
+                        <p>    In view of the above, successful candidates are requested to come along with the underlisted items for registration as follows:</p>
                         <div class="mt-2 col-12">
                             <b> a. Military Personnel’s Children</b><br/>
 
@@ -59,9 +60,9 @@
 
                             (5) Part 2/3 Orders publishing the candidate’s birth.<br/>
 
-                            (6) Primary School Testimonial.<br/>
+                            (6) Primary School Testimonial/First School Leaving Certificate<br/>
 
-                            (7) Writing Materials and a File Jacket.<br/><br/>
+                           <br/>
 
 
                             <b> b. Civilians’ Children</b><br/>
@@ -70,11 +71,11 @@
 
                             (2) Birth Certificate or sworn declaration of age.<br/>
 
-                            (3) Primary School Testimonial.<br/>
-
-                            (4) Writing Materials and a File Jacket.<br/>
+                            (3) Primary School Testimonial/First School Leaving Certificate<br/>
 
                         </div>
+                        <br/>
+                        <p><b>Please note that other requirements will be made available by the school during the registration exercise which is expected to commence immediately.</b></p>
                     </div>
                 </div>
             </div>
@@ -87,7 +88,7 @@
 
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
-        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">The Final Selection Interview for successful candidates is scheduled to hold from Wed 9 to Fri 11 Aug 23 in all the schools nationwide. <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
+        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">RELEASE OF LIST OF SUCCESSFUL CANDIDATES FOR ADMISSION INTO JSS1 IN COMMAND SECONDARY SCHOOLS 2023/2024 ACADEMIC SESSION <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a></marquee>
     </div>
 @endsection

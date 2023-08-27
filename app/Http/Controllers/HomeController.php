@@ -114,13 +114,13 @@ class HomeController extends Controller
             $file_url = asset('results')."/" . $filename;
             if (preg_match('~\.pdf$~', $filename)) {
                 $filename = str_replace('.pdf', '', $filename);
-                if(str_starts_with($filename, 'CSS')){
+                if(str_starts_with($filename, 'COMMAND SECONDARY SCHOOL')){
                     $css[] = [
                         'name' => str_replace('CSS', 'COMMAND SECONDARY SCHOOL ', $filename),
                         'url' => $file_url
                     ];
                 }
-                if(str_starts_with($filename, 'CDSS')){
+                if(str_starts_with($filename, 'COMMAND DAY SECONDARY SCHOOL')){
                     $cdss[] = [
                         'name' =>  str_replace('CDSS', 'COMMAND DAY SECONDARY SCHOOL ', $filename),
                         'url' => $file_url

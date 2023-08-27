@@ -8,7 +8,7 @@
             <a data-barba href="{{ route("news") }}" style="font-weight: bolder">NEWS</a>
         </li>
         <li>
-            <a data-barba href="{{ route("candidates") }}" style="font-weight: bolder">LIST OF SUCCESSFUL CANDIDATES  </a>
+            <a data-barba href="{{ route("candidates") }}" style="font-weight: bolder">SUCCESSFUL CANDIDATES FOR ADMISSION   </a>
         </li>
         <li>
             <a data-barba href="{{ route("contact") }}" style="font-weight: bolder">OUR CONTACT</a>
