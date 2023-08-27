@@ -27,7 +27,7 @@
                                     @foreach($cdss as $dss)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $dss['name'] }}</td>
+                                            <td>{{ Str::upper($dss['name']) }}</td>
                                             <td><a href="{{ $dss['url'] }}" target="_blank" class="button px-25 h-50 -red-1 text-white ml-20">Download Result</a> </td>
                                         </tr>
                                     @endforeach
