@@ -41,7 +41,7 @@
             <td>{{ $application->telephone }}</td>
             <td>{{ $application->email }}</td>
             <td>{{ $application->address }}</td>
-            <td>{{ $application->parental_status->name }}</td>
+            <td>{{ $application->parental_status->name ?? "" }}</td>
             <td>{{ $application->parent_names }}</td>
             <td>{{ $application->rank }}</td>
             <td>{{ $application->svc }}</td>
@@ -50,13 +50,13 @@
             <td>{{ $application->retired_number }}</td>
             <td>{{ $application->dob }}</td>
             <td>{{ $application->unitFormation }}</td>
-            <td>{{ $application->school_type->name }}</td>
-            <td>{{ $application->school->name }}</td>
-            <td>{{ $application->school_type2->name }}</td>
-            <td>{{ $application->school->name }}</td>
-            <td>{{ $application->state->name }}</td>
-            <td>{{ $application->examState->name }}</td>
-            <td>{{ $application->center->name }}</td>
+            <td>{{ $application->school_type->name ?? "" }}</td>
+            <td>{{ $application->school->name ?? "" }}</td>
+            <td>{{ $application->school_type2->name ?? "" }}</td>
+            <td>{{ $application->school->name ?? "" }}</td>
+            <td>{{ $application->state->name ??  "" }}</td>
+            <td>{{ $application->examState->name ?? "" }}</td>
+            <td>{{ $application->center->name ?? "" }}</td>
         </tr>
     @endforeach
     </tbody>

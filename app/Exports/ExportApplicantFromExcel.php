@@ -44,7 +44,7 @@ class ExportApplicantFromExcel implements FromView
             if($ap) {
                 $apps[] = $ap;
             }else{
-                echo 'not found '.$number;
+                echo $number.","."\n";
             }
         }
 

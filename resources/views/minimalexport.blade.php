@@ -23,9 +23,9 @@
             <td>{{ strtoupper($application->exam_number) }}</td>
             <td>{{ $application->telephone }}</td>
             <td>{{ $application->email }}</td>
-            <td>{{ $application->parental_status->name }}</td>
-            <td>{{ $application->school_type->name }}</td>
-            <td>{{ $application->school->name }}</td>
+            <td>{{ $application->parental_status->name ?? "" }}</td>
+            <td>{{ $application->school_type->name ?? "" }}</td>
+            <td>{{ $application->school->name ?? "" }}</td>
         </tr>
     @endforeach
     </tbody>
