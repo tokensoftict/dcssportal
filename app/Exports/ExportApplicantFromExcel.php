@@ -41,9 +41,11 @@ class ExportApplicantFromExcel implements FromView
         {
             $ap = Application::query()->with(['center','state','examState','parental_status','school','school_type','school_type2','school2'])->where('exam_number', $number)->first();
 
-            if(!$ap) dd('not found '.$number);
-
-            $apps[] = $ap;
+            if($ap) {
+                $apps[] = $ap;
+            }else{
+                echo 'not found '.$number;
+            }
         }
 
         if($this->minimalInfo === true)
