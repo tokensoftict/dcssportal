@@ -36,10 +36,7 @@
     @include("layout.header")
 
     <div class="content-wrapper  js-content-wrapper">
-
         @yield('content')
-
-
     </div>
     @include("layout.footer")
 </main>
@@ -50,27 +47,5 @@
 <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
 <script src="{{ asset("js/vendors.js") }}"></script>
 <script src="{{ asset("js/main.js") }}"></script>
-<script>
-    $(document).ready(function(){
-        if(document.getElementById('owl-carousel')) {
-            $('#owl-carousel').owlCarousel({
-                navigation : true, // Show next and prev buttons
-                slideSpeed : 300,
-                paginationSpeed : 400,
-                items : 1,
-                loop:true,
-                autoWidth : true,
-                autoHeight: false,
-                autoplay: true,
-                itemsDesktop : false,
-                itemsDesktopSmall : false,
-                itemsTablet: false,
-                autoplayTimeout: 4000,
-                itemsMobile : false
-            })
-        }
-    })
-</script>
 @yield('js')
-
 </body>

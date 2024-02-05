@@ -83,7 +83,7 @@ class HomeController extends Controller
             return redirect()->route('account.dashboard')->with('success','Login Successful');
         }
 
-        return redirect()->route("login")->with('error','Oppps! You have entered invalid credentials');
+        return redirect()->route("login")->with('error','Oppps! You have entered an invalid credentials');
     }
 
 

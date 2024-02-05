@@ -3,39 +3,45 @@
 
 @section('content')
 
-    <!--
+
  <section data-anim-wrap class="masthead -type-5 mt-50">
  <div class="masthead__bg"></div>
         <div class="pl-45 pr-30" style="height: 80vh">
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="text-center text-24 text-red-1">THIS IS TO INFORM THE GENERAL PUBLIC THAT ONLINE APPLICATIONS FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2023/2024 ACADEMIC SESSION WILL COMMENCE ON FRIDAY 24 FEBRUARY ,2023 AND END ON SATURDAY  10 JUNE 2023</h2>
-                        <h4 class="text-center">Interested candidates are to purchase the form at Two Thousand Naira. (2000)</h4>
+                        <h2 class="text-center text-24 text-red-1">APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS 2024/2025 ACADEMIC SESSION</h2>
+                        <h4 class="text-center">Interested candidates are to purchase the form at Two Thousand Naira. (2500)</h4>
                         <br/>
                         <br/>
-                        <p class="text-17 text-center">Entrance Examination will take place on Saturday 17 June 2023 by 8am in all designated examination centres nationwide.
-                            For Inquiries and support please call 08113856079 or send an email to support@dcss.sch.ng or commandentrance@gmail.com.</p>
+                        <p class="text-17 text-center">THE ONLINE APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS COMMENCES 5TH FEBRUARY, 2024 AND CLOSES 15TH JUNE 2024.
+                            THE ENTRANCE EXAMINATION IS SCHEDULED FOR SATURDAY, 22 JUNE, 2024 AT ALL THE DESIGNATED EXAMINATION CENTRES NATIONWIDE.</p>
                     </div>
 
                     <div class="col-12 text-center text-17">
                         <br/>
                         <br/>
-                        <h5>Procedure for payment</h5>
-                       <p> 1. Visit dcss.sch.ng</p>
-                        <p> 2. Click On <b>“Enroll Now”</b> Button</p>
-                        <p> 3. Complete and submit the application form.</p>
-                        <p> 4. Make Payment</p>
-                        <p> 5. Download / Print out the photocard which will be presented at the exam center.</p>
-                        Thank you
+                        <h5>METHOD OF APPLICATION</h5>
+                        <p>1. Interested Candidates are to visit the DCSS admissions portal at
+                            https://www.dcss.sch.ng</p>
+                        <p> 2. Click on enroll, and create your username and password.</p>
+                        <p>3. Follow the steps of the application process to fill in all the required data and proceed to payment.</p>
+                        <p>4. Payment can be made using bank-issued ATM Debit cards. You shall be directed to the secure paygate platform.</p>
+                        <p>5. Candidates can obtain their Exam Photo Cards from the portal only when payment is confirmed.</p>
+                        <p> 6. After completing the application process, Candidates are advised to print a Photo Card from the portal. Candidates MUST present their Examination Photo Card at the Examination Centre on the day of the Entrance Examination.</p>
+                        <p> 7. For inquiries and support please call 08113856079 or email support@dcss.sch.ng and commandentrance@gmail.com. telegram: 08113856079</p>
+                        <br/><br/>
+                        ANNOUNCER<br/>
+                        DIRECTORATE OF COMMAND SCHOOLS SERVICES
                     </div>
                 </div>
+
 
             </div>
         </div>
           </section>
-        -->
 
+<!--
     <section data-anim-wrap class="masthead -type-5 mt-50">
 
         <div class="pl-45 pr-30">
@@ -81,7 +87,7 @@
             </div>
         </div>
     </section>
-
+-->
 
 @endsection
 

@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Application;
 use App\Models\Session;
 use App\Models\Transaction;
+use App\Models\UserActivity;
 use App\Repositories\BranchCollectRepository;
 use Illuminate\Support\Arr;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -21,7 +22,7 @@ class MakePayment extends Component
 
     public Transaction $transaction;
 
-    public string $paymentGateWay ="INTERSWITCH-PAYMENTGATEWAY";
+    public string $paymentGateWay ="UPPERLINKPAYGATE";
 
     public string $paymentSlipUrl = "";
 
@@ -165,9 +166,23 @@ class MakePayment extends Component
             ]
         );
 
+        UserActivity::logActivities([
+            'user_id' => $this->application->user_id,
+            'transaction_id' =>  $this->transaction->id,
+            'description' => 'Upperlink Paygate Transaction was generated',
+            'response' => $id
+        ]);
+
         $data = $this->transaction->toArray();
 
         Arr::forget($data,['application_id','id','created_at','updated_at','status']);
+
+        UserActivity::logActivities([
+            'user_id' => $this->application->user_id,
+            'description' => 'Payment Payload was sent to Upperlink paygate',
+            'response' => json_encode($data),
+            'transaction_id' =>  $this->transaction->id,
+        ]);
 
         $this->dispatchBrowserEvent("payNow",['body'=>json_encode($data)]);
     }

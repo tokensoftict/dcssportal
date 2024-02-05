@@ -26,20 +26,22 @@
 
 
 
-                    <span class="text-17 d-block">SELECT PAYMENT GATEWAY</span>
+                    <span class="text-17 d-block">PAY WITH</span>
                     <br/>
 
                     <div id="box">
                         <div style="width:100%;display:flex;flex-direction:row;justify-content:space-between;">
+                            <!--
                             <label style="cursor:pointer; width:75%;display:block">
                                 <input type="radio"  wire:model="paymentGateWay" name="pay" value="INTERSWITCH-PAYMENTGATEWAY" checked>
                                 <img style="width: 80%;padding:15px;display:block;margin:auto; border:1px solid #CCC;" src="https://www.interswitchgroup.com/assets/images/home/interswitch_logo.svg">
                             </label>
-
-                            <label style="cursor:pointer; width:80%;display:block">
+                            --->
+                            <label style="cursor:pointer; width:100%;display:block">
                                 <input type="radio"  wire:model="paymentGateWay" name="pay" value="UPPERLINKPAYGATE">
-                                <img style="width: 72%;padding:15px; display:block;margin:auto;border:1px solid #CCC;" src="https://paygate.upperlink.ng/assets/images/logo/logo.png">
+                                <img style="width: 50%;padding:15px; display:block;margin:auto;border:1px solid #CCC;" src="https://paygate.upperlink.ng/assets/images/logo/logo.png">
                             </label>
+
                         </div>
 
                     </div>

@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Events\CompleteApplicationEvent;
 use App\Models\Session;
+use App\Models\UserActivity;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Storage;
@@ -36,6 +37,12 @@ class CompleteApplicationEventListener
         $event->application->exam_number = $exam_number;
 
         $event->application->update();
+
+        UserActivity::logActivities([
+            'user_id' =>  $event->application->user_id,
+            'description' => 'Exam number was generated for the user and transaction',
+            'response' => $exam_number,
+        ]);
 
         Storage::disk('local')->append('exam_number.txt', "{$exam_number},");
     }

@@ -11,8 +11,10 @@ use App\Models\SchoolType;
 use App\Models\Session;
 use App\Models\State;
 use App\Models\User;
+use App\Models\UserActivity;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -25,7 +27,7 @@ class Enrollment extends Component
 
     public String    $surname = "";
     public String    $firstname = "";
-    public String    $othernames = "  ";
+    public String    $othernames = "";
     public String    $email = "";
     public String    $gender = "";
     public String     $age = "";
@@ -206,64 +208,79 @@ class Enrollment extends Component
 
         $this->session_id = 1;
 
-        $user = User::create(
-            [
-                'firstname' => $this->firstname,
-                'surname' => $this->surname,
-                'othernames' => $this->othernames,
-                'email' => $this->email,
-                'phone' => $this->telephone,
-                'password' => $this->password
-            ]
-        );
+        return DB::transaction(function(){
+            $user = User::create(
+                [
+                    'firstname' => $this->firstname,
+                    'surname' => $this->surname,
+                    'othernames' => $this->othernames,
+                    'email' => $this->email,
+                    'phone' => $this->telephone,
+                    'password' => $this->password
+                ]
+            );
+            UserActivity::logActivities([
+                'user_id' => $user->id,
+                'description' => 'Account for user has been created'
+            ]);
+            $this->user_id = $user->id;
 
-        $this->user_id = $user->id;
+            $file = $this->passport->store('passport', 'real_public');
 
-        $file = $this->passport->store('passport', 'real_public');
+             $application = Application::create(
+                [
+                    'firstname' => $this->firstname,
+                    'surname' => $this->surname,
+                    'othernames' => $this->othernames,
+                    'email' => $this->email,
+                    'password' => $this->password,
+                    'gender' => $this->gender,
+                    'passport_path' => $file,
+                    'age' => $this->age,
+                    'telephone' => $this->telephone,
+                    'local_govt' => "",
+                    'address' => $this->address,
+                    'parental_status_id' => $this->parental_status_id,
+                    'parent_names' => $this->parent_names,
+                    'rank' => $this->rank,
+                    'svc' => $this->svc,
+                    'svc_number' => $this->svc_number,
+                    'retired' => $this->select_retired == "Yes" ? 1 : 0,
+                    'retired_number' => $this->retired_number,
+                    'dob' => date("Y-m-d", strtotime($this->dob)),
+                    'unitFormation' => $this->unitFormation,
+                    'school_id' => $this->school_id,
+                    'school2_id' => $this->school2_id,
+                    'school3_id' => NULL,
+                    'school_type_id' => $this->school_type_id,
+                    'school_type_id2' => $this->school_type_id2,
+                    'state_id' => $this->state_id,
+                    'exam_state_id' => $this->exam_state_id,
+                    'center_id' => $this->center_id,
+                    'user_id' => $this->user_id,
+                    'session_id' => $this->session_id,
+                    'is_admin' => ((auth()->check() && auth()->user()->isAdmin()) ? 1 : 0)
+                ]
+            );
 
-        $application = Application::create(
-            [
-                'firstname' => $this->firstname,
-                'surname' => $this->surname,
-                'othernames' => $this->othernames,
-                'email' => $this->email,
-                'password' => $this->password,
-                'gender' => $this->gender,
-                'passport_path' => $file,
-                'age' => $this->age,
-                'telephone' => $this->telephone,
-                'local_govt' => "",
-                'address' => $this->address,
-                'parental_status_id' => $this->parental_status_id,
-                'parent_names' => $this->parent_names,
-                'rank' => $this->rank,
-                'svc' => $this->svc,
-                'svc_number' => $this->svc_number,
-                'retired' => $this->select_retired == "Yes" ? 1 : 0,
-                'retired_number' => $this->retired_number,
-                'dob' => date("Y-m-d", strtotime($this->dob)),
-                'unitFormation' => $this->unitFormation,
-                'school_id' => $this->school_id,
-                'school2_id' => $this->school2_id,
-                'school3_id' => NULL,
-                'school_type_id' => $this->school_type_id,
-                'school_type_id2' => $this->school_type_id2,
-                'state_id' => $this->state_id,
-                'exam_state_id' => $this->exam_state_id,
-                'center_id' => $this->center_id,
-                'user_id' => $this->user_id,
-                'session_id' => $this->session_id,
-                'is_admin' => ((auth()->check() && auth()->user()->isAdmin()) ? 1 : 0)
-            ]
-        );
+            UserActivity::logActivities([
+                'user_id' => $user->id,
+                'description' => 'Application / Enrollment of the User has been created'
+            ]);
 
-        event(new Registered($user));
+            event(new Registered($user));
 
-        if (!(auth()->check() && auth()->user()->isAdmin())){
-            auth()->login($user);
-        }
+            if (!(auth()->check() && auth()->user()->isAdmin())){
+                auth()->login($user);
+                UserActivity::logActivities([
+                    'user_id' => $user->id,
+                    'description' => 'User is automatically log in'
+                ]);
+            }
 
-        return redirect()->route('account.make_payment', $application->id);
+            return redirect()->route('account.make_payment', $application->id);
+        });
+
     }
 
     public function updateApplication()
@@ -307,6 +324,11 @@ class Enrollment extends Component
         }
 
         $this->application->update($data);
+
+        UserActivity::logActivities([
+            'user_id' => $this->application->user_id,
+            'description' => 'User edited / updated his application'
+        ]);
 
         $this->alert(
             "success",

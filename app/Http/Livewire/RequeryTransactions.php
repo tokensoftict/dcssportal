@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Events\CompleteApplicationEvent;
 use App\Models\Application;
 use App\Models\Transaction;
+use App\Models\UserActivity;
 use App\Repositories\BranchCollectRepository;
 use App\Repositories\ConfirmUpperlinkPaygateTransactionRepository;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -58,10 +59,15 @@ class RequeryTransactions extends Component
 
         if($transaction->gateway === "UPPERLINKPAYGATE")
         {
+            UserActivity::logActivities([
+                'user_id' =>  $transaction->application->user_id,
+                'transaction_id' => $transaction->id,
+                'description' => 'Re-querying upperlink paygate transaction',
+            ]);
+
             $status = $this->confirmUpperlinkPaygateTransactionRepository->confirmTransaction($transaction->transactionId);
 
         }else{
-
             $status = $this->branchCollectRepository->requeryTransaction($transaction);
         }
 
@@ -97,8 +103,6 @@ class RequeryTransactions extends Component
             );
 
         }
-
-
         return true;
     }
 
