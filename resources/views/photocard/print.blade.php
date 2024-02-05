@@ -84,7 +84,7 @@
                         <td colspan="2" style="font-size: 11pt;"><strong>Examination Number:</strong> {{ $application->exam_number }}</td>
                     </tr>
                     <tr>
-                        <td style="font-size: 11pt;"><strong>Entrance Examination Date:</strong>  Saturday 17 June 2023</td>
+                        <td style="font-size: 11pt;"><strong>Entrance Examination Date:</strong>  SATURDAY, 22 JUNE, 2024</td>
                         <td style="font-size: 11pt;"><strong>Entrance Examination Time:</strong> 8:00 AM</td>
                     </tr>
                     <tr>
