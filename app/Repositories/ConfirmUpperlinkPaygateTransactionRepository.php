@@ -17,7 +17,7 @@ class ConfirmUpperlinkPaygateTransactionRepository
     public function confirmTransaction($transactionRef)
     {
         $response =   Http::withBasicAuth("upperlinkintegration","Upperlink@2022gate")->get("https://thirdparty.paygate.upperlink.ng/api/v1/client/integration/transaction/query?merchantId=".env("MERCHANT_ID","UPLHSEM")."&ref=".$transactionRef);
-        dd($response->body());
+
         $trans = Transaction::where('transactionId', $transactionRef)->first();
 
         if(!$trans){
