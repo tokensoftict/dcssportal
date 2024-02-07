@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h2 class="text-center text-24 text-red-1">APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS 2024/2025 ACADEMIC SESSION</h2>
-                        <h4 class="text-center">Interested candidates are to purchase the form at Two Thousand Naira. (2500)</h4>
+                        <h4 class="text-center">Interested candidates are to purchase the form at Two Thousand Five Hundred Naira. (2500)</h4>
                         <br/>
                         <br/>
                         <p class="text-17 text-center">THE ONLINE APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS COMMENCES 5TH FEBRUARY, 2024 AND CLOSES 15TH JUNE 2024.
