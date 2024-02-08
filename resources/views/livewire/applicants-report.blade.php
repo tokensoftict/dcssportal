@@ -76,7 +76,7 @@
                         @foreach($this->applications as $application)
                             <tr class="text-12">
                                 <td  class="text-center">{{ $loop->iteration }}</td>
-                                <td  class="text-center"><a target="_blank" href="{{ route('view_application', ['email'=>$application->email]) }}"><img class="img-thumbnail img-fluid" style="width: 80px" alt="{{ $application->fullname  }}" src="{{ url('/'.$application->passport_path)  }}" width="100"/></a></td>
+                                <td  class="text-center"><a target="_blank" href="{{ route('administrator.view_application', ['email'=>$application->email]) }}"><img class="img-thumbnail img-fluid" style="width: 80px" alt="{{ $application->fullname  }}" src="{{ url('/'.$application->passport_path)  }}" width="100"/></a></td>
                                 <td  class="text-center">{{ $application->fullname }}</td>
                                 <td  class="text-center">{{ $application->exam_number }}</td>
                                 <td  class="text-center">{{ $application->center->name }}</td>
