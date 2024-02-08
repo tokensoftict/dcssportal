@@ -30,7 +30,7 @@
                                 @foreach($this->pendingApplications as $pendingApplication)
                                     <tr class="text-12">
                                         <td  class="text-center">{{ $loop->iteration }}</td>
-                                        <td  class="text-center"><img class="img-thumbnail img-fluid" style="width: 80px" alt="{{ $pendingApplication->fullname  }}" src="{{ url('/'.$pendingApplication->passport_path)  }}" width="150"/> </td>
+                                        <td  class="text-center"><a target="_blank" href="{{ route('view_application', ['email'=>$pendingApplication->email]) }}"><img class="img-thumbnail img-fluid" style="width: 80px" alt="{{ $pendingApplication->fullname  }}" src="{{ url('/'.$pendingApplication->passport_path)  }}" width="150"/></a></td>
                                         <td  class="text-center">{{ $pendingApplication->fullname }}</td>
                                         <td  class="text-center">{{ $pendingApplication->telephone }}</td>
                                         <td  class="text-center">{{ $pendingApplication->email }}</td>
