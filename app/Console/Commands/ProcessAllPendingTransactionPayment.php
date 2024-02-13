@@ -45,6 +45,7 @@ class ProcessAllPendingTransactionPayment extends Command
                        event(new CompleteApplicationEvent($transaction->application));
                        $count++;
                    }
+                   sleep(3);
                }
             }
         });
