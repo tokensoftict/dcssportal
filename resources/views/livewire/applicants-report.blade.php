@@ -39,6 +39,7 @@
                             </div>
                         @endif
                         <div>
+                            <h6>Total Record Count : {{ $this->recordCount }}</h6>
                             <label class="text-16 lh-1 fw-500 text-dark-1 mb-10" style="visibility: hidden">Payment Status</label>
                             <div wire:loading.block wire:target="generateReport,viewReport">
                                 <h5 align="center"> Please wait...</h5>

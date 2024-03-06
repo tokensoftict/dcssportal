@@ -35,13 +35,13 @@ class AdministratorController extends Controller
 
     public function reports_by_center()
     {
-        $data = ['filter'=>['centers']];
+        $data = ['filter'=>['centers', 'status']];
         return view('account.administrator.reports_by_center',$data);
     }
 
     public function reports_by_school()
     {
-        $data = ['filter'=>['schools']];
+        $data = ['filter'=>['schools', 'status']];
         return view('account.administrator.reports_by_school',$data);
     }
 

@@ -70,7 +70,7 @@ class ConfirmUpperlinkPaygateTransactionRepository
             return true;
         }
 
-        return "Unable able to confirm transaction status";
+        return "Unable to confirm transaction status";
 
     }
 

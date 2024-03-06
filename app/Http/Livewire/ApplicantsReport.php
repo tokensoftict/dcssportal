@@ -26,6 +26,8 @@ class ApplicantsReport extends Component
 
     public array $filter;
 
+    public int $recordCount =0;
+
     private $applications = [];
 
     public function mount()
@@ -37,11 +39,50 @@ class ApplicantsReport extends Component
     public function render()
     {
         $data = ['applications' => []];
+        $this->countExpectedRecord();
         return view('livewire.applicants-report', $data);
     }
 
 
-    public function generateReport()
+    private function countExpectedRecord()
+    {
+        $apps =  Application::query()->with(['center','state','examState','parental_status','school','school_type','school_type2','school2']);
+
+        if(isset($this->center) && $this->center !="")
+        {
+            $apps->where('center_id',$this->center);
+        }
+
+        if(isset($this->school)  && $this->school !="")
+        {
+            $apps->where('school_id',$this->school);
+        }
+
+        if(isset( $this->payment_status) &&  $this->payment_status == "1")
+        {
+            if(!auth()->user()->isDcssAdmin()){
+
+                $apps->whereNull('exam_number');
+            }
+
+        }
+
+        if(isset($this->payment_status) && $this->payment_status == "2")
+        {
+            $apps->whereNotNull('exam_number');
+        }
+
+        if(auth()->user()->isDcssAdmin() && $this->payment_status != "2")
+        {
+            $apps->whereNotNull('exam_number');
+        }
+        if(count($this->runFilter()) > 0) {
+            $this->recordCount = $apps->count();
+        }
+    }
+
+
+    private function runFilter()
     {
         $filter = [];
 
@@ -59,6 +100,13 @@ class ApplicantsReport extends Component
         {
             $filter['payment_status'] = $this->payment_status;
         }
+        return $filter;
+    }
+
+    public function generateReport()
+    {
+
+        $filter = $this->runFilter();
 
         $center = Center::find( $this->center)->name;
 
