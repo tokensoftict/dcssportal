@@ -27,6 +27,8 @@ Route::get('/contact', ['as'=>'contact',"uses"=>'HomeController@contact']);
 
 Route::get('/candidates', ['as'=>'candidates',"uses"=>'HomeController@candidates']);
 
+Route::get('/interview_status', ['as'=>'interview-status',"uses"=>'HomeController@interview_status']);
+
 Route::post("/registerprocess",['as'=>'registerprocess', "uses"=>"HomeController@registerprocess"]);
 
 Route::post("/loginprocess",['as'=>'loginprocess', "uses"=>"HomeController@loginprocess"]);
@@ -75,6 +77,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get('/reports_by_school', ['as'=>'reports_by_school',"uses"=>'AdministratorController@reports_by_school']);
             Route::get('/reports_by_status', ['as'=>'reports_by_status',"uses"=>'AdministratorController@reports_by_status']);
             Route::get('/settings', ['as'=>'settings',"uses"=>'AdministratorController@settings']);
+            Route::get('/interview_upload', ['as'=>'interview_upload',"uses"=>'AdministratorController@interview_upload']);
             Route::match(['get', 'post'],'/export', ['as'=>'export', 'uses'=>'AdministratorController@export']);
         });
     });

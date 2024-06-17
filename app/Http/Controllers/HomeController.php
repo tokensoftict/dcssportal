@@ -205,4 +205,11 @@ class HomeController extends Controller
 
 
 
+    public function interview_status()
+    {
+        $session = Session::where('status',1)->first();
+
+        return view("successful_candidate_interview", compact("session"));
+    }
+
 }

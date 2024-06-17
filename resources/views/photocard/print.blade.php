@@ -91,7 +91,7 @@
                         <td colspan="2" style="font-size: 11pt;"><strong>Examination Center:</strong> {{ $application->center->name }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-size: 11pt;"><strong>Interview Date:</strong> Will Be Communicated</td>
+                        <td colspan="2" style="font-size: 11pt;"><strong>Interview Date:</strong>7th to 9th Of August 2024 - 8AM</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-size: 11pt;"><strong>Surname:</strong> {{  strtoupper($application->surname) }}</td>

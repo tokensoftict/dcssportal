@@ -117,4 +117,10 @@ class AdministratorController extends Controller
         return view('import');
     }
 
+
+    public function interview_upload()
+    {
+        return view('account.administrator.interview_upload');
+    }
+
 }

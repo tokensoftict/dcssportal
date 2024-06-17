@@ -61,6 +61,21 @@
             </div>
         </div>
 
+
+
+        <div class="col-xl-3 col-md-6">
+            <div class="d-flex justify-between items-center py-35 px-30 rounded-16 bg-white -dark-bg-dark-1 shadow-4">
+                <div>
+                    <div class="lh-1 fw-500">Interview Count</div>
+                    <div class="text-24 lh-1 fw-700 text-dark-1 mt-20">{{ \App\Models\CandidateQualifiedInterview::count() }}</div>
+                    <div class="lh-1 mt-25"><span class="text-purple-1"></span> Centers</div>
+                </div>
+
+                <i class="text-40 icon-person-3 text-purple-1"></i>
+            </div>
+        </div>
+
+
     </div>
 
 
