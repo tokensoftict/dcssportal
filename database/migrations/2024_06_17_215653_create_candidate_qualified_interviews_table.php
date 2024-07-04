@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('candidate_qualified_interviews', function (Blueprint $table) {
             $table->id();
             $table->string('exam_number')->unique();
+            $table->bigInteger("score")->nullable();
             $table->foreignId('application_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });

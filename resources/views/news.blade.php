@@ -9,6 +9,7 @@
         <div class="pl-45 pr-30" style="height: 80vh">
             <div class="row y-gap-50 items-center">
                 <div class="row">
+                    <!--
                     <div class="col-12">
                         <h2 class="text-center text-24 text-red-1">APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS 2024/2025 ACADEMIC SESSION</h2>
                         <h4 class="text-center">Interested candidates are to purchase the form at Two Thousand Five Hundred Naira. (2500)</h4>
@@ -34,6 +35,7 @@
                         ANNOUNCER<br/>
                         DIRECTORATE OF COMMAND SCHOOLS SERVICES
                     </div>
+                    -->
                 </div>
 
 

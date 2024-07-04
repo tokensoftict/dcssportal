@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Exports\ExportApplicantFromExcel;
+use App\Exports\ExportSuccessfulCandidateInformation;
 use App\Imports\ImportSuccessfulCandidateForInterview;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -20,11 +22,16 @@ class UploadCandidateForInterviewComponent extends Component
     }
 
 
+    /**
+     * @return void
+     */
     public function importCandidate()
     {
         $this->validate(['excelFile' => 'required|mimes:xlsx,xls']);
 
-        Excel::import(new ImportSuccessfulCandidateForInterview(), $this->excelFile);
+        $importSuccessfulCandidateForInterview = new ImportSuccessfulCandidateForInterview();
+
+        Excel::import($importSuccessfulCandidateForInterview, $this->excelFile);
 
         $this->alert(
             "success",
@@ -36,6 +43,8 @@ class UploadCandidateForInterviewComponent extends Component
                 'text' =>  "Candidate has been Import Successfully!",
             ]
         );
+
+        return Excel::download(new ExportSuccessfulCandidateInformation($importSuccessfulCandidateForInterview->examNumbers), "successfulUploadedCandidate.xlsx");
 
         $this->excelFile = null;
     }

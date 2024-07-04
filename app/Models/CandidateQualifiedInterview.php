@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $id
  * @property string $exam_number
+ * @property int|null $score
  * @property int|null $application_id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -27,11 +28,13 @@ class CandidateQualifiedInterview extends Model
 	protected $table = 'candidate_qualified_interviews';
 
 	protected $casts = [
+		'score' => 'int',
 		'application_id' => 'int'
 	];
 
 	protected $fillable = [
 		'exam_number',
+		'score',
 		'application_id'
 	];
 

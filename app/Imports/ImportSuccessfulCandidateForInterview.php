@@ -7,10 +7,10 @@ use App\Models\CandidateQualifiedInterview;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
-use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeadingRow
 {
+    public array $examNumbers = [];
     /**
     * @param Collection $collection
     */
@@ -25,8 +25,10 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
                $app = Application::where('exam_number', $row['exam_number'])->first();
 
                if($app) {
+                   $this->examNumbers[] = $row['exam_number'];
                    CandidateQualifiedInterview::create([
                        'exam_number' => $row['exam_number'],
+                       'score' => $row['score'],
                        'application_id' => $app->id
                    ]);
                }

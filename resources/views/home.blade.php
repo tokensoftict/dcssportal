@@ -37,9 +37,11 @@
                                data-responsive="on"
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
+                              <!--
                               This is to inform the general public that online applications for admission into Command Secondary
                               Schools for the 2024/2025 Academic Session will commence on
                               Friday 5 February 2024 and end on Saturday, 15 June 2024
+                              -->
                               <br/>
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
 
@@ -89,9 +91,11 @@
                                data-responsive="on"
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
+                              <!--
                               This is to inform the general public that online applications for admission into Command Secondary
                               Schools for the 2024/2025 Academic Session will commence on
                               Friday 5 February 2024 and end on Saturday, 15 June 2024
+                              -->
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
                                   <center> <a class="button -md mt-3 -red-1 align-content-center text-white fw-500 w-1/5"
 
@@ -139,9 +143,11 @@
                                data-responsive="on"
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(0%, 0%, 100%, 0.55); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
+                              <!--
                               This is to inform the general public that online applications for admission into Command Secondary
                               Schools for the 2024/2025 Academic Session will commence on
                               Friday 5 February 2024 and end on Saturday, 15 June 2024
+                              -->
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
                                   <center> <a class="button -md mt-3 -red-1 align-content-center text-white fw-500 w-1/5"
 
@@ -159,6 +165,7 @@
                                       </a></center>
                               @endif
                           </div>
+
                       </li>
 
                   </ul>
@@ -179,7 +186,9 @@
                               Directorate of Command Schools Services
                           </h1>
                           <p data-anim-child="slide-up delay-3" class="mt-5">
+                              <!--
                               This is to inform the general public that online applications for admission into Command Secondary Schools for the 2024/2025 Academic Session will commence on Friday 5 February 2024 and end on Saturday, 15 June 2024.
+                              -->
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
@@ -239,7 +248,9 @@
 
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
-        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">This is to inform the general public that online applications for admission into Command Secondary Schools for the 2024/2025 Academic Session will commence on Friday 5 February 2024 and end on Saturday, 15 June 2024. <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
+        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
+                <!--This is to inform the general public that online applications for admission into Command Secondary Schools for the 2024/2025 Academic Session will commence on Friday 5 February 2024 and end on Saturday, 15 June 2024.-->
+                <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a>
         </marquee>
     </div>
