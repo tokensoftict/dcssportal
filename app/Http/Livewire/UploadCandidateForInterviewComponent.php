@@ -47,7 +47,7 @@ class UploadCandidateForInterviewComponent extends Component
 
         $this->excelFile = null;
 
-        return Excel::download(new ExportSuccessfulCandidateInformation($importSuccessfulCandidateForInterview->examNumbers), "successfulUploadedCandidate.xlsx");
+        return Excel::download(new ExportSuccessfulCandidateInformation($importSuccessfulCandidateForInterview->examNumbers, $importSuccessfulCandidateForInterview->scores), "successfulUploadedCandidate.xlsx");
 
     }
 }

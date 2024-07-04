@@ -11,6 +11,7 @@ use Maatwebsite\Excel\Concerns\WithHeadingRow;
 class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeadingRow
 {
     public array $examNumbers = [];
+    public array $scores = [];
     /**
      * @param Collection $collection
      */
@@ -26,6 +27,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
 
                 if($app) {
                     $this->examNumbers[] = $row['exam_number'];
+                    $this->scores[$row['exam_number']] =  $row['exam_number'];
                     CandidateQualifiedInterview::updateOrCreate(
                         [
                             'exam_number' => $row['exam_number'],

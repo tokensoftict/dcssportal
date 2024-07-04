@@ -10,9 +10,11 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 class ExportSuccessfulCandidateInformation implements FromCollection, WithHeadings
 {
     public array $examNumbers = [];
+    public array $examScores = [];
 
-    public function __construct(array $examNumbers){
+    public function __construct(array $examNumbers, array $examScores){
         $this->examNumbers = $examNumbers;
+        $this->examScores = $examScores;
     }
 
     /**
@@ -25,6 +27,7 @@ class ExportSuccessfulCandidateInformation implements FromCollection, WithHeadin
         foreach ($applications as $application){
             $data[] = [
                 'Exam Number' => $application->exam_number,
+                'Score' => $this->examScores[$application->exam_number],
                 'Surname' => $application->surname,
                 'Firstname' => $application->firstname,
                 'Othernames' => $application->othernames,
