@@ -9,6 +9,7 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Maatwebsite\Excel\Facades\Excel;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class UploadCandidateForInterviewComponent extends Component
 {
@@ -25,7 +26,7 @@ class UploadCandidateForInterviewComponent extends Component
     /**
      * @return void
      */
-    public function importCandidate()
+    public function importCandidate() : BinaryFileResponse
     {
         $this->validate(['excelFile' => 'required|mimes:xlsx,xls']);
 
@@ -44,8 +45,9 @@ class UploadCandidateForInterviewComponent extends Component
             ]
         );
 
+        $this->excelFile = null;
+
         return Excel::download(new ExportSuccessfulCandidateInformation($importSuccessfulCandidateForInterview->examNumbers), "successfulUploadedCandidate.xlsx");
 
-        $this->excelFile = null;
     }
 }

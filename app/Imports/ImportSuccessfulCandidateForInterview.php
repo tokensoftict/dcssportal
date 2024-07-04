@@ -12,27 +12,31 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
 {
     public array $examNumbers = [];
     /**
-    * @param Collection $collection
-    */
+     * @param Collection $collection
+     */
     public function collection(Collection $collection)
     {
         foreach ($collection as $row){
 
             $candidate = CandidateQualifiedInterview::where('exam_number', $row['exam_number'])->first();
 
-           if(!$candidate){
+            if(!$candidate){
 
-               $app = Application::where('exam_number', $row['exam_number'])->first();
+                $app = Application::where('exam_number', $row['exam_number'])->first();
 
-               if($app) {
-                   $this->examNumbers[] = $row['exam_number'];
-                   CandidateQualifiedInterview::create([
-                       'exam_number' => $row['exam_number'],
-                       'score' => $row['score'],
-                       'application_id' => $app->id
-                   ]);
-               }
-           }
+                if($app) {
+                    $this->examNumbers[] = $row['exam_number'];
+                    CandidateQualifiedInterview::updateOrCreate(
+                        [
+                            'exam_number' => $row['exam_number'],
+                        ],
+                        [
+                            'exam_number' => $row['exam_number'],
+                            'score' => $row['score'],
+                            'application_id' => $app->id
+                        ]);
+                }
+            }
         }
     }
 

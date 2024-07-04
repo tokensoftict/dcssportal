@@ -21,9 +21,10 @@ class ExportSuccessfulCandidateInformation implements FromCollection, WithHeadin
     public function collection()
     {
         $data = [];
-        $applications = Application::with(['school','center','state','parental_status','center'])->where('exam_number', $this->examNumbers)->get();
+        $applications = Application::with(['school','center','state','parental_status','center'])->whereIn('exam_number', $this->examNumbers)->get();
         foreach ($applications as $application){
             $data[] = [
+                'Exam Number' => $application->exam_number,
                 'Surname' => $application->surname,
                 'Firstname' => $application->firstname,
                 'Othernames' => $application->othernames,
