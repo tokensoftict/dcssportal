@@ -27,7 +27,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
 
                 if($app) {
                     $this->examNumbers[] = $row['exam_number'];
-                    $this->scores[$row['exam_number']] =  $row['exam_number'];
+                    $this->scores[strtoupper($row['exam_number'])] =  strtoupper($row['exam_number']);
                     CandidateQualifiedInterview::updateOrCreate(
                         [
                             'exam_number' => $row['exam_number'],
