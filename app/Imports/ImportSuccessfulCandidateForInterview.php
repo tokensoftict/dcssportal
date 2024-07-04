@@ -40,7 +40,9 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
                         ]);
                 }
             }else{
-                $this->notFound[] = $row['exam_number'];
+                $this->notFound[] = [
+                    "Exam Numbers" => $row['exam_number']
+                ];
             }
         }
     }

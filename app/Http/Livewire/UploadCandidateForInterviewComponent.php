@@ -30,6 +30,7 @@ class UploadCandidateForInterviewComponent extends Component
     public function importCandidate() : BinaryFileResponse
     {
         ini_set('memory_limit','2048M');
+        ini_set('max_execution_time', '0');
         $this->validate(['excelFile' => 'required|mimes:xlsx,xls']);
 
         $importSuccessfulCandidateForInterview = new ImportSuccessfulCandidateForInterview();
