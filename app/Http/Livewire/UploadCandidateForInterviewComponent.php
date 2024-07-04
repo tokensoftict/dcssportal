@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Exports\ExportApplicantFromExcel;
 use App\Exports\ExportSuccessfulCandidateInformation;
+use App\Exports\MultiSheetExportCandidate;
 use App\Imports\ImportSuccessfulCandidateForInterview;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -48,7 +49,11 @@ class UploadCandidateForInterviewComponent extends Component
 
         $this->excelFile = null;
 
-        return Excel::download(new ExportSuccessfulCandidateInformation($importSuccessfulCandidateForInterview->examNumbers, $importSuccessfulCandidateForInterview->scores), "successfulUploadedCandidate.xlsx");
+        return Excel::download(new MultiSheetExportCandidate(
+            $importSuccessfulCandidateForInterview->examNumbers,
+            $importSuccessfulCandidateForInterview->scores,
+            $importSuccessfulCandidateForInterview->notFound
+        ), "successfulUploadedCandidate.xlsx");
 
     }
 }

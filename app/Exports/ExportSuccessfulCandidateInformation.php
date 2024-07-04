@@ -46,6 +46,8 @@ class ExportSuccessfulCandidateInformation implements FromCollection, WithHeadin
     public function headings(): array
     {
         return  [
+            'Exam Number',
+            'Score',
             'Surname',
             'Firstname',
             'Othernames',

@@ -12,6 +12,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
 {
     public array $examNumbers = [];
     public array $scores = [];
+    public array $notFound = [];
     /**
      * @param Collection $collection
      */
@@ -21,7 +22,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
 
             $candidate = CandidateQualifiedInterview::where('exam_number', strtoupper($row['exam_number']))->first();
 
-            if(!$candidate){
+            if(!$candidate) {
 
                 $app = Application::where('exam_number', strtoupper($row['exam_number']))->first();
 
@@ -38,6 +39,8 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
                             'application_id' => $app->id
                         ]);
                 }
+            }else{
+                $this->notFound[] = $row['exam_number'];
             }
         }
     }
