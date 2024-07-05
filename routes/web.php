@@ -78,6 +78,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get('/reports_by_status', ['as'=>'reports_by_status',"uses"=>'AdministratorController@reports_by_status']);
             Route::get('/settings', ['as'=>'settings',"uses"=>'AdministratorController@settings']);
             Route::get('/interview_upload', ['as'=>'interview_upload',"uses"=>'AdministratorController@interview_upload']);
+            Route::get('/upload_candidate', ['as'=>'upload_candidate',"uses"=>'AdministratorController@upload_candidate']);
             Route::match(['get', 'post'],'/export', ['as'=>'export', 'uses'=>'AdministratorController@export']);
         });
     });

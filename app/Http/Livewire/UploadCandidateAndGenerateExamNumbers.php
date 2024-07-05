@@ -2,39 +2,33 @@
 
 namespace App\Http\Livewire;
 
-
 use App\Exports\MultiSheetExportCandidate;
-use App\Imports\ImportSuccessfulCandidateForInterview;
+use App\Imports\ImportNewCandidateAndGenerateExamNumber;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
-class UploadCandidateForInterviewComponent extends Component
+class UploadCandidateAndGenerateExamNumbers extends Component
 {
     use WithFileUploads, LivewireAlert;
-    public $excelFile;
 
+    public $excelFile;
 
     public function render()
     {
-        return view('livewire.upload-candidate-for-interview-component');
+        return view('livewire.upload-candidate-and-generate-exam-numbers');
     }
 
-
-    /**
-     * @return void
-     */
     public function importCandidate() : BinaryFileResponse
     {
         ini_set('memory_limit','2048M');
         ini_set('max_execution_time', '0');
         $this->validate(['excelFile' => 'required|mimes:xlsx,xls']);
 
-        $importSuccessfulCandidateForInterview = new ImportSuccessfulCandidateForInterview();
-
-        Excel::import($importSuccessfulCandidateForInterview, $this->excelFile);
+        $importCandidateAndGenerateExamNumbers = new ImportNewCandidateAndGenerateExamNumber();
+        Excel::import($importCandidateAndGenerateExamNumbers, $this->excelFile);
 
         $this->alert(
             "success",
@@ -43,17 +37,14 @@ class UploadCandidateForInterviewComponent extends Component
                 'position' => 'center',
                 'timer' => 6000,
                 'toast' => false,
-                'text' =>  "Candidate has been Import Successfully!",
+                'text' =>  "Candidate has been Uploaded Successfully!",
             ]
         );
 
-        $this->excelFile = null;
-
         return Excel::download(new MultiSheetExportCandidate(
-            $importSuccessfulCandidateForInterview->examNumbers,
-            $importSuccessfulCandidateForInterview->scores,
-            $importSuccessfulCandidateForInterview->notFound
-        ), "successfulUploadedCandidate.xlsx");
-
+            $importCandidateAndGenerateExamNumbers->examNumbers,
+            $importCandidateAndGenerateExamNumbers->scores,
+            $importCandidateAndGenerateExamNumbers->notFound
+        ), "successfulGeneratedCandidate.xlsx");
     }
 }

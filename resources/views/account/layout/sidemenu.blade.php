@@ -125,7 +125,7 @@
                             </a>
                         </div>
                     @endif
-                    @if(auth()->user()->isAdmin() ||  auth()->user()->isUpperlinkAdmin())
+                    @if(auth()->user()->isAdmin())
                         <div class="sidebar__item">
                             <a  href="{{ route('administrator.interview_upload') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                                 <i class="text-20 icon-cloud mr-15"></i>
@@ -133,6 +133,14 @@
                             </a>
                         </div>
                     @endif
+                        @if(auth()->user()->isAdmin())
+                            <div class="sidebar__item">
+                                <a  href="{{ route('administrator.upload_candidate') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                    <i class="text-20 icon-cloud mr-15"></i>
+                                    Upload Candidate
+                                </a>
+                            </div>
+                        @endif
                     @if(auth()->user()->isAdmin())
                         <div class="sidebar__item">
                             <a  href="{{ route('administrator.new_user') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
