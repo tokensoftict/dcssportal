@@ -7,6 +7,9 @@
         <li>
             <a data-barba href="{{ route("news") }}" style="font-weight: bolder">NEWS</a>
         </li>
+        <li>
+            <a data-barba href="{{ asset('pdf/successfull-candidate.pdf') }}" style="font-weight: bolder">LIST OF SUCCESSFUL CANDIDATES</a>
+        </li>
 <!--
         <li>
             <a data-barba href="{{ route("interview-status") }}" style="font-weight: bolder">SUCCESSFUL CANDIDATES FOR INTERVIEW</a>
