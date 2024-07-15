@@ -18,7 +18,7 @@
                         <p class="text-17 text-center">Successful candidates are requested to report to their various interview centres with the underlisted items:</p>
                     </div>
 
-                    <div class="col-12 text-center text-17">
+                    <div class="col-12 text-center text-17" align="left">
                         <br/>
                         <br/>
                         a.Military Personnel’s Children <br/>
@@ -100,7 +100,7 @@
         </div>
     </section>
 -->
-
+ <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
 @endsection
 
 
