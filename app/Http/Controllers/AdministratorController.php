@@ -128,4 +128,10 @@ class AdministratorController extends Controller
         return view('account.administrator.upload_candidate');
     }
 
+
+    public function upload_candidate_get_information()
+    {
+        return view('account.administrator.upload_candidate_get_information');
+    }
+
 }

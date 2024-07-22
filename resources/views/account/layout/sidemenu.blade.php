@@ -141,6 +141,14 @@
                                 </a>
                             </div>
                         @endif
+                        @if(auth()->user()->isAdmin())
+                            <div class="sidebar__item">
+                                <a  href="{{ route('administrator.upload_candidate_get_information') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                    <i class="text-20 icon-cloud mr-15"></i>
+                                    Upload And Get Information
+                                </a>
+                            </div>
+                        @endif
                     @if(auth()->user()->isAdmin())
                         <div class="sidebar__item">
                             <a  href="{{ route('administrator.new_user') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">

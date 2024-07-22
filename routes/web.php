@@ -79,6 +79,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get('/settings', ['as'=>'settings',"uses"=>'AdministratorController@settings']);
             Route::get('/interview_upload', ['as'=>'interview_upload',"uses"=>'AdministratorController@interview_upload']);
             Route::get('/upload_candidate', ['as'=>'upload_candidate',"uses"=>'AdministratorController@upload_candidate']);
+            Route::get('/upload_candidate_get_information', ['as'=>'upload_candidate_get_information',"uses"=>'AdministratorController@upload_candidate_get_information']);
             Route::match(['get', 'post'],'/export', ['as'=>'export', 'uses'=>'AdministratorController@export']);
         });
     });
