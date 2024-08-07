@@ -175,9 +175,14 @@
                           <div data-anim-child="slide-up delay-2" class="text-17 lh-15 text-orange-1 fw-500 mb-10">
                               Discipline and Knowledge
                           </div>
+                          <!--
                           <h1 data-anim-child="slide-up delay-2" class="masthead__title">
                               Welcome to
                               Directorate of Command Schools Services
+                          </h1>
+                          -->
+                          <h1 data-anim-child="slide-up delay-2" class="masthead__title">
+                              POSTPONEMENT OF COMMAND SECONDARY SCHOOLS FINAL SELECTION INTERVIEW DATE FOR THE  2024/2025 ACADEMIC SESSION ADMISSION
                           </h1>
                           <p data-anim-child="slide-up delay-3" class="mt-5">
                               This is to inform all parents and guardians that the Command Secondary Schools final selection interview for 2024/2025 academic session scheduled to hold from 7-9 August 2024, has now been rescheduled to hold from 12-14 August 2024. Accordingly, Parents and guardians are please requested to take note of the change of date. All inconveniences caused by this postponement is highly regretted. Please accept the assurances and esteemed regard of all of us at the Directorate of Command Schools Services.
