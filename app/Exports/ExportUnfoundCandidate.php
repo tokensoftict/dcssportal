@@ -26,7 +26,8 @@ class ExportUnfoundCandidate implements FromCollection, WithHeadings
     public function headings(): array
     {
        return [
-            "Exam Numbers"
+            "Exam Numbers",
+             "Scores"
        ];
     }
 }

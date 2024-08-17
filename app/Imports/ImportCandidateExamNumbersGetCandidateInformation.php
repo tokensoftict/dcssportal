@@ -26,11 +26,12 @@ class ImportCandidateExamNumbersGetCandidateInformation implements ToCollection,
 
             if($app) {
                 $this->examNumbers[] = strtoupper($row['exam_number']);
-                $this->scores[strtoupper($row['exam_number'])] =  $candidate?->score ?? 0;
+                $this->scores[strtoupper($row['exam_number'])] = $row['score'] ?? ($candidate?->score ?? 0);
 
             }else{
                 $this->notFound[] = [
-                    "Exam Numbers" => strtoupper($row['exam_number'])
+                    "Exam Numbers" => strtoupper($row['exam_number']),
+                    "Score" => $row['score'] ?? ""
                 ];
             }
         }
