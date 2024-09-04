@@ -9,45 +9,39 @@
         <div class="pl-45 pr-30" style="height: 80vh">
             <div class="row y-gap-50 items-center">
                 <div class="row">
-<!--
-                    <div class="col-12">
+
+                    <div class="col-8 offset-2">
                         <h2 class="text-center text-24 text-red-1">RELEASE OF 2024/2025 COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT</h2>
                         <h4 class="text-center"></h4>
                         <br/>
                         <br/>
-                        <p class="text-17 text-center">Successful candidates are requested to report to their various interview centres with the underlisted items:</p>
+                        <p class="text-17 text-center">Successful candidates are requested to report at their schools of choice with the following documents to collect their admission letters:</p>
                     </div>
 
-                    <div class="col-12 text-center text-17" align="left">
+                    <div class="col-8 offset-2 text-center text-17" align="left">
                         <br/>
                         <br/>
-                        a.Military Personnel’s Children <br/>
-                        (1)	Entrance examination photo card. <br/>
-                        (2)	Photocopy of parent’s Military ID card. <br/>
-                        (3)	Letter of identification from parent’s unit. <br/>
-                        (4)	Birth Certificate or sworn declaration of age. <br/>
-                        (5)	Part 2/3 Orders publishing candidate’s birth. <br/>
-                        (6)	Primary School Testimonial. <br/>
-                        (7)	Writing Materials. <br/>
-                        (8)	 File Jacket. <br/>
-                        (9)	Children of discharged personnel are to present photocopy of parents discharge certificates or letter of identification from a military unit certifying that he/she is a bonafide child of the deceased personnel. <br/>
+                        <b>Military Personnel’s Children</b> <br/>
 
-                        b.	Civilians’ Children <br/>
-                        (1)	Entrance examination photo card. <br/>
-                        (2)	Birth Certificate or sworn declaration of age. <br/>
-                        (3)	Primary School Testimonial. <br/>
-                        (4)	Writing Materials. <br/>
-                        (5)	File Jacket. <br/>
+                        (1)	Entrance examination photo card.<br/>
+                        (2)	Photocopy of parent’s Military ID card.<br/>
+                        (3)	Letter of identification from parent’s unit.<br/>
+                        (4)	Birth Certificate or sworn declaration of age.<br/>
+                        (5)	Part 2/3 orders publishing candidates’ birth.<br/>
+                        (6)	Primary School Testimonial/First School Leaving Certificate.<br/>
 
-                        2.	Candidates who fail to provide document listed in para 1a (1-9) are to be interviewed as children of civilians. In addition, all candidates are to Pay the sum of Two Thousand Naira (N2,000.00) only non refundable interview fee at their centres.  <br/>
-
-                        Click here for the list of successful candidates  <br/> <br/>
-
-                        Directorate of Command Schools Services <br/>
-
+                        <b>Civilians’ Children</b><br/>
+                        (1)	Entrance examination photo card.<br/>
+                        (2)	Birth Certificate or sworn declaration of age.<br/>
+                        (3)	Primary School Testimonial/First School Leaving Certificate.<br/>
 
                     </div>
--->
+                    <div class="col-8 offset-2">
+                        <p>Furthermore, other requirements will be made available to parents during the collection of admission letters. Admission letters must be collected on or before 30 Sep 24, as admission letters not collected by the dateline will be forfeited and substituted with candidates on the waiting list.</p>
+                        <br/>
+                        <p class="text-right"><b>Directorate of Command Schools Services.</b></p>
+                    </div>
+
                 </div>
 
 

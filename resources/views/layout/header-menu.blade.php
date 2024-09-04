@@ -17,11 +17,11 @@
         </li>
 -->
 
-        <!--
+
         <li>
             <a data-barba href="{{ route("candidates") }}" style="font-weight: bolder">SUCCESSFUL CANDIDATES FOR ADMISSION   </a>
         </li>
-        -->
+
         <li>
             <a data-barba href="{{ route("contact") }}" style="font-weight: bolder">OUR CONTACT</a>
         </li>

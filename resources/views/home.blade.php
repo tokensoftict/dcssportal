@@ -38,9 +38,24 @@
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
                               <h2 style="color:#FFFF">
+                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Also, SMS has been sent to all successful candidates through the phone numbers provided in their application forms.
                               </h2>
 
-                              <br/>
+
+                              <center> <a class="button -md mt-5 -red-1 align-content-center text-white fw-500 w-1/3"
+
+                                          data-x="center"
+                                          data-hoffset="['-25','-25','40','50']"
+                                          data-y="middle"
+                                          data-voffset="['110','-10','150','150']"
+                                          data-width="['auto','auto','auto','auto']"
+                                          data-textAlign="['center','center','center','center']"
+
+                                          data-frames='[{"delay":"+490","speed":2000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":750,"frame":"999","to":"x:[-100%];opacity:1;","mask":"x:[100%];y:0;s:inherit;e:inherit;","ease":"Power4.easeInOut"}]'
+                                          data-responsive="on"
+                                          data-responsive_offset="on"
+                                          style="z-index: 9;" href='{{ route('candidates') }}'>Successful Candidates
+                                  </a></center>
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
 
                                   <center> <a class="button -md mt-5 -red-1 align-content-center text-white fw-500 w-1/5"
@@ -90,8 +105,24 @@
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
                               <h2 style="color:#FFFF">
+                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Also, SMS has been sent to all successful candidates through the phone numbers provided in their application forms.
                               </h2>
+                                <br/>
+                              <br/>
+                              <center> <a class="button -md mt-5 -red-1 align-content-center text-white fw-500 w-1/3"
 
+                                          data-x="center"
+                                          data-hoffset="['-25','-25','40','50']"
+                                          data-y="middle"
+                                          data-voffset="['110','-10','150','150']"
+                                          data-width="['auto','auto','auto','auto']"
+                                          data-textAlign="['center','center','center','center']"
+
+                                          data-frames='[{"delay":"+490","speed":2000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":750,"frame":"999","to":"x:[-100%];opacity:1;","mask":"x:[100%];y:0;s:inherit;e:inherit;","ease":"Power4.easeInOut"}]'
+                                          data-responsive="on"
+                                          data-responsive_offset="on"
+                                          style="z-index: 9;" href='{{ route('candidates') }}'>Successful Candidates
+                                  </a></center>
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
                                   <center> <a class="button -md mt-3 -red-1 align-content-center text-white fw-500 w-1/5"
 
@@ -140,7 +171,24 @@
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(0%, 0%, 100%, 0.55); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
                               <h2 style="color:#FFFF">
+                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Also, SMS has been sent to all successful candidates through the phone numbers provided in their application forms.
                               </h2>
+                              <br/>
+                              <br/>
+                              <center> <a class="button -md mt-5 -red-1 align-content-center text-white fw-500 w-1/3"
+
+                                          data-x="center"
+                                          data-hoffset="['-25','-25','40','50']"
+                                          data-y="middle"
+                                          data-voffset="['110','-10','150','150']"
+                                          data-width="['auto','auto','auto','auto']"
+                                          data-textAlign="['center','center','center','center']"
+
+                                          data-frames='[{"delay":"+490","speed":2000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":750,"frame":"999","to":"x:[-100%];opacity:1;","mask":"x:[100%];y:0;s:inherit;e:inherit;","ease":"Power4.easeInOut"}]'
+                                          data-responsive="on"
+                                          data-responsive_offset="on"
+                                          style="z-index: 9;" href='{{ route('candidates') }}'>Successful Candidates
+                                  </a></center>
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
                                   <center> <a class="button -md mt-3 -red-1 align-content-center text-white fw-500 w-1/5"
 
@@ -184,7 +232,7 @@
 
                           </h1>
                           <p data-anim-child="slide-up delay-3" class="mt-5">
-
+                              This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Also, SMS has been sent to all successful candidates through the phone numbers provided in their application forms.
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))

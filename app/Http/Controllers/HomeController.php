@@ -109,18 +109,34 @@ class HomeController extends Controller
 
         $cdss = [];
         $css = [];
+        $csss = [];
 
         foreach ($files as $filename) {
             $file_url = asset('results')."/" . $filename;
             if (preg_match('~\.pdf$~', $filename)) {
                 $filename = str_replace('.pdf', '', $filename);
-                if(str_starts_with($filename, 'COMMAND SECONDARY SCHOOL')){
+                if(str_starts_with($filename, 'CSS')){
                     $css[] = [
                         'name' => str_replace('CSS', 'COMMAND SECONDARY SCHOOL ', $filename),
                         'url' => $file_url
                     ];
                 }
-                if(str_starts_with($filename, 'COMMAND DAY SECONDARY SCHOOL')){
+
+                if(str_starts_with($filename, '-CSSS')){
+                    $csss[] = [
+                        'name' => str_replace('-CSSS', 'COMMAND SCIENCE SECONDARY SCHOOL ', $filename),
+                        'url' => $file_url
+                    ];
+                }
+
+                if(str_starts_with($filename, 'CSTSS')){
+                    $csss[] = [
+                        'name' => str_replace('CSTSS', 'COMMAND SCIENCE AND TECHNICAL SECONDARY SCHOOL ', $filename),
+                        'url' => $file_url
+                    ];
+                }
+
+                if(str_starts_with($filename, 'CDSS')){
                     $cdss[] = [
                         'name' =>  str_replace('CDSS', 'COMMAND DAY SECONDARY SCHOOL ', $filename),
                         'url' => $file_url
@@ -129,7 +145,7 @@ class HomeController extends Controller
             }
         }
 
-        return view("candidates", compact('session', 'cdss', 'css'));
+        return view("candidates", compact('session', 'cdss', 'css', 'csss'));
     }
 
 
