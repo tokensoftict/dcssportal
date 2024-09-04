@@ -37,7 +37,7 @@
                                data-responsive="on"
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
-                              <h2 style="color:#FFFF">]
+                              <h2 style="color:#FFFF">
                               </h2>
 
                               <br/>
