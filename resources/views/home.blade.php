@@ -37,9 +37,9 @@
                                data-responsive="on"
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
-                              <h2 style="color:#FFFF">POSTPONEMENT OF COMMAND SECONDARY SCHOOLS FINAL SELECTION INTERVIEW DATE FOR THE  2024/2025 ACADEMIC SESSION ADMISSION
+                              <h2 style="color:#FFFF">]
                               </h2>
-                              This is to inform all parents and guardians that the Command Secondary Schools final selection interview for 2024/2025 academic session scheduled to hold from 7-9 August 2024, has now been rescheduled to hold from 12-14 August 2024. Accordingly, Parents and guardians are please requested to take note of the change of date. All inconveniences caused by this postponement is highly regretted. Please accept the assurances and esteemed regard of all of us at the Directorate of Command Schools Services.
+
                               <br/>
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
 
@@ -89,9 +89,9 @@
                                data-responsive="on"
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
-                              <h2 style="color:#FFFF">POSTPONEMENT OF COMMAND SECONDARY SCHOOLS FINAL SELECTION INTERVIEW DATE FOR THE  2024/2025 ACADEMIC SESSION ADMISSION
+                              <h2 style="color:#FFFF">
                               </h2>
-                              This is to inform all parents and guardians that the Command Secondary Schools final selection interview for 2024/2025 academic session scheduled to hold from 7-9 August 2024, has now been rescheduled to hold from 12-14 August 2024. Accordingly, Parents and guardians are please requested to take note of the change of date. All inconveniences caused by this postponement is highly regretted. Please accept the assurances and esteemed regard of all of us at the Directorate of Command Schools Services.
+
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
                                   <center> <a class="button -md mt-3 -red-1 align-content-center text-white fw-500 w-1/5"
 
@@ -139,9 +139,8 @@
                                data-responsive="on"
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(0%, 0%, 100%, 0.55); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
-                              <h2 style="color:#FFFF">POSTPONEMENT OF COMMAND SECONDARY SCHOOLS FINAL SELECTION INTERVIEW DATE FOR THE  2024/2025 ACADEMIC SESSION ADMISSION
+                              <h2 style="color:#FFFF">
                               </h2>
-                              This is to inform all parents and guardians that the Command Secondary Schools final selection interview for 2024/2025 academic session scheduled to hold from 7-9 August 2024, has now been rescheduled to hold from 12-14 August 2024. Accordingly, Parents and guardians are please requested to take note of the change of date. All inconveniences caused by this postponement is highly regretted. Please accept the assurances and esteemed regard of all of us at the Directorate of Command Schools Services.
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
                                   <center> <a class="button -md mt-3 -red-1 align-content-center text-white fw-500 w-1/5"
 
@@ -182,10 +181,10 @@
                           </h1>
                           -->
                           <h1 data-anim-child="slide-up delay-2" class="masthead__title">
-                              POSTPONEMENT OF COMMAND SECONDARY SCHOOLS FINAL SELECTION INTERVIEW DATE FOR THE  2024/2025 ACADEMIC SESSION ADMISSION
+
                           </h1>
                           <p data-anim-child="slide-up delay-3" class="mt-5">
-                              This is to inform all parents and guardians that the Command Secondary Schools final selection interview for 2024/2025 academic session scheduled to hold from 7-9 August 2024, has now been rescheduled to hold from 12-14 August 2024. Accordingly, Parents and guardians are please requested to take note of the change of date. All inconveniences caused by this postponement is highly regretted. Please accept the assurances and esteemed regard of all of us at the Directorate of Command Schools Services.
+
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
@@ -246,7 +245,7 @@
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
-                RELEASE OF 2024/2025 COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT
+
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a>
         </marquee>

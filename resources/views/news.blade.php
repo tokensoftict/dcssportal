@@ -9,7 +9,7 @@
         <div class="pl-45 pr-30" style="height: 80vh">
             <div class="row y-gap-50 items-center">
                 <div class="row">
-
+<!--
                     <div class="col-12">
                         <h2 class="text-center text-24 text-red-1">RELEASE OF 2024/2025 COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT</h2>
                         <h4 class="text-center"></h4>
@@ -47,7 +47,7 @@
 
 
                     </div>
-
+-->
                 </div>
 
 
