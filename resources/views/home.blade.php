@@ -174,12 +174,12 @@
                           <div data-anim-child="slide-up delay-2" class="text-17 lh-15 text-orange-1 fw-500 mb-10">
                               Discipline and Knowledge
                           </div>
-                          <!--
+
                           <h1 data-anim-child="slide-up delay-2" class="masthead__title">
                               Welcome to
                               Directorate of Command Schools Services
                           </h1>
-                          -->
+
                           <h1 data-anim-child="slide-up delay-2" class="masthead__title">
 
                           </h1>
