@@ -38,7 +38,7 @@
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
                               <h2 style="color:#FFFF">
-                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Also, SMS has been sent to all successful candidates through the phone numbers provided in their application forms.
+                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Admission letters must be collected on or before 30 Sep 24, as admission letters not collected by the dateline will be forfeited and substituted with candidates on the waiting list.
                               </h2>
 
 
@@ -105,7 +105,7 @@
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
                               <h2 style="color:#FFFF">
-                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Also, SMS has been sent to all successful candidates through the phone numbers provided in their application forms.
+                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Admission letters must be collected on or before 30 Sep 24, as admission letters not collected by the dateline will be forfeited and substituted with candidates on the waiting list.
                               </h2>
                                 <br/>
                               <br/>
@@ -171,7 +171,7 @@
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(0%, 0%, 100%, 0.55); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
                               <h2 style="color:#FFFF">
-                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Also, SMS has been sent to all successful candidates through the phone numbers provided in their application forms.
+                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Admission letters must be collected on or before 30 Sep 24, as admission letters not collected by the dateline will be forfeited and substituted with candidates on the waiting list.
                               </h2>
                               <br/>
                               <br/>
@@ -232,7 +232,7 @@
 
                           </h1>
                           <p data-anim-child="slide-up delay-3" class="mt-5">
-                              This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Also, SMS has been sent to all successful candidates through the phone numbers provided in their application forms.
+                              This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Admission letters must be collected on or before 30 Sep 24, as admission letters not collected by the dateline will be forfeited and substituted with candidates on the waiting list.
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
