@@ -121,7 +121,7 @@ class AccountController extends Controller
 
     public function download_photocard(Application $application)
     {
-
+        ini_set('memory_limit','1048M');
         $session = Session::where("status",1)->first();
 
         $pdf = PDF::loadView("photocard.print",['application'=>$application, "session"=> $session]);
@@ -132,7 +132,7 @@ class AccountController extends Controller
 
     public function download_payment_receipt(Application $application)
     {
-
+        ini_set('memory_limit','1048M');
         $transaction = Transaction::where('application_id',$application->id)->where("status",1)->first();
 
         if(!$transaction) abort("404");
