@@ -8,7 +8,7 @@
               <div id="slider" class="rev_slider fullscreenbanner rs-nav-light" data-version="5.4.1">
                   <ul>
 
-                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/slide1.jpg') }}" alt="" />
+                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner2025-3.jpeg') }}" alt="" />
                           <div class="tp-caption w-regular color-red shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -22,8 +22,9 @@
                                data-responsive="on"
                                data-responsive_offset="on"
                                style="z-index: 9;color: #ff0">
-                          </div>
 
+
+                            <!--
                           <div class="tp-caption w-light shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -38,7 +39,7 @@
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
                               <h2 style="color:#FFFF">
-                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Admission letters must be collected on or before 30 Sep 24, as admission letters not collected by the dateline will be forfeited and substituted with candidates on the waiting list.
+
                               </h2>
 
 
@@ -56,6 +57,7 @@
                                           data-responsive_offset="on"
                                           style="z-index: 9;" href='{{ route('candidates') }}'>Successful Candidates
                                   </a></center>
+                              -->
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
 
                                   <center> <a class="button -md mt-5 -red-1 align-content-center text-white fw-500 w-1/5"
@@ -74,8 +76,9 @@
                                  </a></center>
                               @endif
                           </div>
+
                       </li>
-                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/slide2.jpg') }}" alt="" />
+                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner2025-7.jpeg') }}" alt="" />
                           <div class="tp-caption w-regular color-red shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -89,8 +92,8 @@
                                data-responsive="on"
                                data-responsive_offset="on"
                                style="z-index: 9;color: #ff0">
-                          </div>
 
+                          <!--
                           <div class="tp-caption w-light shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -105,10 +108,11 @@
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(20,3,66, 0.75); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
                               <h2 style="color:#FFFF">
-                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Admission letters must be collected on or before 30 Sep 24, as admission letters not collected by the dateline will be forfeited and substituted with candidates on the waiting list.
+
                               </h2>
                                 <br/>
                               <br/>
+
                               <center> <a class="button -md mt-5 -red-1 align-content-center text-white fw-500 w-1/3"
 
                                           data-x="center"
@@ -123,6 +127,7 @@
                                           data-responsive_offset="on"
                                           style="z-index: 9;" href='{{ route('candidates') }}'>Successful Candidates
                                   </a></center>
+                                  -->
                               @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
                                   <center> <a class="button -md mt-3 -red-1 align-content-center text-white fw-500 w-1/5"
 
@@ -141,7 +146,7 @@
                               @endif
                           </div>
                       </li>
-                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/slide3.jpg') }}" alt="" />
+                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner2025-10.jpeg') }}" alt="" />
                           <div class="tp-caption w-regular color-red shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -156,7 +161,7 @@
                                data-responsive_offset="on"
                                style="z-index: 9;color: #ff0">
                           </div>
-
+                            <!--
                           <div class="tp-caption w-light shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -171,7 +176,7 @@
                                data-responsive_offset="on"
                                style="z-index: 9; background-color: rgba(0%, 0%, 100%, 0.55); height: auto; padding-bottom: 50px; padding-top: 50px; color: #FFF; border-radius: 10px;">
                               <h2 style="color:#FFFF">
-                                  This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Admission letters must be collected on or before 30 Sep 24, as admission letters not collected by the dateline will be forfeited and substituted with candidates on the waiting list.
+
                               </h2>
                               <br/>
                               <br/>
@@ -206,7 +211,7 @@
                                       </a></center>
                               @endif
                           </div>
-
+                            -->
                       </li>
 
                   </ul>
@@ -232,7 +237,7 @@
 
                           </h1>
                           <p data-anim-child="slide-up delay-3" class="mt-5">
-                              This is to inform parents that the result of the selection interview for admission into Command Secondary Schools Junior Secondary School (JSS1) 2024/2025 Academic Session has been released. Successful candidates are requested to check their names at their schools of choice and the Nigerian Army Divisions’ Headquarters office of the Director Division and Garrison Education Services. Admission letters must be collected on or before 30 Sep 24, as admission letters not collected by the dateline will be forfeited and substituted with candidates on the waiting list.
+
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))

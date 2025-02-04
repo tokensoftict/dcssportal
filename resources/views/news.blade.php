@@ -8,6 +8,7 @@
  <div class="masthead__bg"></div>
         <div class="pl-45 pr-30" style="height: 80vh">
             <div class="row y-gap-50 items-center">
+              <!--
                 <div class="row">
 
                     <div class="col-8 offset-2">
@@ -43,7 +44,7 @@
                     </div>
 
                 </div>
-
+            -->
 
             </div>
         </div>
