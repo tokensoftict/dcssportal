@@ -101,6 +101,7 @@
 
     <script>
         window.addEventListener('payNow', (e) => {
+            console.log(JSON.parse(e.detail.body));
             window.payGateCheckout(JSON.parse(e.detail.body));
         });
 
