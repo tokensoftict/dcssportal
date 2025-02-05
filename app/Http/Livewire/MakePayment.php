@@ -179,7 +179,13 @@ class MakePayment extends Component
 
         $data = $this->transaction->toArray();
 
+
+
         Arr::forget($data,['application_id','id','created_at','updated_at','status']);
+        $data["address"] = $this->application->address;
+        $data['phone'] = $this->application->telephone;
+        $data['meta'] = "";
+        $data['city'] = "";
 
         UserActivity::logActivities([
             'user_id' => $this->application->user_id,
