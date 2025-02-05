@@ -14,7 +14,7 @@ use Livewire\Component;
 class MakePayment extends Component
 {
 
-   use LivewireAlert;
+    use LivewireAlert;
 
     public Application $application;
 
@@ -161,6 +161,10 @@ class MakePayment extends Component
                 "surName" => $this->application->surname,
                 "firstName" => $this->application->surname,
                 "lastName" => $this->application->firstname,
+                "address" => $this->application->address,
+                "meta" =>"",
+                "phone" =>$this->application->telephone,,
+                "city" =>"",
                 "customerUrl" => route("account.complete_application",$this->application->id),
                 "merchantId" => env("MERCHANT_ID","UPLHSEM"),
             ]
