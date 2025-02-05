@@ -5,9 +5,28 @@
 
 
  <section data-anim-wrap class="masthead -type-5 mt-50">
- <div class="masthead__bg"></div>
         <div class="pl-45 pr-30" style="height: 80vh">
             <div class="row y-gap-50 items-center">
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <h2 class="text-center text-24 text-red-1">METHOD OF APPLICATION</h2>
+                        1.  Interested Candidates are to visit the Directorate of Command Schools Services [DCSS] admissions portal at <a href="https://www.dcss.sch.ng">https://www.dcss.sch.ng</a> .<br/>
+                        2.  Click on enroll, and create your username and password.<br/>
+                        3.  Follow the steps of the application process to fill in all the required data and
+                        proceed to payment.<br/>
+                        5.  Application Form Fee is ₦2,500.00 only;<br/>
+                        4. Payment can be made using bank-issued ATM Debit cards. You shall be
+                        directed to the secure Paygate platform.<br/>
+                        5. Candidates can obtain their Exam Photo Cards from the portal only when
+                        payment is confirmed.<br/>
+                        6. After completing the application process, candidates are advised to print a
+                        Photo Card from the portal. Candidates MUST present their Examination<br/>
+                        Photo Card at the Examination Centre on the day of the Entrance Examination.
+                        7. For inquiries and support, please call 08113856079 or email support
+                        <a href="mailto:support@dcss.sch.ng">support@dcss.sch.ng</a> or <a href="mailto:commandentrance@gmail.com">commandentrance@gmail.com</a>
+
+                    </div>
+                </div>
               <!--
                 <div class="row">
 
@@ -97,13 +116,14 @@
         </div>
     </section>
 -->
- <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
 @endsection
 
 
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
-        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase"><span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
+        <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
+                APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2025/2026 IS OUT.
+                <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a></marquee>
     </div>
 @endsection

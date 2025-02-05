@@ -2,13 +2,14 @@
 @section('title',"DIRECTORATE OF COMMAND SCHOOLS SERVICE")
 
 @section('content')
+    <br/> <br/> <br/> <br/> <br/><br/> <br/>
   <div class="container-fluid">
       <section data-anim-wrap class="masthead">
           <div class="rev_slider_wrapper fullscreen-container">
               <div id="slider" class="rev_slider fullscreenbanner rs-nav-light" data-version="5.4.1">
                   <ul>
 
-                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner2025-3.jpeg') }}" alt="" />
+                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner2025-3-cropped.jpg') }}" alt="" />
                           <div class="tp-caption w-regular color-red shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -237,7 +238,9 @@
 
                           </h1>
                           <p data-anim-child="slide-up delay-3" class="mt-5">
-
+                              Application for Admission into Command Secondary Schools for 2025/2026 is out.
+                              The online application for admission commences on Wednesday 5th February 2025 and closes Saturday 8th June 2025
+                              The entrance examination is scheduled for Saturday,21st June 2025 at all the designated examination centers nationwide.
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
@@ -264,7 +267,7 @@
                                       <div class="mr-10">
                                           <img src="{{ asset("img/home-8/hero/icons/1.svg") }}" alt="icon">
                                       </div>
-                                      <div class="fw-500 lh-11 mt-10">16<br> DAY SCHOOLS</div>
+                                      <div class="fw-500 lh-11 mt-10">19<br> DAY SCHOOLS</div>
                                   </div>
                               </div>
 
@@ -273,7 +276,7 @@
                                       <div class="mr-10">
                                           <img src="{{ asset("img/home-8/hero/icons/1.svg") }}" alt="icon">
                                       </div>
-                                      <div class="fw-500 lh-11 mt-10">47<br> TOTAL SCHOOLS</div>
+                                      <div class="fw-500 lh-11 mt-10">50<br> TOTAL SCHOOLS</div>
                                   </div>
                               </div>
 
@@ -298,7 +301,7 @@
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
-
+                APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2025/2026 IS OUT.
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a>
         </marquee>
