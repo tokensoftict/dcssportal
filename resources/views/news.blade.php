@@ -5,7 +5,7 @@
 
 
  <section data-anim-wrap class="masthead -type-5 mt-50">
-        <div class="pl-45 pr-30" style="height: 80vh">
+        <div class="pl-45 pr-30" style="height: 60vh">
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-8 offset-2">
