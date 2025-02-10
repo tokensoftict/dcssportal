@@ -5,25 +5,24 @@
 
 
  <section data-anim-wrap class="masthead -type-5 mt-50">
-        <div class="pl-45 pr-30" style="height: 60vh">
+        <div class="pl-45 pr-30" style="height: 80vh">
             <div class="row y-gap-50 items-center">
                 <div class="row">
-                    <div class="col-8 offset-2">
+                    <div class="col-12 col-sm-8 offset-sm-2">
                         <h2 class="text-center text-24 text-red-1">METHOD OF APPLICATION</h2>
-                        1.  Interested Candidates are to visit the Directorate of Command Schools Services [DCSS] admissions portal at <a href="https://www.dcss.sch.ng">https://www.dcss.sch.ng</a> .<br/>
-                        2.  Click on enroll, and create your username and password.<br/>
-                        3.  Follow the steps of the application process to fill in all the required data and
-                        proceed to payment.<br/>
-                        5.  Application Form Fee is ₦2,500.00 only;<br/>
-                        4. Payment can be made using bank-issued ATM Debit cards. You shall be
-                        directed to the secure Paygate platform.<br/>
-                        5. Candidates can obtain their Exam Photo Cards from the portal only when
+                        1.   Interested Candidates are to visit the Directorate of Command
+                        Schools Services [DCSS] admissions portal at <b><a href="https://www.dcss.sch.ng">https://www.dcss.sch.ng</a></b> .<br/>
+                        2.  Click on enroll, and create personal username and password.<br/>
+                        3.  Follow the steps to fill in all the required data and proceed to payment.<br/>
+                        4.Payment of <b>N2,500</b>can be made using bank-issued ATM Debit cards. You
+                        shall be directed to the secured Paygate platform.<br/>
+                        5.Candidates can obtain their Exam Photo Cards from the portal only when
                         payment is confirmed.<br/>
-                        6. After completing the application process, candidates are advised to print a
+                        6.After completing the application process, candidates are advised to print a
                         Photo Card from the portal. Candidates MUST present their Examination<br/>
-                        Photo Card at the Examination Centre on the day of the Entrance Examination.<br/>
-                        7. For inquiries and support, please call 08113856079 or email support
-                        <a href="mailto:support@dcss.sch.ng">support@dcss.sch.ng</a> or <a href="mailto:commandentrance@gmail.com">commandentrance@gmail.com</a>
+                        Photo Card at the Examination Centre on the day of the Entrance Examination.
+                        7.For inquiries and support, please call <b><a href="tel:08113856079">08113856079</a></b> or email:
+                        <b><a href="mailto:support@dcss.sch.ng">support@dcss.sch.ng</a></b> or <b><a href="mail:to">commandentrance@gmail.com</a></b> <br/>
 
                     </div>
                 </div>

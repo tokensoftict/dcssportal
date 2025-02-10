@@ -9,7 +9,7 @@
               <div id="slider" class="rev_slider fullscreenbanner rs-nav-light" data-version="5.4.1">
                   <ul>
 
-                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner2025-3-cropped.jpg') }}" alt="" />
+                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner-first.jpeg') }}" alt="" />
                           <div class="tp-caption w-regular color-red shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -79,7 +79,7 @@
                           </div>
 
                       </li>
-                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner2025-7.jpeg') }}" alt="" />
+                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner2025-3-cropped.jpg') }}" alt="" />
                           <div class="tp-caption w-regular color-red shaded_text text-center"
                                data-x="center"
                                data-y="middle"
