@@ -184,7 +184,7 @@ class MakePayment extends Component
         $data["address"] = $this->application->address;
         $data['phone'] = $this->application->telephone;
         $data['meta'] = "";
-        $data['city'] = "";
+        $data['city'] = $this->application->address;
 
         UserActivity::logActivities([
             'user_id' => $this->application->user_id,
