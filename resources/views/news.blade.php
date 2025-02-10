@@ -20,7 +20,7 @@
                         payment is confirmed.<br/>
                         6.After completing the application process, candidates are advised to print a
                         Photo Card from the portal. Candidates MUST present their Examination<br/>
-                        Photo Card at the Examination Centre on the day of the Entrance Examination.
+                        Photo Card at the Examination Centre on the day of the Entrance Examination.<br/>
                         7.For inquiries and support, please call <b><a href="tel:08113856079">08113856079</a></b> or email:
                         <b><a href="mailto:support@dcss.sch.ng">support@dcss.sch.ng</a></b> or <b><a href="mail:to">commandentrance@gmail.com</a></b> <br/>
 
