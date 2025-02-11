@@ -23,6 +23,7 @@
                         Photo Card at the Examination Centre on the day of the Entrance Examination.<br/>
                         7.For inquiries and support, please call <b><a href="tel:08113856079">08113856079</a></b> or email:
                         <b><a href="mailto:support@dcss.sch.ng">support@dcss.sch.ng</a></b> or <b><a href="mail:to">commandentrance@gmail.com</a></b> <br/>
+                        <a href="{{ route('register') }}">Click here to enroll now</a>
 
                     </div>
                 </div>
@@ -121,7 +122,7 @@
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
-                APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2025/2026 IS OUT.
+                APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2025/2026 IS OUT.  <a href="{{ route('register') }}">CLICK HERE TO ENROLL NOW</a>
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a></marquee>
     </div>
