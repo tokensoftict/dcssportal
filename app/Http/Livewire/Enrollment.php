@@ -53,6 +53,7 @@ class Enrollment extends Component
     public String   $exam_state_id = "";
     public int $user_id = 0;
 
+    public $errorMessage = "";
 
     public Application $application;
 
@@ -181,6 +182,20 @@ class Enrollment extends Component
 
             $this->passport = url('/'.$this->application->passport_path);
 
+        }
+
+    }
+
+    public function updated($property)
+    {
+        try {
+            $this->validateOnly($property, [
+                'passport' => ['file', 'mimes:jpg,jpeg', 'image', 'max:2048']
+            ]);
+            $this->errorMessage = null; // Clear error if valid
+        }  catch (\Illuminate\Validation\ValidationException $e) {
+            $this->passport = null; // Reset file input
+            $this->errorMessage = "Invalid file. Please upload an image with jpg or jpeg extension";
         }
 
     }

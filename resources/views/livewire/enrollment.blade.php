@@ -44,12 +44,16 @@
                             <img id="frame"  src="{{ $this->passport !== NULL ? (is_string($this->passport) ? $this->passport : $this->passport->temporaryUrl()) : "https://dcss.sch.ng/asset/images/defaultavatar.jpg" }}"  style="width:100%;height:auto;" class="img-fluid img-thumbnail pull-right mt-5" alt="Passport">
                             <input class="form-control" style="width: 0;height: 0;padding: 0; margin: 0" type="file" wire:model="passport" name="passport" id="formFile" onchange="preview()">
                             <div wire:loading wire:target="passport">Uploading...</div>
+                            @if ($errors->has('passport'))
+                                <div class="text-red-3 d-block">{{ $errors->first('passport') }}</div>
+                            @endif
+                            @if ($this->errorMessage != "")
+                                <div class="text-red-3 d-block">{{ $this->errorMessage }}</div>
+                            @endif
                             <button type="button" onclick="formFile.click()" class="button -icon -purple-1 text-white pull-right mt-15">Upload</button>
 
 
-                            @if ($errors->has('passport'))
-                                <span class="text-red-3">{{ $errors->first('passport') }}</span>
-                            @endif
+
                         </div>
                     </div>
                     <div class="row">
