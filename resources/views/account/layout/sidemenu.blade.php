@@ -95,6 +95,14 @@
                     @endif
                     @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin())
                         <div class="sidebar__item">
+                            <a  href="{{ route('administrator.payment_report') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-bar-chart mr-15"></i>
+                                Payment Reports
+                            </a>
+                        </div>
+                    @endif
+                    @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin())
+                        <div class="sidebar__item">
                             <a  href="{{ route('administrator.reports') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                                 <i class="text-20 icon-bar-chart mr-15"></i>
                                 Reports
@@ -133,22 +141,22 @@
                             </a>
                         </div>
                     @endif
-                        @if(auth()->user()->isAdmin())
-                            <div class="sidebar__item">
-                                <a  href="{{ route('administrator.upload_candidate') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                                    <i class="text-20 icon-cloud mr-15"></i>
-                                    Upload Candidate
-                                </a>
-                            </div>
-                        @endif
-                        @if(auth()->user()->isAdmin())
-                            <div class="sidebar__item">
-                                <a  href="{{ route('administrator.upload_candidate_get_information') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
-                                    <i class="text-20 icon-cloud mr-15"></i>
-                                    Upload And Get Information
-                                </a>
-                            </div>
-                        @endif
+                    @if(auth()->user()->isAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.upload_candidate') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-cloud mr-15"></i>
+                                Upload Candidate
+                            </a>
+                        </div>
+                    @endif
+                    @if(auth()->user()->isAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.upload_candidate_get_information') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-cloud mr-15"></i>
+                                Upload And Get Information
+                            </a>
+                        </div>
+                    @endif
                     @if(auth()->user()->isAdmin())
                         <div class="sidebar__item">
                             <a  href="{{ route('administrator.new_user') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">

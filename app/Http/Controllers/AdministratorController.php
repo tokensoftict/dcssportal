@@ -134,4 +134,9 @@ class AdministratorController extends Controller
         return view('account.administrator.upload_candidate_get_information');
     }
 
+    public function payment_report()
+    {
+        return view('account.administrator.payment_report');
+    }
+
 }
