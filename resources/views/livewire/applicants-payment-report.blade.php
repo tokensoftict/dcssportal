@@ -46,6 +46,7 @@
                                 <th  class="text-center">Currency</th>
                                 <th  class="text-center">Gateway</th>
                                 <th  class="text-center">Date</th>
+                                <th  class="text-center">Status</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -60,6 +61,7 @@
                                     <td class="text-center">{{ $transaction->currency }}</td>
                                     <td class="text-center">{{ $transaction->gateway }}</td>
                                     <td class="text-center">{{ $transaction->created_at->toDateTimeString() }}</td>
+                                    <td class="text-center">Completed</td>
                                 </tr>
                             @endforeach
                             </tbody>
