@@ -7,11 +7,11 @@
 
                     <div >
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">From</label>
-                        <input required type="date" name="center" wire:model="from" class="text-16 lh-1 fw-500 text-dark-1 mb-10"/>
+                        <input required type="date" name="center" wire:model="from_date" class="text-16 lh-1 fw-500 text-dark-1 mb-10"/>
                     </div>
                     <div >
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">To</label>
-                        <input required type="date" name="center" wire:model="to" class="text-16 lh-1 fw-500 text-dark-1 mb-10"/>
+                        <input required type="date" name="center" wire:model="to_date" class="text-16 lh-1 fw-500 text-dark-1 mb-10"/>
                     </div>
 
                     <div>

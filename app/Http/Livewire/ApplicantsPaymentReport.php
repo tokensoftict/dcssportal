@@ -12,6 +12,8 @@ class ApplicantsPaymentReport extends Component
 {
     public $from, $to = "";
 
+    public $from_date, $to_date = "";
+
     public array $filter;
     public int $recordCount =0;
 
@@ -21,13 +23,17 @@ class ApplicantsPaymentReport extends Component
     {
         $this->from = now()->startOfWeek()->toDateTimeString();
         $this->to = now()->endOfWeek()->toDateTimeString();
+
+        $this->from_date = now()->startOfMonth()->format('Y-m-d');
+        $this->to_date = now()->endOfMonth()->format('Y-m-d');
     }
 
 
     public function viewReport()
     {
-        $this->from = (new Carbon($this->from))->startOfDay()->toDateTimeString();
-        $this->to = (new Carbon($this->to))->endOfDay()->toDateTimeString();
+        $this->from = (new Carbon($this->from_date))->startOfDay()->toDateTimeString();
+        $this->to = (new Carbon($this->to_date))->endOfDay()->toDateTimeString();
+
         $this->completedApplication = Transaction::query()->with('application')
             ->whereBetween("created_at", [$this->from, $this->to])
             ->where('status', '1')->orderBy('id', 'DESC')->get();
@@ -35,7 +41,7 @@ class ApplicantsPaymentReport extends Component
 
     public function generateReport()
     {
-        return Excel::download(new ApplicantPaymentReports([$this->from, $this->to]),  'payment_report.xlsx');
+        return Excel::download(new ApplicantPaymentReports([$this->from, $this->to]),  'payment_report-'.$this->from_date.'-'.$this->to_date.'.xlsx');
     }
 
     public function render()
