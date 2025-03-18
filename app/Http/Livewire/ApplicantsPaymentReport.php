@@ -31,6 +31,7 @@ class ApplicantsPaymentReport extends Component
 
     public function viewReport()
     {
+        ini_set('memory_limit', '-1');
         $this->from = (new Carbon($this->from_date))->startOfDay()->toDateTimeString();
         $this->to = (new Carbon($this->to_date))->endOfDay()->toDateTimeString();
 
@@ -41,6 +42,7 @@ class ApplicantsPaymentReport extends Component
 
     public function generateReport()
     {
+        ini_set('memory_limit', '-1');
         return Excel::download(new ApplicantPaymentReports([$this->from, $this->to]),  'payment_report-'.$this->from_date.'-'.$this->to_date.'.xlsx');
     }
 
