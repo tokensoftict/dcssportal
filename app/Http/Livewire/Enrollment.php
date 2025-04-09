@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Models\UserActivity;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -203,7 +204,7 @@ class Enrollment extends Component
     public function render()
     {
         return view('livewire.enrollment',[
-            'centers' => Center::where('state_id',$this->exam_state_id)->get(),
+            'centers' => $this->getCentersWithCandidateLessThan500(),
             'states' => State::query()->get(),
             'schoolTypes' => SchoolType::all(),
             'parental_statuses' => ParentalStatus::all(),
@@ -212,6 +213,13 @@ class Enrollment extends Component
         ]);
     }
 
+
+    private function getCentersWithCandidateLessThan500() : Collection
+    {
+       return Center::where('state_id',$this->exam_state_id)->get()->filter(function($center){
+           return Application::query()->where('center_id',$center->id)->count() < 500;
+        });
+    }
 
     public function processForm()
     {
