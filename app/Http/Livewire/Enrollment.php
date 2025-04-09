@@ -217,7 +217,7 @@ class Enrollment extends Component
     private function getCentersWithCandidateLessThan500() : Collection
     {
        return Center::where('state_id',$this->exam_state_id)->get()->filter(function($center){
-           return Application::query()->where('center_id',$center->id)->count() < 500;
+           return Application::query()->orWhereNotNull("exam_number")->where('center_id',$center->id)->count() < 500;
         });
     }
 
