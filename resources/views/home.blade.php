@@ -305,9 +305,11 @@
 
                           </h1>
                           <p data-anim-child="slide-up delay-3" class="mt-5">
+                              <!--
                               Application for Admission into Command Secondary Schools for 2025/2026 is out.
                               The online application for admission commences on Wednesday 5th February 2025 and closes Friday 13th June 2025
                               The entrance examination is scheduled for Saturday,21st June 2025 at all the designated examination centers nationwide.
+                              -->
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
@@ -366,6 +368,7 @@
 @endsection
 
 @section('top_news')
+    <!--
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
                 APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2025/2026 IS OUT <a href="{{ route('register') }}">CLICK HERE TO ENROLL NOW.</a>
@@ -373,6 +376,7 @@
  </span><span style="color: BLACK"></span></a>
         </marquee>
     </div>
+    -->
 @endsection
 
 @section('js')

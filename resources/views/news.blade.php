@@ -9,6 +9,7 @@
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-12 col-sm-8 offset-sm-2">
+                        <!--
                         <h2 class="text-center text-24 text-red-1">METHOD OF APPLICATION</h2>
                         1.   Interested Candidates are to visit the Directorate of Command
                         Schools Services [DCSS] admissions portal at <b><a href="https://www.dcss.sch.ng">https://www.dcss.sch.ng</a></b> .<br/>
@@ -24,7 +25,7 @@
                         7.For inquiries and support, please call <b><a href="tel:08113856079">08113856079</a></b> or email:
                         <b><a href="mailto:support@dcss.sch.ng">support@dcss.sch.ng</a></b> or <b><a href="mail:to">commandentrance@gmail.com</a></b> <br/>
                         <a href="{{ route('register') }}">Click here to enroll now</a>
-
+                        -->
                     </div>
                 </div>
               <!--
@@ -120,10 +121,12 @@
 
 
 @section('top_news')
+    <!--
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
                 APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2025/2026 IS OUT.  <a href="{{ route('register') }}">CLICK HERE TO ENROLL NOW</a>
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a></marquee>
     </div>
+    -->
 @endsection
