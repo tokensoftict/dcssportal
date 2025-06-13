@@ -305,11 +305,11 @@
 
                           </h1>
                           <p data-anim-child="slide-up delay-3" class="mt-5">
-                              <!--
+
                               Application for Admission into Command Secondary Schools for 2025/2026 is out.
-                              The online application for admission commences on Wednesday 5th February 2025 and closes Friday 13th June 2025
+                              The online application for admission commences on Sunday 5th February 2025 and closes Friday 15th June 2025
                               The entrance examination is scheduled for Saturday,21st June 2025 at all the designated examination centers nationwide.
-                              -->
+
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))

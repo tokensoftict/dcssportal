@@ -9,7 +9,7 @@
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-12 col-sm-8 offset-sm-2">
-                        <!--
+
                         <h2 class="text-center text-24 text-red-1">METHOD OF APPLICATION</h2>
                         1.   Interested Candidates are to visit the Directorate of Command
                         Schools Services [DCSS] admissions portal at <b><a href="https://www.dcss.sch.ng">https://www.dcss.sch.ng</a></b> .<br/>
@@ -25,7 +25,7 @@
                         7.For inquiries and support, please call <b><a href="tel:08113856079">08113856079</a></b> or email:
                         <b><a href="mailto:support@dcss.sch.ng">support@dcss.sch.ng</a></b> or <b><a href="mail:to">commandentrance@gmail.com</a></b> <br/>
                         <a href="{{ route('register') }}">Click here to enroll now</a>
-                        -->
+
                     </div>
                 </div>
               <!--
