@@ -18,6 +18,8 @@ class MakePayment extends Component
 
     public Application $application;
 
+    public bool $allow = false;
+
     public Session $session;
 
     public Transaction $transaction;
@@ -38,6 +40,14 @@ class MakePayment extends Component
     {
         $this->session = Session::where('status',1)->first();
         $this->transaction = new Transaction();
+        if(time() > strtotime($this->session->registration_begins) && time() < strtotime($this->session->registration_ends)) {
+            //if the registration is still on
+            $this->allow = true;
+        }
+
+        if(auth()->user()->isAdmin()) { // if the login user is and admin, they can make payment
+            $this->allow = true;
+        }
     }
 
     public function render()
