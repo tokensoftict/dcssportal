@@ -32,6 +32,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
                     "Exam Numbers Not Found" => $row['exam_number'],
                     "Exam Numbers Duplicate" => ""
                 ];
+                continue;
             }
 
             $candidate = CandidateQualifiedInterview::where('exam_number',  $application->exam_number)->first();
