@@ -38,11 +38,11 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
                             'score' => empty($row['score']) ? 0 : $row['score'],
                             'application_id' => $app->id
                         ]);
+                }else{
+                    $this->notFound[] = [
+                        "Exam Numbers" => $row['exam_number']
+                    ];
                 }
-            }else{
-                $this->notFound[] = [
-                    "Exam Numbers" => $row['exam_number']
-                ];
             }
         }
     }
