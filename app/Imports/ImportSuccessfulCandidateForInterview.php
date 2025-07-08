@@ -27,6 +27,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
             $applicationID = (int)$examNumber;
 
             $application = Application::find($applicationID);
+            if(is_null( $application->exam_number))   continue;
             if(!$application) {
                 $this->notFound[$i] = [
                     "Exam Numbers Not Found" => $row['exam_number'],
@@ -41,9 +42,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
 
                 $app = Application::where('exam_number', $application->exam_number)->exists();
 
-                if(is_null( $application->exam_number)) {
-                    dd($row, $application);
-                }
+
 
                 if($app) {
                     $this->examNumbers[] =  $application->exam_number;
