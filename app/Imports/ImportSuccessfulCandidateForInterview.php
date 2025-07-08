@@ -42,7 +42,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
                 $app = Application::where('exam_number', $application->exam_number)->exists();
 
                 if(is_null( $application->exam_number)) {
-                    dd($row);
+                    dd($row, $application);
                 }
 
                 if($app) {
