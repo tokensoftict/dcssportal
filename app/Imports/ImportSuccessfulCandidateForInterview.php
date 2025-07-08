@@ -19,7 +19,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
     public function collection(Collection $collection)
     {
         foreach ($collection as $row){
-
+            if(empty($row['exam_number'])) continue;
             $examNumber = $row['exam_number'];
             $examNumber = substr($examNumber, 2);
             $applicationID = (int)$examNumber;
