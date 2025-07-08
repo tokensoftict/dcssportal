@@ -20,11 +20,17 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
     {
         foreach ($collection as $row){
 
-            $candidate = CandidateQualifiedInterview::where('exam_number', strtoupper(trim($row['exam_number'])))->first();
+            $examNumber = $row['exam_number'];
+            $examNumber = substr($examNumber, 2);
+            $applicationID = (int)$examNumber;
+
+            $application = Application::find($applicationID);
+
+            $candidate = CandidateQualifiedInterview::where('exam_number',  $application->exam_number)->first();
 
             if(!$candidate) {
 
-                $app = Application::where('exam_number', strtoupper(trim($row['exam_number'])))->first();
+                $app = Application::where('exam_number', $application->exam_number)->first();
 
                 if($app) {
                     $this->examNumbers[] = trim(strtoupper($row['exam_number']));
