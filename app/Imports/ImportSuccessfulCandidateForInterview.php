@@ -18,6 +18,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
      */
     public function collection(Collection $collection)
     {
+        $i = 0;
         foreach ($collection as $row){
             if(empty($row['exam_number'])) continue;
             $examNumber = $row['exam_number'];
@@ -45,11 +46,18 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
                             'application_id' => $app->id
                         ]);
                 }else{
-                    $this->notFound[] = [
-                        "Exam Numbers" => $row['exam_number']
+                    $this->notFound[$i] = [
+                        "Exam Numbers Not Found" => $row['exam_number'],
+                        "Exam Numbers Duplicate" => ""
                     ];
                 }
+            } else {
+                $this->notFound[$i] = [
+                    "Exam Numbers Not Found" => "",
+                    "Exam Numbers Duplicate" => $row['exam_number']
+                ];
             }
+            $i++;
         }
     }
 
