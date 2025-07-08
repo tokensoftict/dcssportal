@@ -27,7 +27,7 @@ class ExportSuccessfulCandidateInformation implements FromCollection, WithHeadin
         foreach ($applications as $application){
             $data[] = [
                 'Exam Number' => $application->exam_number,
-                'Score' => $this->examScores[strtoupper($application->exam_number)],
+                'Score' => isset($this->examScores[strtoupper($application->exam_number)]) ? $this->examScores[strtoupper($application->exam_number)] : "",
                 'Surname' => $application->surname,
                 'Firstname' => $application->firstname,
                 'Othernames' => $application->othernames,
