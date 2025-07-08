@@ -35,7 +35,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
                         ],
                         [
                             'exam_number' =>strtoupper($row['exam_number']),
-                            'score' => $row['score'],
+                            'score' => empty($row['score']) ? 0 : $row['score'],
                             'application_id' => $app->id
                         ]);
                 }
