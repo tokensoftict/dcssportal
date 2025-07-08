@@ -41,6 +41,10 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
 
                 $app = Application::where('exam_number', $application->exam_number)->exists();
 
+                if(is_null( $application->exam_number)) {
+                    dd($row);
+                }
+
                 if($app) {
                     $this->examNumbers[] =  $application->exam_number;
                     $this->scores[$application->exam_number] =  $row['score'];
