@@ -23,6 +23,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
             if(empty($row['exam_number'])) continue;
             $examNumber = $row['exam_number'];
             $examNumber = substr($examNumber, 2);
+            $examNumber = substr($examNumber, 0, -2);
             $applicationID = (int)$examNumber;
 
             $application = Application::find($applicationID);
