@@ -25,7 +25,7 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
             $examNumber = substr($examNumber, 2);
             $applicationID = (int)$examNumber;
 
-            $application = Application::find($applicationID);
+            $application = Application::findorfail($applicationID);
 
             $candidate = CandidateQualifiedInterview::where('exam_number',  $application->exam_number)->first();
 
