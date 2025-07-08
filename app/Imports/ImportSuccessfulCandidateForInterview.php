@@ -28,7 +28,10 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
 
             $application = Application::find($applicationID);
             if(!$application) {
-                throw new \Exception('Application not found '. $applicationID. "    ".$row['exam_number']);
+                $this->notFound[$i] = [
+                    "Exam Numbers Not Found" => $row['exam_number'],
+                    "Exam Numbers Duplicate" => ""
+                ];
             }
 
             $candidate = CandidateQualifiedInterview::where('exam_number',  $application->exam_number)->first();
