@@ -39,21 +39,21 @@ class ImportSuccessfulCandidateForInterview implements ToCollection, WithHeading
 
             if(!$candidate) {
 
-                $app = Application::where('exam_number', $application->exam_number)->first();
+                $app = Application::where('exam_number', $application->exam_number)->exists();
 
                 if($app) {
-                    $this->examNumbers[] = trim(strtoupper($row['exam_number']));
-                    $this->scores[strtoupper($row['exam_number'])] =  $row['score'];
+                    $this->examNumbers[] =  $application->exam_number;
+                    $this->scores[$application->exam_number] =  $row['score'];
                     CandidateQualifiedInterview::updateOrCreate(
                         [
-                            'exam_number' => strtoupper($row['exam_number']),
+                            'exam_number' => $application->exam_number,
                         ],
                         [
-                            'exam_number' =>strtoupper($row['exam_number']),
+                            'exam_number' => $application->exam_number,
                             'score' => empty($row['score']) ? 0 : $row['score'],
-                            'application_id' => $app->id
+                            'application_id' => $application->id
                         ]);
-                }else{
+                } else {
                     $this->notFound[$i] = [
                         "Exam Numbers Not Found" => $row['exam_number'],
                         "Exam Numbers Duplicate" => ""
