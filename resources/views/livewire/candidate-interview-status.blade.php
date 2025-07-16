@@ -9,7 +9,7 @@
 
             @if($showSuccess)
             <div class="alert alert-success mt-4" role="alert">
-                <h5 class="text-green-5">Congratulation ! {{ $successMessage }}</h5>
+                <p class="text-green-5 text-light-12">Congratulation ! {!! $successMessage !!}</p>
             </div>
             <!--
                 <a target="new" href="{{ route('account.download_photocard', $this->info['id']) }}">Download Photo-card</a>

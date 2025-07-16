@@ -9,11 +9,11 @@
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="text-center text-24 text-red-1">LIST OF SUCCESSFUL CANDIDATES FOR INTERVIEW - 2024/2025 SESSION </h2>
+                        <h2 class="text-center text-24 text-red-1">LIST OF SUCCESSFUL CANDIDATES - 2025/2026 SESSION </h2>
                         <div class="row mt-4">
                             <div class="col-lg-12 col-12">
                                 <br/>
-                                <h6 class="text-center text-17 text-blue-1 text-center">CHECK INTERVIEW STATUS</h6>
+                                <h6 class="text-center text-17 text-blue-1 text-center">CHECK STATUS</h6>
                                     <livewire:candidate-interview-status/>
                                 <br/>
                             </div>

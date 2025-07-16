@@ -4,12 +4,13 @@
 @section('content')
 
 
- <section data-anim-wrap class="masthead -type-5 mt-50">
+    <section data-anim-wrap class="masthead -type-5 mt-50">
+        <!--
         <div class="pl-45 pr-30" style="height: 80vh">
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-12 col-sm-8 offset-sm-2">
-<!--
+
                         <h2 class="text-center text-24 text-red-1">METHOD OF APPLICATION</h2>
                         1.   Interested Candidates are to visit the Directorate of Command
                         Schools Services [DCSS] admissions portal at <b><a href="https://www.dcss.sch.ng">https://www.dcss.sch.ng</a></b> .<br/>
@@ -25,108 +26,119 @@
                         7.For inquiries and support, please call <b><a href="tel:08113856079">08113856079</a></b> or email:
                         <b><a href="mailto:support@dcss.sch.ng">support@dcss.sch.ng</a></b> or <b><a href="mail:to">commandentrance@gmail.com</a></b> <br/>
                         <a href="{{ route('register') }}">Click here to enroll now</a>
--->
+
                     </div>
                 </div>
-              <!--
-                <div class="row">
 
-                    <div class="col-8 offset-2">
-                        <h2 class="text-center text-24 text-red-1">RELEASE OF 2024/2025 COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT</h2>
-                        <h4 class="text-center"></h4>
-                        <br/>
-                        <br/>
-                        <p class="text-17 text-center">Successful candidates are requested to report at their schools of choice with the following documents to collect their admission letters:</p>
-                    </div>
+    -->
 
-                    <div class="col-8 offset-2 text-center text-17" align="left">
-                        <br/>
-                        <br/>
-                        <b>Military Personnel’s Children</b> <br/>
 
-                        (1)	Entrance examination photo card.<br/>
-                        (2)	Photocopy of parent’s Military ID card.<br/>
-                        (3)	Letter of identification from parent’s unit.<br/>
-                        (4)	Birth Certificate or sworn declaration of age.<br/>
-                        (5)	Part 2/3 orders publishing candidates’ birth.<br/>
-                        (6)	Primary School Testimonial/First School Leaving Certificate.<br/>
+        <div class="row">
 
-                        <b>Civilians’ Children</b><br/>
-                        (1)	Entrance examination photo card.<br/>
-                        (2)	Birth Certificate or sworn declaration of age.<br/>
-                        (3)	Primary School Testimonial/First School Leaving Certificate.<br/>
-
-                    </div>
-                    <div class="col-8 offset-2">
-                        <p>Furthermore, other requirements will be made available to parents during the collection of admission letters. Admission letters must be collected on or before 30 Sep 24, as admission letters not collected by the dateline will be forfeited and substituted with candidates on the waiting list.</p>
-                        <br/>
-                        <p class="text-right"><b>Directorate of Command Schools Services.</b></p>
-                    </div>
-
-                </div>
-            -->
-
+            <div class="col-8 offset-2">
+                <h2 class="text-center text-24 text-red-1">RELEASE OF 2025/2026 COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT</h2>
+                <p class="text-center">
+                    This is to announce the release of the results of the Common Entrance Examination held on Saturday, 21 June 2025, for admission into Junior Secondary Schools (JSS1) in Command Secondary Schools for the 2025/2026 Academic Session.<br/> The Final Selection Interview for the successful candidates is scheduled to be held from Wednesday, 6 – Friday, 8 August 2025 in all Command Secondary Schools nationwide. <br/>Candidates are advised to check at their various schools of choice and the Divisions of Education Services at all Nigerian Army Division Headquarters. Successful candidates are requested to report to their various interview centres with the following items:
+                </p>
             </div>
-        </div>
-          </section>
 
-<!--
-    <section data-anim-wrap class="masthead -type-5 mt-50">
-
-        <div class="pl-45 pr-30">
-            <div class="row y-gap-50 items-center">
-                <div class="row">
-                    <div class="col-lg-7  offset-lg-3 col-12">
-                        <h2 class="text-center text-24 text-red-1"></h2>
-                        <p>
-                            Please be informed that the result of the Command Secondary Schools Selection Interview for admission of candidates into JSS 1 2023/2024 Academic Session is out. Successful candidates are requested to check their names at the schools of choice and NA Divisional Education Services nationwide.
-                        </p>
-                        <p>    In view of the above, successful candidates are requested to come along with the underlisted items for registration as follows:</p>
-                        <div class="mt-2 col-12">
-                            <b> a. Military Personnel’s Children</b><br/>
-
-                            (1) Entrance examination photo card.<br/>
-
-                            (2) Photocopy of parent’s Military ID card.<br/>
-
-                            (3) Letter of identification from parent’s unit.<br/>
-
-                            (4) Birth Certificate or sworn declaration of age.<br/>
-
-                            (5) Part 2/3 Orders publishing the candidate’s birth.<br/>
-
-                            (6) Primary School Testimonial/First School Leaving Certificate<br/>
-
-                           <br/>
+            <div class="col-8 offset-2 text-center text-17" align="left">
+                <br/>
+                <b>Military Personnel’s Children</b> <br/>
+                <ol>
+                    <li>1. Entrance examination photo card.</li>
+                    <li>2. Photocopy of parents’ Military ID card.</li>
+                    <li>3. Original letter of identification from parents’ unit.</li>
+                    <li>4. Birth Certificate or sworn declaration of age.</li>
+                    <li>5. Part 2/3 Orders publishing the candidate’s birth.</li>
+                    <li>6. Primary School Testimonial.</li>
+                    <li>7. Writing Materials.</li>
+                    <li>8. File Jacket.</li>
+                    <li>9. Children of discharged personnel are to present photocopy of parents discharge certificates and original letter of identification from a military unit certifying that he/she is a bonafide biological child of the deceased personnel.</li>
+                </ol>
 
 
-                            <b> b. Civilians’ Children</b><br/>
+                <b>Civilians’ Children</b><br/>
+                <ul>
+                    <li>1. Entrance examination photo card.</li>
+                    <li>2. Birth Certificate or sworn declaration of age.</li>
+                    <li>3. Primary School Testimonial.</li>
+                    <li>4. Writing Materials.</li>
+                    <li>5. File Jacket.</li>
+                </ul>
+                <br/>
+                <p class="text-center">
+                    Candidates who fail to provide documents listed in paragraph 1a (1-9) are to be interviewed as children of civilians. In addition, all candidates are required to pay a non-refundable interview fee of <b>Two Thousand Naira (N2,500.00)</b> at their designated centres.
+                </p>
 
-                            (1) Entrance examination photo card.<br/>
-
-                            (2) Birth Certificate or sworn declaration of age.<br/>
-
-                            (3) Primary School Testimonial/First School Leaving Certificate<br/>
-
-                        </div>
-                        <br/>
-                        <p><b>Please note that other requirements will be made available by the school during the registration exercise which is expected to commence immediately.</b></p>
-                    </div>
-                </div>
+                <a href="{{ route('candidates') }}">Click here for list of successful candidates</a>
             </div>
+
+
+
         </div>
+
+
+
     </section>
--->
+
+    <!--
+
+        <section data-anim-wrap class="masthead -type-5 mt-50">
+
+            <div class="pl-45 pr-30">
+                <div class="row y-gap-50 items-center">
+                    <div class="row">
+                        <div class="col-lg-7  offset-lg-3 col-12">
+                            <h2 class="text-center text-24 text-red-1"></h2>
+                            <p>
+                                Please be informed that the result of the Command Secondary Schools Selection Interview for admission of candidates into JSS 1 2023/2024 Academic Session is out. Successful candidates are requested to check their names at the schools of choice and NA Divisional Education Services nationwide.
+                            </p>
+                            <p>    In view of the above, successful candidates are requested to come along with the underlisted items for registration as follows:</p>
+                            <div class="mt-2 col-12">
+                                <b> a. Military Personnel’s Children</b><br/>
+
+                                (1) Entrance examination photo card.<br/>
+
+                                (2) Photocopy of parent’s Military ID card.<br/>
+
+                                (3) Letter of identification from parent’s unit.<br/>
+
+                                (4) Birth Certificate or sworn declaration of age.<br/>
+
+                                (5) Part 2/3 Orders publishing the candidate’s birth.<br/>
+
+                                (6) Primary School Testimonial/First School Leaving Certificate<br/>
+
+                               <br/>
+
+
+                                <b> b. Civilians’ Children</b><br/>
+
+                                (1) Entrance examination photo card.<br/>
+
+                                (2) Birth Certificate or sworn declaration of age.<br/>
+
+                                (3) Primary School Testimonial/First School Leaving Certificate<br/>
+
+                            </div>
+                            <br/>
+                            <p><b>Please note that other requirements will be made available by the school during the registration exercise which is expected to commence immediately.</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    -->
 @endsection
 
 
 @section('top_news')
-    <!--
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
-                APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2025/2026 IS OUT.  <a href="{{ route('register') }}">CLICK HERE TO ENROLL NOW</a>
+                COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT 2025/2026 IS OUT <a href="{{ route('news') }}">CLICK HERE TO READ MORE.</a>
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
- </span><span style="color: BLACK"></span></a></marquee>
+ </span><span style="color: BLACK"></span></a>
+        </marquee>
     </div>
-    -->
 @endsection

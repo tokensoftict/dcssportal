@@ -9,8 +9,9 @@
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="text-center text-24 text-red-1"></h2>
-                        <div class="row mt-4">
+                        <h2 class="text-center text-24 text-red-1">2025/2026 COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT.</h2>
+                        <br/>
+                        <div class="row mt-2">
                             <div class="col-lg-4 col-12">
                                 <h6 class="text-center text-17 text-red-1">COMMAND DAY SECONDARY SCHOOL LISTS</h6>
                                 <br/>
@@ -91,11 +92,11 @@
 
 
 @section('top_news')
-    <!--
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
+                COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT 2025/2026 IS OUT <a href="{{ route('news') }}">CLICK HERE TO READ MORE.</a>
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
- </span><span style="color: BLACK"></span></a></marquee>
+ </span><span style="color: BLACK"></span></a>
+        </marquee>
     </div>
-    ->>
 @endsection
