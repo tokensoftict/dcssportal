@@ -116,37 +116,6 @@ class HomeController extends Controller
             if (preg_match('~\.pdf$~', $filename)) {
                 $filename = str_replace('.pdf', '', $filename);
 
-                if(str_starts_with($filename, 'SUP CDSS')){
-                    $cdss[] = [
-                        'name' =>  str_replace('SUP CDSS', 'SUPPLEMENTARY COMMAND DAY SECONDARY SCHOOL ', $filename),
-                        'url' => $file_url
-                    ];
-                }
-
-
-                if(str_starts_with($filename, 'SUP CSS')){
-                    $css[] = [
-                        'name' => str_replace('SUP CSS', 'SUPPLEMENTARY COMMAND SECONDARY SCHOOL ', $filename),
-                        'url' => $file_url
-                    ];
-                }
-
-                if(str_starts_with($filename, 'SUP CSSS')){
-                    $csss[] = [
-                        'name' => str_replace('SUP CSSS', 'SUPPLEMENTARY COMMAND SCIENCE SECONDARY SCHOOL ', $filename),
-                        'url' => $file_url
-                    ];
-                }
-
-                if(str_starts_with($filename, 'SUP CSTSS')){
-                    $csss[] = [
-                        'name' => str_replace('SUP CSTSS', 'SUPPLEMENTARY COMMAND SCIENCE AND TECHNICAL SECONDARY SCHOOL ', $filename),
-                        'url' => $file_url
-                    ];
-                }
-
-
-
                 if(str_starts_with($filename, 'CSS')){
                     $css[] = [
                         'name' => str_replace('CSS', 'COMMAND SECONDARY SCHOOL ', $filename),
@@ -168,12 +137,44 @@ class HomeController extends Controller
                     ];
                 }
 
-                if(str_starts_with($filename, 'CDSS')){
+                if(str_starts_with($filename, 'CDSS')) {
                     $cdss[] = [
                         'name' =>  str_replace('CDSS', 'COMMAND DAY SECONDARY SCHOOL ', $filename),
                         'url' => $file_url
                     ];
                 }
+
+
+                if(str_starts_with($filename, 'SUP CDSS')) {
+                    $cdss[] = [
+                        'name' =>  str_replace('SUP CDSS', 'SUPPLEMENTARY COMMAND DAY SECONDARY SCHOOL ', $filename),
+                        'url' => $file_url
+                    ];
+                }
+
+
+                if(str_starts_with($filename, 'SUP CSS')){
+                    $css[] = [
+                        'name' => str_replace('SUP CSS', 'SUPPLEMENTARY COMMAND SECONDARY SCHOOL ', $filename),
+                        'url' => $file_url
+                    ];
+                }
+
+                if(str_starts_with($filename, 'SUP -CSSS')){
+                    $csss[] = [
+                        'name' => str_replace('SUP -CSSS', 'SUPPLEMENTARY COMMAND SCIENCE SECONDARY SCHOOL ', $filename),
+                        'url' => $file_url
+                    ];
+                }
+
+                if(str_starts_with($filename, 'SUP CSTSS')){
+                    $csss[] = [
+                        'name' => str_replace('SUP CSTSS', 'SUPPLEMENTARY COMMAND SCIENCE AND TECHNICAL SECONDARY SCHOOL ', $filename),
+                        'url' => $file_url
+                    ];
+                }
+
+
 
 
             }
