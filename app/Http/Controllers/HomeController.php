@@ -118,20 +118,13 @@ class HomeController extends Controller
 
                 if(str_starts_with($filename, 'SUP CDSS')){
                     $cdss[] = [
-                        'name' =>  str_replace('CDSS', 'SUPPLEMENTARY COMMAND DAY SECONDARY SCHOOL ', $filename),
+                        'name' =>  str_replace('SUP CDSS', 'SUPPLEMENTARY COMMAND DAY SECONDARY SCHOOL ', $filename),
                         'url' => $file_url
                     ];
                 }
 
 
-                if(str_starts_with($filename, 'CSS')){
-                    $css[] = [
-                        'name' => str_replace('SUP CSS', 'SUPPLEMENTARY COMMAND SECONDARY SCHOOL ', $filename),
-                        'url' => $file_url
-                    ];
-                }
-
-                if(str_starts_with($filename, 'CSS')){
+                if(str_starts_with($filename, 'SUP CSS')){
                     $css[] = [
                         'name' => str_replace('SUP CSS', 'SUPPLEMENTARY COMMAND SECONDARY SCHOOL ', $filename),
                         'url' => $file_url
