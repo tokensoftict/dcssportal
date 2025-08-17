@@ -11,11 +11,11 @@
         <li>
             <a data-barba href="{{ route("news") }}" style="font-weight: bolder">HOW TO APPLY</a>
         </li>
--->
+
         <li>
             <a href="{{ route('candidates') }}" style="font-weight: bolder">LIST OF SUCCESSFUL CANDIDATES</a>
         </li>
-        <!--
+
         <li>
             <a data-barba href="{{ route("interview-status") }}" style="font-weight: bolder">SUCCESSFUL CANDIDATES</a>
         </li>

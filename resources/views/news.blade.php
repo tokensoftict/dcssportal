@@ -4,7 +4,7 @@
 @section('content')
 
 
-    <section data-anim-wrap class="masthead -type-5 mt-50">
+    <section data-anim-wrap class="masthead -type-5 mt-50" style="height: 90vh">
         <!--
         <div class="pl-45 pr-30" style="height: 80vh">
             <div class="row y-gap-50 items-center">
@@ -33,50 +33,6 @@
     -->
 
 
-        <div class="row">
-
-            <div class="col-8 offset-2">
-                <h2 class="text-center text-24 text-red-1">RELEASE OF 2025/2026 COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT</h2>
-                <p class="text-center">
-                    This is to announce the release of the results of the Common Entrance Examination held on Saturday, 21 June 2025, for admission into Junior Secondary Schools (JSS1) in Command Secondary Schools for the 2025/2026 Academic Session.<br/> The Final Selection Interview for the successful candidates is scheduled to be held from Wednesday, 6 – Friday, 8 August 2025 in all Command Secondary Schools nationwide. <br/>Candidates are advised to check at their various schools of choice and the Divisions of Education Services at all Nigerian Army Division Headquarters. Successful candidates are requested to report to their various interview centres with the following items:
-                </p>
-            </div>
-
-            <div class="col-8 offset-2 text-center text-17" align="left">
-                <br/>
-                <b>Military Personnel’s Children</b> <br/>
-                <ol>
-                    <li>1. Entrance examination photo card.</li>
-                    <li>2. Photocopy of parents’ Military ID card.</li>
-                    <li>3. Original letter of identification from parents’ unit.</li>
-                    <li>4. Birth Certificate or sworn declaration of age.</li>
-                    <li>5. Part 2/3 Orders publishing the candidate’s birth.</li>
-                    <li>6. Primary School Testimonial.</li>
-                    <li>7. Writing Materials.</li>
-                    <li>8. File Jacket.</li>
-                    <li>9. Children of discharged personnel are to present photocopy of parents discharge certificates and original letter of identification from a military unit certifying that he/she is a bonafide biological child of the deceased personnel.</li>
-                </ol>
-
-
-                <b>Civilians’ Children</b><br/>
-                <ul>
-                    <li>1. Entrance examination photo card.</li>
-                    <li>2. Birth Certificate or sworn declaration of age.</li>
-                    <li>3. Primary School Testimonial.</li>
-                    <li>4. Writing Materials.</li>
-                    <li>5. File Jacket.</li>
-                </ul>
-                <br/>
-                <p class="text-center">
-                    Candidates who fail to provide documents listed in paragraph 1a (1-9) are to be interviewed as children of civilians. In addition, all candidates are required to pay a non-refundable interview fee of <b>Two Thousand Naira (N2,500.00)</b> at their designated centres.
-                </p>
-
-                <a href="{{ route('candidates') }}">Click here for list of successful candidates</a>
-            </div>
-
-
-
-        </div>
 
 
 
@@ -135,10 +91,12 @@
 
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
+        <!--
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
                 COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT 2025/2026 IS OUT <a href="{{ route('news') }}">CLICK HERE TO READ MORE.</a>
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a>
         </marquee>
+        -->
     </div>
 @endsection

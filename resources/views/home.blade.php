@@ -309,11 +309,12 @@
                           <h1 data-anim-child="slide-up delay-2" class="masthead__title">
 
                           </h1>
+                          <!--
                           <p data-anim-child="slide-up delay-3" class="mt-5">
                               This is to announce the release of the results of the Common Entrance Examination held on Saturday, 21 June 2025, for admission into Junior Secondary Schools (JSS1) in Command Secondary Schools for the 2025/2026 Academic Session.
                               <a href="{{ route('news') }}">Click here to read more</a>
                           </p>
-
+                            -->
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
                               <div data-anim-child="slide-up delay-4" class="row items-center x-gap-20 y-gap-20 pt-20">
                                   <div class="col-auto">
@@ -372,11 +373,13 @@
 @section('top_news')
 
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
+        <!--
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
                 COMMAND SECONDARY SCHOOLS COMMON ENTRANCE EXAMINATION RESULT 2025/2026 IS OUT <a href="{{ route('news') }}">CLICK HERE TO READ MORE.</a>
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a>
         </marquee>
+        -->
     </div>
 
 @endsection
