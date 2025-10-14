@@ -123,6 +123,31 @@ class ApplicantExport implements FromCollection, WithHeadings
 
     public function headings(): array
     {
-        return array_keys($this->data[0]);
+        return [
+            "Surname",
+            "First Name",
+            "Other Names",
+            "Exam Number",
+            "Gender",
+            "Age",
+            "Telephone",
+            "Email Address" ,
+            "Address" ,
+            "Parental Status" ,
+            "Parent Names" ,
+            "Rank" ,
+            "SVC" ,
+            "SVC Number" ,
+            "Retired Number" ,
+            "Date of Birth" ,
+            "Unit Information",
+            "School Type First Choice",
+            "School First Choice" ,
+            "School Type Second Choice",
+            "School Second Choice",
+            "State of Origin",
+            "Exam State" ,
+            "Exam Center"  ,
+        ];
     }
 }
