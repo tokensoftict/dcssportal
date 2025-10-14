@@ -108,7 +108,11 @@ class ApplicantsReport extends Component
 
         $filter = $this->runFilter();
 
-        $center = Center::find( $this->center)->name;
+        if($this->center != "") {
+            $center = Center::find($this->center)->name;
+        } else {
+            $center = "all_".date("Y")."_report";
+        }
 
         return Excel::download(new ApplicantExport($filter),  $center.'.xlsx');
     }
