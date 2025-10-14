@@ -113,7 +113,7 @@ class ApplicantsReport extends Component
         } else {
             $center = "all_".date("Y")."_report";
         }
-dd($center);
+
         return Excel::download(new ApplicantExport($filter),  $center.'.xlsx');
     }
 
