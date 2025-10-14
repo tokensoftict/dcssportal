@@ -8,7 +8,7 @@
                         @if(in_array('centers',$this->filter))
                             <div >
                                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Select Centers</label>
-                                <select required name="center" wire:model="center" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                <select  name="center" wire:model="center" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
                                     <option value="">Select Center</option>
                                     @foreach($this->centers as $center_)
                                         <option value="{{ $center_->id }}">{{ $center_->name }}</option>
@@ -19,7 +19,7 @@
                         @if(in_array('schools',$this->filter))
                             <div>
                                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">School First Choice</label>
-                                <select required name="school" wire:model="school" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                <select  name="school" wire:model="school" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
                                     <option value="">Select School</option>
                                     @foreach($this->schools as $school_)
                                         <option value="{{ $school_->id }}">{{ $school_->name }}</option>
@@ -30,7 +30,7 @@
                         @if(in_array('status',$this->filter))
                             <div>
                                 <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Payment Status</label>
-                                <select required  name="payment_status" wire:model="payment_status" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                <select   name="payment_status" wire:model="payment_status" class="text-16 lh-1 fw-500 text-dark-1 mb-10">
                                     <option value="">Select Payment Status</option>
                                     @foreach($this->statuses as $key=>$sta)
                                         <option value="{{ $key }}">{{ $sta }}</option>
