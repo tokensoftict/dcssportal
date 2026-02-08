@@ -34,6 +34,7 @@
                                 <div class="col-lg-6 mt-lg-0 mt-2">
                                     <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Email address *</label>
                                     <input type="email" requireds wire:model.defer="email" name="email" value="{{ old('email',"") }}" placeholder="Email Address">
+                                    <span class="text-red-3" style="font-size:10px; font-weight: bolder">Please note that this email address will be verified. Kindly enter a working email address.</span>
                                     @if ($errors->has('email'))
                                         <span class="text-red-3">{{ $errors->first('email') }}</span>
                                     @endif

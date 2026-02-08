@@ -79,7 +79,7 @@ class UsersTableSeeder extends Seeder
                     "phone" => "09099898745",
                     "password" => '$2y$10$MlNRl1GYMpNdInWnY.e2PuK.3GauXdrrYv5XpSN9LpiuOfsXhSPzu',
                     "email" => "ayshamustapha99@gmail.com",
-                    "email_verified_at" => NULL,
+                    "email_verified_at" => Carbon::now(),
                 ]
             ]);
     }

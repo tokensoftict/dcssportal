@@ -19,9 +19,23 @@ Route::get('/', ['as'=>'index',"uses"=>'HomeController@index']);
 
 Route::get('/login', ['as'=>'login',"uses"=>'HomeController@login']);
 
+
+//Password Reset Routes
+Route::get('account/password/reset', ['as'=>'password.request',"uses"=>'HomeController@forgetPassword']);
+Route::post('account/password/email', ['as'=>'password.email',"uses"=>'HomeController@sendResetLinkEmail']);
+Route::get('account/password/reset/{token}', ['as'=>'password.reset',"uses"=>'HomeController@showResetForm']);
+Route::post('account/password/reset/login', ['as'=>'password.update',"uses"=>'HomeController@restPassword']);
+
+//Email Verification Routes
+Route::get('/email/verify', ['as'=>'verification.notice',"uses"=>'HomeController@emailVerification'])->middleware('auth');
+Route::post('/email/verification-notification', ['as'=>'verification.send',"uses"=>'HomeController@resend'])->middleware('throttle:6,1');
+Route::get('/email/verify/{id}/{hash}', ['as'=>'verification.verify',"uses"=>'HomeController@verifyEmailAddress'])->middleware(['signed']);
+
+
 Route::get('/register', ['as'=>'register',"uses"=>'HomeController@register']);
 
 Route::get('/news', ['as'=>'news',"uses"=>'HomeController@news']);
+Route::get('/how-to-apply', ['as'=>'howtoapply',"uses"=>'HomeController@howtoapply']);
 
 Route::get('/contact', ['as'=>'contact',"uses"=>'HomeController@contact']);
 
@@ -45,7 +59,10 @@ Route::prefix("update")->as("update.")->group(function (){
 
 });
 
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['auth', 'verified']], function() {
+
+
+
 
     Route::prefix('account')->as('account.')->group(function () {
 
@@ -59,7 +76,6 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('{application}/print-photocard', ['as'=>'print_photocard',"uses"=>'AccountController@print_photocard']);
         Route::get('{application}/download-photocard', ['as'=>'download_photocard',"uses"=>'AccountController@download_photocard']);
         Route::get('{application}/download-payment-receipt', ['as'=>'download_payment_receipt',"uses"=>'AccountController@download_payment_receipt']);
-
         Route::get('{transaction}/download-payment-slip', ['as'=>'download_payment_slip',"uses"=>'AccountController@download_payment_slip']);
     });
 

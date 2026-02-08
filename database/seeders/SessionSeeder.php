@@ -16,8 +16,8 @@ class SessionSeeder extends Seeder
      */
     public function run()
     {
-        $opening_date = Carbon::create(2024,02,6);
-        $closing_date = Carbon::create(2024,06,15);
+        $opening_date = Carbon::create(now()->format("Y"),now()->format("m"),9);
+        $closing_date = Carbon::create(now()->format("Y"),6,6);
 
 
         DB::table("sessions")

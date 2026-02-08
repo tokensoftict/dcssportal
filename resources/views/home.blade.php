@@ -9,7 +9,7 @@
               <div id="slider" class="rev_slider fullscreenbanner rs-nav-light" data-version="5.4.1">
                   <ul>
 
-                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner-first.jpeg') }}" alt="" />
+                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/2026/banner1.jpeg') }}" alt="" />
                           <div class="tp-caption w-regular color-red shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -79,7 +79,7 @@
                           </div>
 
                       </li>
-                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner2025-3-cropped.jpg') }}" alt="" />
+                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/2026/banner2.jpeg') }}" alt="" />
                           <div class="tp-caption w-regular color-red shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -147,7 +147,7 @@
                               @endif
                           </div>
                       </li>
-                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/banner-real.jpeg') }}" alt="" />
+                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/2026/banner3.jpeg') }}" alt="" />
                           <div class="tp-caption w-regular color-red shaded_text text-center"
                                data-x="center"
                                data-y="middle"
@@ -311,8 +311,7 @@
                           </h1>
 
                           <p data-anim-child="slide-up delay-3" class="mt-5">
-                              This is to announce the release of successful candidate for admission into Junior Secondary Schools (JSS1) in Command Secondary Schools for the 2025/2026 Academic Session is out.
-                              <a href="{{ route('news') }}">Click here to read more</a>
+
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
@@ -330,7 +329,7 @@
                                       <div class="mr-10">
                                           <img src="{{ asset("img/home-8/hero/icons/1.svg") }}" alt="icon">
                                       </div>
-                                      <div class="fw-500 lh-11 mt-10">31<br> BOARDING SCHOOLS</div>
+                                      <div class="fw-500 lh-11 mt-10">{{ \App\Models\School::query()->where('school_type_id', 2)->count() }}<br> BOARDING SCHOOLS</div>
                                   </div>
                               </div>
 
@@ -339,7 +338,7 @@
                                       <div class="mr-10">
                                           <img src="{{ asset("img/home-8/hero/icons/1.svg") }}" alt="icon">
                                       </div>
-                                      <div class="fw-500 lh-11 mt-10">19<br> DAY SCHOOLS</div>
+                                      <div class="fw-500 lh-11 mt-10">{{ \App\Models\School::query()->where('school_type_id', 1)->count() }}<br> DAY SCHOOLS</div>
                                   </div>
                               </div>
 
@@ -348,7 +347,7 @@
                                       <div class="mr-10">
                                           <img src="{{ asset("img/home-8/hero/icons/1.svg") }}" alt="icon">
                                       </div>
-                                      <div class="fw-500 lh-11 mt-10">50<br> TOTAL SCHOOLS</div>
+                                      <div class="fw-500 lh-11 mt-10">{{ \App\Models\School::query()->where('school_type_id', 1)->count() +  \App\Models\School::query()->where('school_type_id', 2)->count()}}<br> TOTAL SCHOOLS</div>
                                   </div>
                               </div>
 
@@ -371,15 +370,13 @@
 @endsection
 
 @section('top_news')
-
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
-                Breaking News: SUCCESSFUL CANDIDATES FOR ADMISSION INTO JSS1 IN COMMAND SECONDARY SCHOOLS 2025/2026 ACADEMIC SESSION IS OUT. <a href="{{ route('news') }}">CLICK HERE TO READ MORE.</a>
+                BREAKING NEWS: APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2026/2027 IS OUT. <a href="{{ route('howtoapply') }}">CLICK HERE TO READ MORE.</a>
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a>
         </marquee>
     </div>
-
 @endsection
 
 @section('js')

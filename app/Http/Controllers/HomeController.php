@@ -9,8 +9,14 @@ use App\Models\Application;
 use App\Models\Session;
 use App\Models\Transaction;
 use App\Models\User;
+use App\Services\EmailApiService;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -37,6 +43,160 @@ class HomeController extends Controller
         return view("login", compact('session'));
     }
 
+    public function forgetPassword()
+    {
+        $session = Session::where('status',1)->first();
+
+        return view("forgotpassword", compact('session'));
+    }
+
+    public function sendResetLinkEmail(Request $request)
+    {
+        // Validate email
+        $request->validate([
+            'email' => 'required|email'
+        ]);
+
+        // Find user (do not reveal existence)
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user) {
+            return back()->with('status',
+                'If the email address exists, a password reset link has been sent.'
+            );
+        }
+
+        // Create reset token
+        $token = Password::createToken($user);
+
+        // Reset link
+        $resetUrl = url(route('password.reset', [
+            'token' => $token,
+            'email' => $user->email
+        ], false));
+
+        // Send email via API
+        app(EmailApiService::class)->send([
+            'to' => [
+                'email' => $user->email,
+                'name' => $user->firstname
+            ],
+            'subject' => 'Reset Your Password',
+            'htmlbody' => "
+                <p>Hello {$user->firstname},</p>
+                <p>You requested to reset your password.</p>
+                <p>
+                    <a href='{$resetUrl}' 
+                       style='display:inline-block;padding:10px 20px;
+                              background:#2563eb;color:#fff;
+                              text-decoration:none;border-radius:4px'>
+                        Reset Password
+                    </a>
+                </p>
+                <p>If you did not request this, please ignore this email.</p>
+            "
+        ]);
+
+        return back()->with('status',
+            'If the email address exists, a password reset link has been sent.'
+        );
+    }
+
+    public function showResetForm(Request $request, $token = null)
+    {
+        $session = Session::where('status',1)->first();
+
+        return view('auth.passwords.reset', [
+            'token' => $token,
+            'email' => $request->email,
+            'session' => $session
+        ]);
+
+    }
+
+    public function restPassword(Request $request)
+    {
+        // Validate input
+        $request->validate([
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed|min:6',
+        ]);
+
+        // Attempt password reset
+        $status = Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function ($user, $password) {
+
+                $user->forceFill([
+                    'password' => Hash::make($password),
+                    'remember_token' => Str::random(60),
+                ])->save();
+
+                 event(new PasswordReset($user));
+            }
+        );
+
+        // Handle response
+        return $status === Password::PASSWORD_RESET
+            ? redirect()->route('login')->with('error', __('Your password has been reset successfully.'))
+            : back()->withErrors(['email' => __($status)]);
+    }
+
+    public function emailVerification()
+    {
+        $session = Session::where('status',1)->first();
+
+        return view("auth.verify", compact('session'));
+    }
+
+
+    public function resend(Request $request)
+    {
+        $user = $request->user();
+
+        if ($user->hasVerifiedEmail()) {
+
+            if($request->user()->isAdmin() || $request->user()->isDcssAdmin() || $request->user()->isUpperlinkAdmin()) {
+
+                return redirect()->route('administrator.index')->with('success','Login Successful');
+            }
+
+            return redirect()->route('account.dashboard')->with('success','Login Successful');
+        }
+
+        // Send verification email using your API
+        $user->sendEmailVerificationNotification();
+
+        return back()->with('status', 'verification-link-sent');
+    }
+
+    public function verifyEmailAddress(Request $request, $id, $hash)
+    {
+        $user = User::findOrFail($id);
+
+        if(!$user) {
+            abort(403);
+        }
+
+
+        if (! hash_equals((string) $hash, sha1($user->getEmailForVerification()))) {
+            abort(403);
+        }
+
+        if($user->hasVerifiedEmail()) {
+           return redirect()->route("login")->with('error', "Your account is already verified.");
+        }
+
+
+        $user->markEmailAsVerified();
+
+        auth()->logout();
+
+        event(new Verified($user));
+        $session = Session::where('status',1)->first();
+        return view("auth.verify_success", compact('user', 'session'));
+    }
 
     public function register()
     {
@@ -68,7 +228,6 @@ class HomeController extends Controller
         return redirect("account.dashboard")->with('success', "Account has been successfully registered.");
     }
 
-
     public function loginprocess(LoginRequest $request)
     {
 
@@ -86,12 +245,18 @@ class HomeController extends Controller
         return redirect()->route("login")->with('error','Oppps! You have entered an invalid credentials');
     }
 
-
     public function news()
     {
         $session = Session::where('status',1)->first();
 
         return view("news", compact('session'));
+    }
+
+    public function howtoapply()
+    {
+        $session = Session::where('status',1)->first();
+
+        return view("howtoapply", compact('session'));
     }
 
     public function contact()
@@ -183,8 +348,6 @@ class HomeController extends Controller
         return view("candidates", compact('session', 'cdss', 'css', 'csss'));
     }
 
-
-
     public function branchcollect_callback(Application $application, $transaction)
     {
         if(!$application) return "Invalid Application id sent";
@@ -253,8 +416,6 @@ class HomeController extends Controller
 
         return "1";
     }
-
-
 
     public function interview_status()
     {
