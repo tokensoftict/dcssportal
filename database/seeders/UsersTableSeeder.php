@@ -36,51 +36,6 @@ class UsersTableSeeder extends Seeder
                     "email" => "commandentrance@gmail.com",
                     'email_verified_at' => Carbon::now(),
                 ],
-                [
-                    "firstname" => "Oluwatobi",
-                    "othernames" => "Oladosu",
-                    "is_admin" => 3,
-                    "phone" => "09078987667",
-                    "password" => '$2y$10$heyMvclaN7VZw6R9raAKBO8way8BxujbAvpckR.AMEwsNbp1PxOzK',
-                    "email" => "oluwatobi.oladosu@upperlink.ng",
-                    'email_verified_at' => Carbon::now(),
-                ],
-                [
-                    "firstname" => "Folakemi",
-                    "othernames" => "Okesola",
-                    "is_admin" => 3,
-                    "phone" => "0909898789",
-                    "password" => '$2y$10$EkoDvr8UQB0VcVvMzHoqJOJn.zyxQUR3cmTibzBJM.qYOaI0yUdFW',
-                    "email" => "folakemi.okesola@upperlink.ng",
-                    'email_verified_at' => Carbon::now(),
-                ],
-                [
-                    "firstname" => "Mosope",
-                    "othernames" => "Fayemi",
-                    "is_admin" => 3,
-                    "phone" => "09099899878",
-                    "password" => '$2y$10$p1pVC1dq1aRMGaFz9AmxO.Iu.uJrNhk1Sj3Je555gFL01NBEKrBue',
-                    "email" => "mosope.fayemi@upperlink.ng",
-                    'email_verified_at' => Carbon::now(),
-                ],
-                [
-                    "firstname" => "Opeyemi",
-                    "othernames" => "Quadri",
-                    "is_admin" => 3,
-                    "phone" => "0909989878",
-                    "password" => '$2y$10$LZ/yHEd.ZEXQHmgpFpRLw.ouO34RknNNiwsJhate3wVvwJhSugQZC',
-                    "email" => "nimatope08@gmail.com",
-                    'email_verified_at' => Carbon::now(),
-                ],
-                [
-                    "firstname" => "Aisha",
-                    "othernames" => "Mustapha",
-                    "is_admin" => 3,
-                    "phone" => "09099898745",
-                    "password" => '$2y$10$MlNRl1GYMpNdInWnY.e2PuK.3GauXdrrYv5XpSN9LpiuOfsXhSPzu',
-                    "email" => "ayshamustapha99@gmail.com",
-                    "email_verified_at" => Carbon::now(),
-                ]
             ]);
     }
 }
