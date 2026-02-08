@@ -109,7 +109,9 @@ class Application extends Model
 		'num_of_edits',
 		'user_id',
 		'session_id',
-        'is_admin'
+        'is_admin',
+        'part_two_order',
+        'id_card',
 	];
 
     protected $appends = ['fullname'];

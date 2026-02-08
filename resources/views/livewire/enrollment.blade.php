@@ -269,7 +269,7 @@
                                         <div class="col-12">
                                             <div class="form-radio d-flex items-center ">
                                                 <div class="radio">
-                                                    <input type="radio" wire:model.defer="select_retired" name="select_retired" value="Yes">
+                                                    <input type="radio" wire:model="select_retired" name="select_retired" value="Yes">
                                                     <div class="radio__mark">
                                                         <div class="radio__icon"></div>
                                                     </div>
@@ -280,7 +280,7 @@
                                         <div class="col-12">
                                             <div class="form-radio d-flex items-center ">
                                                 <div class="radio">
-                                                    <input type="radio" wire:model.defer="select_retired" name="select_retired" value="No">
+                                                    <input type="radio" wire:model="select_retired" name="select_retired" value="No">
                                                     <div class="radio__mark">
                                                         <div class="radio__icon"></div>
                                                     </div>
@@ -305,6 +305,24 @@
                                     </div>
                                 </div>
                             @endif
+
+                            <div class="row mt-25">
+                                <div class="col-lg-6">
+                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Part Two Order *</label>
+                                    <input class="form-control" type="file" wire:model="part_two_order" name="part_two_order" id="part_two_order">
+                                    @if ($errors->has('part_two_order'))
+                                        <span class="text-red-3">{{ $errors->first('part_two_order') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Military ID Card (Valid) *</label>
+                                    <input class="form-control" type="file" wire:model="id_card" name="part_two_order" id="part_two_order">
+                                    @if ($errors->has('id_card'))
+                                        <span class="text-red-3">{{ $errors->first('id_card') }}</span>
+                                    @endif
+                                </div>
+                            </div>
+
                         @endif
 
                         @if($this->parental_status_id === "4")
@@ -332,11 +350,18 @@
                                 </div>
                             </div>
                             <div class="row mt-25">
-                                <div class="col-lg-12">
+                                <div class="col-lg-6">
                                     <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">SVC Number *</label>
                                     <input type="text" requireds name="svc_number" wire:model.defer="svc_number" value="{{ old('svc_number',"") }}" placeholder="SVC Number">
                                     @if ($errors->has('svc_number'))
                                         <span class="text-red-3">{{ $errors->first('svc_number') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Military ID Card (Valid) *</label>
+                                    <input class="form-control" type="file" wire:model="id_card" name="part_two_order" id="part_two_order">
+                                    @if ($errors->has('id_card'))
+                                        <span class="text-red-3">{{ $errors->first('id_card') }}</span>
                                     @endif
                                 </div>
                             </div>
@@ -367,7 +392,12 @@
                         <div wire:loading.block wire:target="processForm,updateApplication">
                             <h5 align="center"> Processing Form Please wait... <i class="fa fa-spin fa-spinner"></i></h5>
                         </div>
-                        <div wire:loading.remove wire:target="processForm,updateApplication">
+
+                        <div wire:loading.block wire:target="passport,part_two_order,id_card">
+                            <h5 align="center">Uploading Please wait... <i class="fa fa-spin fa-spinner"></i></h5>
+                        </div>
+
+                        <div wire:loading.remove wire:target="processForm,updateApplication,passport,part_two_order,id_card">
                             @if(isset($this->application->id))
                                 <button type="submit" name="submit" id="submit" class="button -md -red-1 align-content-center text-white fw-500 w-1/1">
                                     Update Application

@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->text("customerUrl")->change();
-            $table->text("paygate_response")->after("customerUrl")->nullable();
+        Schema::table('applications', function (Blueprint $table) {
+            $table->string("part_two_order")->nullable()->after("passport_path");
+            $table->string("id_card")->nullable()->after("part_two_order");
         });
     }
 
@@ -26,9 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->string("customerUrl")->change();
-            $table->dropColumn("paygate_response");
+        Schema::table('applications', function (Blueprint $table) {
+            $table->dropColumn(["part_two_order", "id_card"]);
         });
     }
 };

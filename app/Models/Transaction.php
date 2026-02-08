@@ -58,7 +58,8 @@ class Transaction extends Model
 		'customerUrl',
 		'merchantId',
 		'gateway',
-		'status'
+		'status',
+        'paygate_response'
 	];
 
 	public function application()

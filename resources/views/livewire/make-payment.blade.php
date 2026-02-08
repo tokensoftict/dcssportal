@@ -101,8 +101,14 @@
 
     <script>
         window.addEventListener('payNow', (e) => {
-            console.log(JSON.parse(e.detail.body));
-            window.payGateCheckout(JSON.parse(e.detail.body));
+            console.log(e.detail);
+            //window.payGateCheckout(JSON.parse(e.detail.body));
+            const data = e.detail;
+            if(data.status === true) {
+                window.location.href = data.url;
+            } else {
+                alert(data.message);
+            }
         });
 
         window.addEventListener('errorGeneratingTransaction', (e) => {

@@ -60,10 +60,6 @@ Route::prefix("update")->as("update.")->group(function (){
 });
 
 Route::group(['middleware' => ['auth', 'verified']], function() {
-
-
-
-
     Route::prefix('account')->as('account.')->group(function () {
 
         Route::get('/', ['as'=>'dashboard',"uses"=>'AccountController@index']);

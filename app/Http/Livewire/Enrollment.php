@@ -58,7 +58,7 @@ class Enrollment extends Component
 
     public Application $application;
 
-    public $passport;
+    public $passport,$part_two_order,$id_card;
 
     public int $session_id = 0;
 
@@ -108,6 +108,8 @@ class Enrollment extends Component
             $data['svc_number'] = 'required';
             $data['unitFormation'] = 'required';
             $data['select_retired'] = 'required|in:Yes,No';
+            $data['id_card'] = 'required|mimes:jpg,jpeg|max:2048';
+            $data['part_two_order'] = 'required|mimes:jpg,jpeg|max:2048';
         }
 
         if($this->parental_status_id === "4")
@@ -171,6 +173,8 @@ class Enrollment extends Component
                 'state_id',
                 'exam_state_id',
                 'center_id',
+                //'id_card',
+                //'part_two_order',
             ];
 
             foreach ($properties as $property)
@@ -191,11 +195,15 @@ class Enrollment extends Component
     {
         try {
             $this->validateOnly($property, [
-                'passport' => ['file', 'mimes:jpg,jpeg', 'image', 'max:2048']
+                'passport' => ['file', 'mimes:jpg,jpeg', 'image', 'max:2048'],
+                'id_card' => ['file', 'mimes:jpg,jpeg', 'image', 'max:2048'],
+                'part_two_order' => ['file', 'mimes:jpg,jpeg', 'image', 'max:2048']
             ]);
             $this->errorMessage = null; // Clear error if valid
         }  catch (\Illuminate\Validation\ValidationException $e) {
             $this->passport = null; // Reset file input
+            $this->id_card = null;
+            $this->part_two_order = null;
             $this->errorMessage = "Invalid file. Please upload an image with jpg or jpeg extension";
         }
 
@@ -252,6 +260,12 @@ class Enrollment extends Component
             $this->user_id = $user->id;
 
             $file = $this->passport->store('passport', 'real_public');
+            if($this->id_card) {
+                $id_card = $this->id_card->store('id_card', 'real_public');
+            }
+            if($this->part_two_order) {
+                $part_two_order = $this->part_two_order->store('part_two_order', 'real_public');
+            }
 
              $application = Application::create(
                 [
@@ -262,6 +276,8 @@ class Enrollment extends Component
                     'password' => $this->password,
                     'gender' => $this->gender,
                     'passport_path' => $file,
+                    'id_card' => $id_card ?? null,
+                    'part_two_order' => $part_two_order ?? null,
                     'age' => $this->age,
                     'telephone' => $this->telephone,
                     'local_govt' => "",

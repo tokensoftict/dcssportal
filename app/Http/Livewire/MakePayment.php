@@ -7,9 +7,11 @@ use App\Models\Session;
 use App\Models\Transaction;
 use App\Models\UserActivity;
 use App\Repositories\BranchCollectRepository;
+use App\Repositories\ConfirmUpperlinkPaygateTransactionRepository;
 use Illuminate\Support\Arr;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
+use Alert;
 
 class MakePayment extends Component
 {
@@ -29,11 +31,13 @@ class MakePayment extends Component
     public string $paymentSlipUrl = "";
 
     private BranchCollectRepository $branchCollectRepository;
+    private ConfirmUpperlinkPaygateTransactionRepository $confirmUpperlinkPaygateTransactionRepository;
 
 
-    public function boot(BranchCollectRepository $branchCollectRepository)
+    public function boot(BranchCollectRepository $branchCollectRepository, ConfirmUpperlinkPaygateTransactionRepository $confirmUpperlinkPaygateTransactionRepository)
     {
         $this->branchCollectRepository = $branchCollectRepository;
+        $this->confirmUpperlinkPaygateTransactionRepository = $confirmUpperlinkPaygateTransactionRepository;
     }
 
     public function mount()
@@ -203,6 +207,21 @@ class MakePayment extends Component
             'transaction_id' =>  $this->transaction->id,
         ]);
 
-        $this->dispatchBrowserEvent("payNow",['body'=>json_encode($data)]);
+        $data['redirectUrl'] = $data['customerUrl'];
+        $data['payGateRef'] = $data['transactionId'];
+        $data['countryCode'] = "NG";
+        $response = $this->confirmUpperlinkPaygateTransactionRepository->createPayGatePaymentIntent($data);
+        if($response->code == "200") {
+            $this->dispatchBrowserEvent("payNow",[
+                'url'=>$response->data->checkOutUrl,
+                'status'=>true,
+            ]);
+        } else {
+            Alert::error('Payment', 'There was an error generating payment, please try again.');
+            $this->dispatchBrowserEvent("payNow",[
+                'message'=>"There was an error generating payment, please try again.",
+                'status'=>false,
+            ]);
+        }
     }
 }

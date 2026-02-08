@@ -21,6 +21,9 @@ class ConfirmUpperlinkPaygateTransactionRepository
             ->get("https://thirdparty.paygate.upperlink.ng/api/v1/client/integration/transaction/query?merchantId=".env("MERCHANT_ID","UPLHSEM")."&ref=".$transactionRef);
 
         $trans = Transaction::where('transactionId', $transactionRef)->first();
+        $trans->paygate_response = $response->body();
+        $trans->save();
+
 
         if(!$trans){
             UserActivity::logActivities([
@@ -73,7 +76,17 @@ class ConfirmUpperlinkPaygateTransactionRepository
         }
 
         return "Unable to confirm transaction status";
+    }
 
+
+
+    public function createPayGatePaymentIntent(array $data)
+    {
+        $response =   Http::withBasicAuth("upperlinkintegration","Upperlink@2022gate")
+            ->withoutVerifying()
+            ->post("https://thirdparty.paygate.upperlink.ng/api/v1/client/integration/transaction/payment", $data);
+
+        return $response->object();
     }
 
 }
