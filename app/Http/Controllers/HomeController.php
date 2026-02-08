@@ -147,6 +147,15 @@ class HomeController extends Controller
     {
         $session = Session::where('status',1)->first();
 
+        if(auth()->check() and auth()->user()->hasVerifiedEmail()){
+            if(auth()->user()->isAdmin() || auth()->user()->isDcssAdmin() || auth()->user()->isUpperlinkAdmin()) {
+
+                return redirect()->route('administrator.index')->with('success','Login Successful');
+            }
+
+            return redirect()->route('account.dashboard')->with('success','Login Successful');
+        }
+
         return view("auth.verify", compact('session'));
     }
 
@@ -173,6 +182,7 @@ class HomeController extends Controller
 
     public function verifyEmailAddress(Request $request, $id, $hash)
     {
+        $id = decrypt($id);
         $user = User::findOrFail($id);
 
         if(!$user) {

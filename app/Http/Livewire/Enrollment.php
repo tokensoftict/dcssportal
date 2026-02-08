@@ -319,7 +319,7 @@ class Enrollment extends Component
             'firstname' => $this->firstname,
             'surname' => $this->surname,
             'othernames' => $this->othernames,
-            'email' => $this->email,
+            //'email' => $this->email,
             'password' => $this->password,
             'gender' => $this->gender,
             'age' => $this->age,

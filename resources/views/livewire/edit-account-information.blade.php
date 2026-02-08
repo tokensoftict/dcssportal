@@ -25,7 +25,7 @@
 
                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Email Address</label>
 
-                        <input type="email" required wire:model.defer="email" placeholder="Email Address">
+                        <input type="email" readonly required wire:model.defer="email" placeholder="Email Address">
                     </div>
 
 

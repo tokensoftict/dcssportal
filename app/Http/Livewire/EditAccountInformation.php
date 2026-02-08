@@ -52,7 +52,7 @@ class EditAccountInformation extends Component
 
         $this->user->firstname = $this->firstname ;
         $this->user->othernames = $this->othernames ;
-        $this->user->email = $this->email ;
+        //$this->user->email = $this->email ;
         $this->user->phone =  $this->phone ;
         if(!empty($this->password))
         {
