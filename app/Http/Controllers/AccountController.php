@@ -124,7 +124,7 @@ class AccountController extends Controller
         ini_set('memory_limit','1048M');
         $session = Session::where("status",1)->first();
 
-        $pdf = PDF::loadView("photocard.print",['application'=>$application, "session"=> $session]);
+        $pdf = PDF::loadView("photocard.print_new",['application'=>$application, "session"=> $session]);
 
         return $pdf->stream('photocard.pdf');
     }
@@ -139,7 +139,7 @@ class AccountController extends Controller
 
         $session = Session::where("status",1)->first();
 
-        $pdf = PDF::loadView("reciept.payment",['payment' => $transaction, "session"=> $session]);
+        $pdf = PDF::loadView("reciept.payment_slip_new",['payment' => $transaction, "session"=> $session]);
 
         return $pdf->stream('payment.pdf');
     }
@@ -163,7 +163,7 @@ class AccountController extends Controller
 
         $session = Session::where("status",1)->first();
 
-        $pdf = PDF::loadView("reciept.payment_slip",['payment' => $transaction, "session"=> $session]);
+        $pdf = PDF::loadView("reciept.payment_slip_new",['payment' => $transaction, "session"=> $session]);
 
         return $pdf->stream('payment_slip.pdf');
     }
