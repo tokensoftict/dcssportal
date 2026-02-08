@@ -21,10 +21,10 @@ Route::get('/login', ['as'=>'login',"uses"=>'HomeController@login']);
 
 
 //Password Reset Routes
-Route::get('account/password/reset', ['as'=>'password.request',"uses"=>'HomeController@forgetPassword']);
-Route::post('account/password/email', ['as'=>'password.email',"uses"=>'HomeController@sendResetLinkEmail']);
-Route::get('account/password/reset/{token}', ['as'=>'password.reset',"uses"=>'HomeController@showResetForm']);
-Route::post('account/password/reset/login', ['as'=>'password.update',"uses"=>'HomeController@restPassword']);
+Route::get('my-account/password/reset', ['as'=>'password.request',"uses"=>'HomeController@forgetPassword']);
+Route::post('my-account/password/email', ['as'=>'password.email',"uses"=>'HomeController@sendResetLinkEmail']);
+Route::get('my-account/password/reset/{token}', ['as'=>'password.reset',"uses"=>'HomeController@showResetForm']);
+Route::post('my-account/password/reset/login', ['as'=>'password.update',"uses"=>'HomeController@restPassword']);
 
 //Email Verification Routes
 Route::get('/email/verify', ['as'=>'verification.notice',"uses"=>'HomeController@emailVerification'])->middleware('auth');
