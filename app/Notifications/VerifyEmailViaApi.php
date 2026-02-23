@@ -26,7 +26,7 @@ class VerifyEmailViaApi extends Notification
         // Generate signed URL for email verification
         $url = URL::temporarySignedRoute(
             'verification.verify',
-            Carbon::now()->addMinutes(60),
+            Carbon::now()->addMinutes(260),
             ['id' => encrypt($notifiable->getKey()), 'hash' => sha1($notifiable->getEmailForVerification())]
         );
 
