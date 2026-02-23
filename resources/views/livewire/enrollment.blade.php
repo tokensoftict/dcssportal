@@ -264,37 +264,18 @@
                                     @endif
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="text-16 lh-12 text-dark-1 fw-500 mb-30">Are you retired?</div>
-                                    <div class="row y-gap-15">
-                                        <div class="col-12">
-                                            <div class="form-radio d-flex items-center ">
-                                                <div class="radio">
-                                                    <input type="radio" wire:model="select_retired" name="select_retired" value="Yes">
-                                                    <div class="radio__mark">
-                                                        <div class="radio__icon"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="lh-1 text-14 text-dark-1 ml-12">Yes</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-radio d-flex items-center ">
-                                                <div class="radio">
-                                                    <input type="radio" wire:model="select_retired" name="select_retired" value="No">
-                                                    <div class="radio__mark">
-                                                        <div class="radio__icon"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="lh-1 text-14 text-dark-1 ml-12">No</div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Are you retired? *</label>
+                                    <select class="form-group" requireds id="retired" wire:model="select_retired">
+                                            <option value="">-Select One-</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
                                     @if ($errors->has('select_retired'))
                                         <span class="text-red-3">{{ $errors->first('select_retired') }}</span>
                                     @endif
                                 </div>
                             </div>
-                            @if($this->select_retired == "Yes")
+                            @if($this->select_retired == "1" || $this->select_retired == "Yes" )
                                 <div class="row mt-25">
                                     <div class="col-lg-6">
                                         <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Retired Number *</label>

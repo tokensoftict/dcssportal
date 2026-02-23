@@ -118,9 +118,10 @@ class Enrollment extends Component
             $data['rank'] = 'required';
             $data['svc'] = 'required';
             $data['svc_number'] = 'required';
+            $data['id_card'] = 'required|mimes:jpg,jpeg|max:2048';
         }
 
-        if($this->select_retired === "Yes")
+        if($this->select_retired == "Yes" || $this->select_retired == "1")
         {
             $data['retired_number'] = 'required';
         }
@@ -130,6 +131,14 @@ class Enrollment extends Component
             Arr::forget($data,['password','passport']);
 
             $data['email'] = 'required|unique:users,email,'.$this->application->user_id;
+
+            if(is_string($this->part_two_order)) {
+                Arr::forget($data,['part_two_order']);
+            }
+
+            if(is_string($this->id_card)) {
+                Arr::forget($data,['id_card']);
+            }
         }
 
 
@@ -183,9 +192,18 @@ class Enrollment extends Component
 
             }
 
-            $this->retired = $this->application->retired == 'Yes' ? 1 : 0;
+            $this->select_retired = $this->application->retired == '1' ? 'Yes' : 'No';
 
             $this->passport = url('/'.$this->application->passport_path);
+
+            if($this->application->parental_status_id == "1" || $this->application->parental_status_id == "2") {
+                $this->id_card = url('/', $this->application->id_card);
+                $this->part_two_order = url('/', $this->application->part_two_order);
+            }
+
+            if($this->parental_status_id === "4") {
+                $this->id_card = url('/', $this->application->id_card);
+            }
 
         }
 
@@ -253,16 +271,20 @@ class Enrollment extends Component
                     'password' => $this->password
                 ]
             );
+
             UserActivity::logActivities([
                 'user_id' => $user->id,
                 'description' => 'Account for user has been created'
             ]);
+
             $this->user_id = $user->id;
 
             $file = $this->passport->store('passport', 'real_public');
+
             if($this->id_card) {
                 $id_card = $this->id_card->store('id_card', 'real_public');
             }
+
             if($this->part_two_order) {
                 $part_two_order = $this->part_two_order->store('part_two_order', 'real_public');
             }
@@ -365,7 +387,19 @@ class Enrollment extends Component
             $data['passport_path'] = $file;
         }
 
+        if(!is_string($this->id_card) and !is_null($this->id_card)){
+            $file = $this->id_card->store('id_card', 'real_public');
+            $data['id_card'] = $file;
+
+        }
+
+        if(!is_string($this->part_two_order) and !is_null($this->part_two_order)){
+            $file = $this->part_two_order->store('part_two_order', 'real_public');
+            $data['part_two_order'] = $file;
+        }
+
         $this->application->update($data);
+
 
         UserActivity::logActivities([
             'user_id' => $this->application->user_id,

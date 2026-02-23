@@ -79,7 +79,7 @@
                           </div>
 
                       </li>
-                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/2026/banner2.jpeg') }}" alt="" />
+                      <li data-transition="fade" data-nav-color="light"><img src="{{ asset('banner/2026/banner_red.jpeg') }}" alt="" />
                           <div class="tp-caption w-regular color-red shaded_text text-center"
                                data-x="center"
                                data-y="middle"
