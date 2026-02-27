@@ -214,8 +214,8 @@ class MakePayment extends Component
         $act->response = json_encode($response);
         $act->save();
         $message = "";
-        if(isset($response->message)) {
-            $message.= "Reason : ".$response->message;
+        if(isset($response->description)) {
+            $message.= "Reason : ".$response->description;
         }
         if($response->code == "200") {
             $this->dispatchBrowserEvent("payNow",[
