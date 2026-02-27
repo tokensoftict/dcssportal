@@ -65,13 +65,27 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
         Route::get('/', ['as'=>'dashboard',"uses"=>'AccountController@index']);
         Route::get('/logout', ['as'=>'logout',"uses"=>'AccountController@logout']);
         Route::get('{user}/profile', ['as'=>'profile',"uses"=>'AccountController@profile']);
+
+
+
         Route::get('{application}/make-payment', ['as'=>'make_payment',"uses"=>'AccountController@make_payment']);
         Route::get('{application}/transactions', ['as'=>'transactions',"uses"=>'AccountController@transactions']);
         Route::get('{application}/complete-application', ['as'=>'complete_application',"uses"=>'AccountController@complete_application']);
         Route::get('{application}/edit-application', ['as'=>'edit_application',"uses"=>'AccountController@edit_application']);
         Route::get('{application}/print-photocard', ['as'=>'print_photocard',"uses"=>'AccountController@print_photocard']);
+
         Route::get('{application}/download-photocard', ['as'=>'download_photocard',"uses"=>'AccountController@download_photocard']);
         Route::get('{application}/download-payment-receipt', ['as'=>'download_payment_receipt',"uses"=>'AccountController@download_payment_receipt']);
+
+
+        Route::get('payment', ['as'=>'payment',"uses"=>'AccountController@payment']);
+        Route::get('my-profile', ['as'=>'my-profile',"uses"=>'AccountController@my_profile']);
+        Route::get('print-my-photocard', ['as'=>'print_my_photocard',"uses"=>'AccountController@print_my_photocard']);
+        Route::get('download-my-photocard', ['as'=>'download_my_photocard',"uses"=>'AccountController@download_my_photocard']);
+        Route::get('download-my-payment-receipt', ['as'=>'download_my_payment_receipt',"uses"=>'AccountController@download_my_payment_receipt']);
+        Route::get('my-transactions', ['as'=>'my-transactions',"uses"=>'AccountController@my_transactions']);
+        Route::get('edit-my-application', ['as'=>'edit_my_application',"uses"=>'AccountController@edit_my_application']);
+
         Route::get('{transaction}/download-payment-slip', ['as'=>'download_payment_slip',"uses"=>'AccountController@download_payment_slip']);
     });
 

@@ -16,27 +16,27 @@
                     </div>
 
                     <div class="sidebar__item">
-                        <a href="{{ route('account.make_payment',$application->id) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                        <a href="{{ route('account.payment') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                             <i class="text-20 icon-save-money mr-15"></i>
                             Make Payment
                         </a>
                     </div>
 
                     <div class="sidebar__item">
-                        <a  href="{{ route('account.print_photocard',$application->id) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                        <a  href="{{ route('account.print_my_photocard') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                             <i class="text-20 icon-star mr-15"></i>
                             Print Photo Card
                         </a>
                     </div>
                     <div class="sidebar__item">
-                        <a  href="{{ route('account.transactions',$application->id) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                        <a  href="{{ route('account.my-transactions') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                             <i class="text-20 icon-list-2 mr-15"></i>
                             Transactions
                         </a>
                     </div>
 
                     <div class="sidebar__item ">
-                        <a href="{{ route('account.profile',$application->user_id) }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                        <a href="{{ route('account.my-profile') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                             <i class="text-20 icon-person-3 mr-15"></i>
                             My Profile
                         </a>

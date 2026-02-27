@@ -91,7 +91,7 @@
                         @endif
                     @endif
                     @if($this->application->exam_number == NULL && !auth()->user()->isAdmin())
-                        <a  href="{{ route('account.edit_application',$this->application->id) }}" class="mt-2 button -icon -purple-1 text-white">Edit Application</a>
+                        <a  href="{{ route('account.edit_my_application') }}" class="mt-2 button -icon -purple-1 text-white">Edit Application</a>
                     @endif
                 </div>
             </div>

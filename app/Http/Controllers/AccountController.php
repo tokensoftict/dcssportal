@@ -41,8 +41,26 @@ class AccountController extends Controller
         return view("account.editapplication",['session' => $session, 'application'=> $application]);
     }
 
+    public function edit_my_application()
+    {
+        $application = Application::query()->where("user_id",auth()->user()->id)->first();
+        if(!$application) abort('404');
+
+        $session = Session::where('status',1)->first();
+
+        return view("account.editapplication",['session' => $session, 'application'=> $application]);
+    }
+
     public function make_payment(Application $application)
     {
+        return view('account.make_payment', ['application'=>$application]);
+    }
+
+    public function payment()
+    {
+        $application = Application::query()->where("user_id",auth()->user()->id)->first();
+        if(!$application) abort("404");
+
         return view('account.make_payment', ['application'=>$application]);
     }
 
@@ -122,6 +140,7 @@ class AccountController extends Controller
     public function download_photocard(Application $application)
     {
         ini_set('memory_limit','1048M');
+        ini_set('max_execution_time', 30000);
         $session = Session::where("status",1)->first();
 
         $pdf = PDF::loadView("photocard.print_new",['application'=>$application, "session"=> $session]);
@@ -133,6 +152,7 @@ class AccountController extends Controller
     public function download_payment_receipt(Application $application)
     {
         ini_set('memory_limit','1048M');
+        ini_set('max_execution_time', 30000);
         $transaction = Transaction::where('application_id',$application->id)->where("status",1)->first();
 
         if(!$transaction) abort("404");
@@ -145,8 +165,52 @@ class AccountController extends Controller
     }
 
 
+    public function download_my_photocard()
+    {
+        ini_set('memory_limit','1048M');
+        ini_set('max_execution_time', 30000);
+        $session = Session::where("status",1)->first();
+
+        $application = Application::query()->where("user_id",auth()->user()->id)->first();
+        if(!$application) abort("404");
+
+        $pdf = PDF::loadView("photocard.print_new",['application'=>$application, "session"=> $session]);
+
+        return $pdf->stream('photocard.pdf');
+    }
+
+
+    public function download_my_payment_receipt()
+    {
+        ini_set('memory_limit','1048M');
+        ini_set('max_execution_time', 30000);
+
+        $application = Application::query()->where("user_id",auth()->user()->id)->first();
+        if(!$application) abort("404");
+
+        $transaction = Transaction::where('application_id',$application->id)->where("status",1)->first();
+
+        if(!$transaction) abort("404");
+
+        $session = Session::where("status",1)->first();
+
+        $pdf = PDF::loadView("reciept.payment_slip_new",['payment' => $transaction, "session"=> $session]);
+
+        return $pdf->stream('payment.pdf');
+    }
+
+
+
     public function print_photocard(Application $application)
     {
+        return view('account.print_photocard', ['application'=>$application]);
+    }
+
+    public function print_my_photocard()
+    {
+        $application = Application::query()->where("user_id",auth()->user()->id)->first();
+        if(!$application) abort("404");
+
         return view('account.print_photocard', ['application'=>$application]);
     }
 
@@ -176,6 +240,15 @@ class AccountController extends Controller
         return view('account.transaction', ['application'=>$application]);
     }
 
+
+    public function my_transactions()
+    {
+        $application = Application::query()->where("user_id",auth()->user()->id)->first();
+        if(!$application) abort("404");
+
+        return view('account.transaction', ['application'=>$application]);
+    }
+
     public function profile(User $user)
     {
         if(!auth()->user()->isAdmin())
@@ -183,6 +256,12 @@ class AccountController extends Controller
             $user = auth()->user();
         }
 
+        return view('account.profile', ['user'=>$user]);
+    }
+
+    public function my_profile()
+    {
+        $user = auth()->user();
         return view('account.profile', ['user'=>$user]);
     }
 }

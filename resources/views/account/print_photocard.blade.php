@@ -39,10 +39,18 @@
 
                     <div class="py-30 px-30 text-center">
 
-                        <a  href="{{ route('account.download_photocard',$application->id) }}" target="_new" class="button -icon -red-1 text-white">
-                            Print Photo card
-                            <i class="icon-check text-13 ml-10"></i>
-                        </a>
+                        @if(!(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin() ||  auth()->user()->isUpperlinkAdmin() ))
+                            <a  href="{{ route('account.download_my_photocard') }}" target="_new" class="button -icon -red-1 text-white">
+                                Print Photo card
+                                <i class="icon-check text-13 ml-10"></i>
+                            </a>
+
+                        @else
+                            <a  href="{{ route('account.download_photocard',$application->id) }}" target="_new" class="button -icon -red-1 text-white">
+                                Print Photo card
+                                <i class="icon-check text-13 ml-10"></i>
+                            </a>
+                        @endif
 
                     </div>
                 </div>
