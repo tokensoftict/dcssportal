@@ -64,6 +64,6 @@ class UserActivity extends Model
     public static function logActivities(array $activity){
         $activity['date_added'] = now();
         $activity['time_added'] = now()->toTimeString();
-        self::create($activity);
+        return self::create($activity);
     }
 }

@@ -200,7 +200,7 @@ class MakePayment extends Component
         $data['meta'] = "";
         $data['city'] = "Ikeja";
 
-        UserActivity::logActivities([
+        $act = UserActivity::logActivities([
             'user_id' => $this->application->user_id,
             'description' => 'Payment Payload was sent to Upperlink paygate',
             'response' => json_encode($data),
@@ -211,6 +211,8 @@ class MakePayment extends Component
         $data['payGateRef'] = $data['transactionId'];
         $data['countryCode'] = "NG";
         $response = $this->confirmUpperlinkPaygateTransactionRepository->createPayGatePaymentIntent($data);
+        $act->response = json_decode($response);
+        $act->save();
         if($response->code == "200") {
             $this->dispatchBrowserEvent("payNow",[
                 'url'=>$response->data->checkOutUrl,
