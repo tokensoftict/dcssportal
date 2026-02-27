@@ -211,7 +211,7 @@ class MakePayment extends Component
         $data['payGateRef'] = $data['transactionId'];
         $data['countryCode'] = "NG";
         $response = $this->confirmUpperlinkPaygateTransactionRepository->createPayGatePaymentIntent($data);
-        $act->response = json_decode($response);
+        $act->response = json_encode($response);
         $act->save();
         if($response->code == "200") {
             $this->dispatchBrowserEvent("payNow",[
