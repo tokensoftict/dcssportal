@@ -32,12 +32,10 @@
 
                     <div class="py-30 px-30 text-center">
 
-                        <a  href="{{ route('account.download_payment_receipt',$application->id) }}" target="_new" class="button -icon -purple-1 text-white">
+                        <a  href="{{ route('account.download_my_payment_receipt') }}" target="_new" class="button -icon -purple-1 text-white">
                            Print Payment Receipt
                             <i class="icon-check text-13 ml-10"></i>
                         </a>
-
-
 
                     </div>
                 </div>
