@@ -87,7 +87,7 @@ class Enrollment extends Component
             'gender' => 'required',
             'passport' => 'required|mimes:jpg,jpeg|max:2048',
             'age' => 'required|numeric',
-            'telephone' =>'required',
+            'telephone' =>'required|max:11|min:11',
             'address' => 'required',
             'dob' => 'required',
             'parental_status_id' => 'required',
