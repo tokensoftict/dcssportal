@@ -68,14 +68,13 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 
 
 
-        Route::get('{application}/make-payment', ['as'=>'make_payment',"uses"=>'AccountController@make_payment']);
-        Route::get('{application}/transactions', ['as'=>'transactions',"uses"=>'AccountController@transactions']);
+        Route::get('{application}/make-payment', ['as'=>'make_payment',"uses"=>'AccountController@make_payment'])->middleware('isnotadmin');
+        Route::get('{application}/transactions', ['as'=>'transactions',"uses"=>'AccountController@transactions'])->middleware('isnotadmin');
         Route::get('{application}/complete-application', ['as'=>'complete_application',"uses"=>'AccountController@complete_application']);
-        Route::get('{application}/edit-application', ['as'=>'edit_application',"uses"=>'AccountController@edit_application']);
-        Route::get('{application}/print-photocard', ['as'=>'print_photocard',"uses"=>'AccountController@print_photocard']);
-
-        Route::get('{application}/download-photocard', ['as'=>'download_photocard',"uses"=>'AccountController@download_photocard']);
-        Route::get('{application}/download-payment-receipt', ['as'=>'download_payment_receipt',"uses"=>'AccountController@download_payment_receipt']);
+        Route::get('{application}/edit-application', ['as'=>'edit_application',"uses"=>'AccountController@edit_application'])->middleware('isnotadmin');;
+        Route::get('{application}/print-photocard', ['as'=>'print_photocard',"uses"=>'AccountController@print_photocard'])->middleware('isnotadmin');;
+        Route::get('{application}/download-photocard', ['as'=>'download_photocard',"uses"=>'AccountController@download_photocard'])->middleware('isnotadmin');;
+        Route::get('{application}/download-payment-receipt', ['as'=>'download_payment_receipt',"uses"=>'AccountController@download_payment_receipt'])->middleware('isnotadmin');;
 
 
         Route::get('payment', ['as'=>'payment',"uses"=>'AccountController@payment']);
