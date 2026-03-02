@@ -1,8 +1,8 @@
 <div>
     @if(isset($this->application->id))
-        <form class="contact-form respondForm__form row y-gap-20 pt-30"  wire:submit.prevent="updateApplication">
+        <form class="contact-form respondForm__form row y-gap-20 pt-30"  method="post" wire:submit.prevent="updateApplication">
             @else
-                <form class="contact-form respondForm__form row y-gap-20 pt-30"  wire:submit.prevent="processForm">
+                <form class="contact-form respondForm__form row y-gap-20 pt-30" method="post"  wire:submit.prevent="processForm">
                     @endif
                     <h3 class="text-20 lh-11 mt-30 mb-10">Personal Details</h3>
                     <div class="row">
