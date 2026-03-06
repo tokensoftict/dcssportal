@@ -289,14 +289,14 @@
 
                             <div class="row mt-25">
                                 <div class="col-lg-6">
-                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Part Two Order *</label>
+                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Part Two Order * PDF,JPEG</label>
                                     <input class="form-control" type="file" wire:model="part_two_order" name="part_two_order" id="part_two_order">
                                     @if ($errors->has('part_two_order'))
                                         <span class="text-red-3">{{ $errors->first('part_two_order') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6">
-                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Military ID Card (Valid) *</label>
+                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Military ID Card (Valid) * PDF,JPEG</label>
                                     <input class="form-control" type="file" wire:model="id_card" name="part_two_order" id="part_two_order">
                                     @if ($errors->has('id_card'))
                                         <span class="text-red-3">{{ $errors->first('id_card') }}</span>
@@ -339,7 +339,7 @@
                                     @endif
                                 </div>
                                 <div class="col-lg-6">
-                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Military ID Card (Valid) *</label>
+                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Military ID Card (Valid) * PDF,JPEG</label>
                                     <input class="form-control" type="file" wire:model="id_card" name="part_two_order" id="part_two_order">
                                     @if ($errors->has('id_card'))
                                         <span class="text-red-3">{{ $errors->first('id_card') }}</span>

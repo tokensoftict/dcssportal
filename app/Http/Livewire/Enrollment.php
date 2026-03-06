@@ -108,8 +108,8 @@ class Enrollment extends Component
             $data['svc_number'] = 'required';
             $data['unitFormation'] = 'required';
             $data['select_retired'] = 'required|in:Yes,No';
-            $data['id_card'] = 'required|mimes:jpg,jpeg|max:2048';
-            $data['part_two_order'] = 'required|mimes:jpg,jpeg|max:2048';
+            $data['id_card'] = 'required|mimes:jpg,jpeg,pdf|max:2048';
+            $data['part_two_order'] = 'required|mimes:jpg,jpeg,pdf|max:2048';
         }
 
         if($this->parental_status_id === "4")
@@ -118,7 +118,7 @@ class Enrollment extends Component
             $data['rank'] = 'required';
             $data['svc'] = 'required';
             $data['svc_number'] = 'required';
-            $data['id_card'] = 'required|mimes:jpg,jpeg|max:2048';
+            $data['id_card'] = 'required|mimes:jpg,jpeg,pdf|max:2048';
         }
 
         if($this->select_retired == "Yes" || $this->select_retired == "1")
