@@ -210,24 +210,32 @@ class MakePayment extends Component
         $data['redirectUrl'] = $data['customerUrl'];
         $data['payGateRef'] = $data['transactionId'];
         $data['countryCode'] = "NG";
-        $response = $this->confirmUpperlinkPaygateTransactionRepository->createPayGatePaymentIntent($data);
-        $act->response = json_encode($response);
-        $act->save();
-        $message = "";
-        if(isset($response->description)) {
-            $message.= "Reason : ".$response->description;
-        }
-        if($response->code == "200") {
-            $this->dispatchBrowserEvent("payNow",[
-                'url'=>$response->data->checkOutUrl,
-                'status'=>true,
-            ]);
-        } else {
-            Alert::error('Payment', 'There was an error generating payment '.$message);
-            $this->dispatchBrowserEvent("payNow",[
-                'message'=>"There was an error generating payment ".$message,
-                'status'=>false,
-            ]);
-        }
+
+        Alert::error('Payment', 'There was an error generating payment, Payment is currently not available');
+        $this->dispatchBrowserEvent("payNow",[
+            'message'=>"There was an error generating payment, Payment is currently not available",
+            'status'=>false,
+        ]);
+
+
+//        $response = $this->confirmUpperlinkPaygateTransactionRepository->createPayGatePaymentIntent($data);
+//        $act->response = json_encode($response);
+//        $act->save();
+//        $message = "";
+//        if(isset($response->description)) {
+//            $message.= "Reason : ".$response->description;
+//        }
+//        if($response->code == "200") {
+//            $this->dispatchBrowserEvent("payNow",[
+//                'url'=>$response->data->checkOutUrl,
+//                'status'=>true,
+//            ]);
+//        } else {
+//            Alert::error('Payment', 'There was an error generating payment '.$message);
+//            $this->dispatchBrowserEvent("payNow",[
+//                'message'=>"There was an error generating payment ".$message,
+//                'status'=>false,
+//            ]);
+//        }
     }
 }
