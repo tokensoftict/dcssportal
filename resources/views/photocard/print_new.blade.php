@@ -173,7 +173,7 @@
         </td>
         <td>
             <span class="label">Interview Date:</span><br>
-            WILL BE COMMUNICATED
+            27th of June 2026
         </td>
     </tr>
 </table>
