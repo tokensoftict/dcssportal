@@ -143,7 +143,7 @@
         </td>
         <td>
             <span class="label">Entrance Examination Date:</span><br>
-            Saturday,13th June 2026
+            Saturday,27th June 2026
         </td>
         <td>
             <span class="label">Entrance Examination Time:</span><br>
@@ -173,7 +173,7 @@
         </td>
         <td>
             <span class="label">Interview Date:</span><br>
-            27th of June 2026
+            WILL BE COMMUNICATED
         </td>
     </tr>
 </table>

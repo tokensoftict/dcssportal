@@ -84,14 +84,14 @@
                         <td colspan="2" style="font-size: 11pt;"><strong>Examination Number:</strong> {{ $application->exam_number }}</td>
                     </tr>
                     <tr>
-                        <td style="font-size: 11pt;"><strong>Entrance Examination Date:</strong>SATURDAY, 13TH JUNE 2026</td>
+                        <td style="font-size: 11pt;"><strong>Entrance Examination Date:</strong>Saturday,27th June 2026</td>
                         <td style="font-size: 11pt;"><strong>Entrance Examination Time:</strong> 8:00 AM</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-size: 11pt;"><strong>Examination Center:</strong> {{ $application->center->name }}</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-size: 11pt;"><strong>Interview Date:</strong>  27th of June 2026</td>
+                        <td colspan="2" style="font-size: 11pt;"><strong>Interview Date:</strong> WILL BE COMMUNICATED</td>
                     </tr>
                     <tr>
                         <td colspan="2" style="font-size: 11pt;"><strong>Surname:</strong> {{  strtoupper($application->surname) }}</td>
