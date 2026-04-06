@@ -21,12 +21,12 @@
                             <form method="post" class="contact-form respondForm__form row y-gap-20 pt-30" action="{{ route('loginprocess') }}">
                                 @csrf
                                 <div class="col-12">
-                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Email Address</label>
-                                    <input type="email" required name="email" placeholder="Email Address">
+                                    <label for="email" class="text-16 lh-1 fw-500 text-dark-1 mb-10">Email Address</label>
+                                    <input type="email" id="email" required name="email" placeholder="Email Address" autocomplete="off">
                                 </div>
                                 <div class="col-12">
-                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Password</label>
-                                    <input type="password" required name="password" placeholder="Password">
+                                    <label for="password" class="text-16 lh-1 fw-500 text-dark-1 mb-10">Password</label>
+                                    <input type="password" id="password" required name="password" placeholder="Password" autocomplete="off">
                                     <p class="mt-10"><a href="{{ route("password.request") }}" class="text-purple-1">Forgot your password, click here</a></p>
                                 </div>
 
