@@ -22,11 +22,11 @@
                                 @csrf
                                 <div class="col-12">
                                     <label for="email" class="text-16 lh-1 fw-500 text-dark-1 mb-10">Email Address</label>
-                                    <input type="email" id="email" required name="email" placeholder="Email Address" autocomplete="off">
+                                    <input type="email" id="email" required name="email" placeholder="Email Address">
                                 </div>
                                 <div class="col-12">
                                     <label for="password" class="text-16 lh-1 fw-500 text-dark-1 mb-10">Password</label>
-                                    <input type="password" id="password" required name="password" placeholder="Password" autocomplete="off">
+                                    <input type="password" id="password" required name="password" placeholder="Password">
                                     <p class="mt-10"><a href="{{ route("password.request") }}" class="text-purple-1">Forgot your password, click here</a></p>
                                 </div>
 
