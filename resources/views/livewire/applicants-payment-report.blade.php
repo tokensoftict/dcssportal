@@ -18,7 +18,7 @@
                         <div wire:loading.block wire:target="generateReport,viewReport">
                             <h5 align="center"> Please wait...</h5>
                         </div>
-                        @if(auth()->user()->isAdmin())
+                        @if(auth()->user()->isAdmin() || auth()->user()->isDcssAdmin())
                             <div wire:loading.remove wire:target="generateReport">
                                 <button type="submit" class="button -md -blue-1 align-content-center text-white fw-500 w-1/1">Export </button>
                             </div>
