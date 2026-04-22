@@ -101,7 +101,7 @@
                             </a>
                         </div>
                     @endif
-                    @if(auth()->user()->isAdmin())
+                    @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin())
                         <div class="sidebar__item">
                             <a  href="{{ route('administrator.school_reports') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
                                 <i class="text-20 icon-bar-chart mr-15"></i>
