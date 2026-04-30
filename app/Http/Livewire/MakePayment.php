@@ -22,6 +22,8 @@ class MakePayment extends Component
 
     public bool $allow = false;
 
+    public bool $isSelectedCenteredFull = false;
+
     public Session $session;
 
     public Transaction $transaction;
@@ -52,6 +54,9 @@ class MakePayment extends Component
         if(auth()->user()->isAdmin()) { // if the login user is and admin, they can make payment
             $this->allow = true;
         }
+
+        $countUsers = Application::query()->where("center_id", $this->application->center_id)->count();
+        $this->isSelectedCenteredFull = $countUsers > 500;
     }
 
     public function render()

@@ -6,6 +6,11 @@
                     <h2 class="text-17 lh-1 fw-500">Payment Details</h2>
                 </div>
                 @if($this->allow)
+                    @if($this->isSelectedCenteredFull == true)
+                        <div class="py-30 px-30 text-center">
+                            <h2 align="center" class="text-red-1">The examination center you selected ({{ $this->application->center->name }}) is currently full. Please choose a different center.</h2>
+                        </div>
+                    @else
                     <div class="py-30 px-30 text-center">
 
                         <img class="w-1/3" alt="{{ $this->application->fullname  }}" src="{{ url('/'.$this->application->passport_path)  }}" width="150"/>
@@ -90,6 +95,7 @@
 
 
                     </div>
+                    @endif
                 @else
                     <div class="py-30 px-30 text-center">
                         <h2 align="center" class="text-red-1"> Applications has closed!</h2>
