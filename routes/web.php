@@ -103,6 +103,7 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
             Route::get('/reports_by_status', ['as'=>'reports_by_status',"uses"=>'AdministratorController@reports_by_status']);
             Route::get('/payment_report', ['as'=>'payment_report',"uses"=>'AdministratorController@payment_report']);
             Route::get('/school_reports', ['as'=>'school_reports',"uses"=>'AdministratorController@school_reports']);
+            Route::get('/center_reports', ['as'=>'center_reports',"uses"=>'AdministratorController@center_reports']);
             Route::get('/settings', ['as'=>'settings',"uses"=>'AdministratorController@settings']);
             Route::get('/interview_upload', ['as'=>'interview_upload',"uses"=>'AdministratorController@interview_upload']);
             Route::get('/upload_candidate', ['as'=>'upload_candidate',"uses"=>'AdministratorController@upload_candidate']);

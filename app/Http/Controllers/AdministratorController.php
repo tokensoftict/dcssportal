@@ -144,4 +144,9 @@ class AdministratorController extends Controller
         return view('account.administrator.school_reports');
     }
 
+    public function center_reports()
+    {
+        return view('account.administrator.center_reports');
+    }
+
 }
