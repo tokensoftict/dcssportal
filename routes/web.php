@@ -58,8 +58,8 @@ Route::prefix("update")->as("update.")->group(function (){
     Route::get('/thirdpartyurl/{application}/{transaction}', ['as'=>'branchcollect_transaction_hook_thirdparty',"uses" => "HomeController@branchcollect_callback_thirldparty"]);
 
 });
-
-Route::group(['middleware' => ['auth', 'verified']], function() {
+//'verified'
+Route::group(['middleware' => ['auth']], function() {
     Route::prefix('account')->as('account.')->group(function () {
 
         Route::get('/', ['as'=>'dashboard',"uses"=>'AccountController@index']);
