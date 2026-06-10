@@ -306,12 +306,13 @@
                               Directorate of Command Schools Services
                           </h1>
                             -->
-                          <h1 data-anim-child="slide-up delay-2" class="masthead__title">
+                          <h5 data-anim-child="slide-up delay-2" class="masthead__title">
 
-                          </h1>
+                          </h5>
 
                           <p data-anim-child="slide-up delay-3" class="mt-5">
-
+                              This is to inform the general public that online applications for admission into Command Secondary Schools for 2026/2027 Academic Session will commence on Monday 9 February ,2026 and closes on Friday  12 June 2026 <br/><br/>
+                              Entrance Examination will take place on Saturday 27 June 2026 by 8am in all designated examination centres nationwide.
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
@@ -372,7 +373,7 @@
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
-                BREAKING NEWS: APPLICATION FOR ADMISSION INTO COMMAND SECONDARY SCHOOLS FOR 2026/2027 IS OUT. <a href="{{ route('howtoapply') }}">CLICK HERE TO READ MORE.</a>
+                ENTRANCE EXAMINATION WILL TAKE PLACE ON SATURDAY 27 JUNE 2026 BY 8AM IN ALL DESIGNATED EXAMINATION CENTRES NATIONWIDE.
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a>
         </marquee>
