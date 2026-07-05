@@ -101,6 +101,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get('/reports_by_center', ['as'=>'reports_by_center',"uses"=>'AdministratorController@reports_by_center']);
             Route::get('/reports_by_school', ['as'=>'reports_by_school',"uses"=>'AdministratorController@reports_by_school']);
             Route::get('/reports_by_status', ['as'=>'reports_by_status',"uses"=>'AdministratorController@reports_by_status']);
+            Route::get('/search_report', ['as'=>'search_report',"uses"=>'AdministratorController@search_report']);
             Route::get('/payment_report', ['as'=>'payment_report',"uses"=>'AdministratorController@payment_report']);
             Route::get('/school_reports', ['as'=>'school_reports',"uses"=>'AdministratorController@school_reports']);
             Route::get('/center_reports', ['as'=>'center_reports',"uses"=>'AdministratorController@center_reports']);

@@ -5,6 +5,7 @@ namespace App\Imports;
 use App\Events\CompleteApplicationEvent;
 use App\Models\Application;
 use App\Models\Center;
+use App\Models\ParentalStatus;
 use App\Models\School;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
@@ -23,11 +24,12 @@ class ImportNewCandidateAndGenerateExamNumber implements ToCollection, WithHeadi
         foreach ($collection as $row){
             $school = School::find($row['school_id']);
             $centre = Center::find($row['center_id']);
+            $status = ParentalStatus::find($row['parental_status_id']);
             if(!$school) dd($row['school_id']);
 
             $candidate =  Application::create([
                 'exam_number' => NULL,
-                'email' => '',
+                'email' => $row['email'] ?? '',
                 'school_id' => $school->id,
                 'user_id' => 1,
                 'state_id' => $centre->state_id,
@@ -43,7 +45,7 @@ class ImportNewCandidateAndGenerateExamNumber implements ToCollection, WithHeadi
                 'surname' => $row['surname'],
                 'passport_path' => NULL,
                 'session_id' => 1,
-                'parental_status_id'=>3,
+                'parental_status_id'=>$status->id,
                 'school2_id' =>$school->id,
                 'school_type_id' => $school->school_type_id,
                 'school_type_id2' => $school->school_type_id,

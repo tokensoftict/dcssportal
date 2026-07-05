@@ -39,6 +39,19 @@ class ApplicantExport implements FromCollection, WithHeadings
             $apps->where('school_id',$this->filter['school_id']);
         }
 
+        if(isset($this->filter['search']) && $this->filter['search'] !="")
+        {
+            $searchVal = $this->filter['search'];
+            $apps->where(function($q) use ($searchVal) {
+                $q->where('email', 'like', '%' . $searchVal . '%')
+                  ->orWhere('surname', 'like', '%' . $searchVal . '%')
+                  ->orWhere('firstname', 'like', '%' . $searchVal . '%')
+                  ->orWhere('othernames', 'like', '%' . $searchVal . '%')
+                  ->orWhere('telephone', 'like', '%' . $searchVal . '%')
+                  ->orWhere('exam_number', 'like', '%' . $searchVal . '%');
+            });
+        }
+
         if(isset($this->filter['payment_status']) && $this->filter['payment_status'] == "1")
         {
             $apps->whereNull('exam_number');
@@ -100,6 +113,19 @@ class ApplicantExport implements FromCollection, WithHeadings
         if(isset($this->filter['school_id'])  && $this->filter['school_id'] !="")
         {
             $apps->where('school_id',$this->filter['school_id']);
+        }
+
+        if(isset($this->filter['search']) && $this->filter['search'] !="")
+        {
+            $searchVal = $this->filter['search'];
+            $apps->where(function($q) use ($searchVal) {
+                $q->where('email', 'like', '%' . $searchVal . '%')
+                  ->orWhere('surname', 'like', '%' . $searchVal . '%')
+                  ->orWhere('firstname', 'like', '%' . $searchVal . '%')
+                  ->orWhere('othernames', 'like', '%' . $searchVal . '%')
+                  ->orWhere('telephone', 'like', '%' . $searchVal . '%')
+                  ->orWhere('exam_number', 'like', '%' . $searchVal . '%');
+            });
         }
 
         if(isset($this->filter['payment_status']) && $this->filter['payment_status'] == "1")

@@ -51,6 +51,11 @@ class AdministratorController extends Controller
         return view('account.administrator.reports_by_status',$data);
     }
 
+    public function search_report()
+    {
+        return view('account.administrator.search_report');
+    }
+
     public function view_application(Request $request)
     {
         $data = [];

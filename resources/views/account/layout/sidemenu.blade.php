@@ -149,6 +149,14 @@
                             </a>
                         </div>
                     @endif
+                    @if(auth()->user()->isAdmin() ||  auth()->user()->isDcssAdmin())
+                        <div class="sidebar__item">
+                            <a  href="{{ route('administrator.search_report') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
+                                <i class="text-20 icon-search mr-15"></i>
+                                Search Reports
+                            </a>
+                        </div>
+                    @endif
                     @if(auth()->user()->isAdmin())
                         <div class="sidebar__item">
                             <a  href="{{ route('administrator.interview_upload') }}" class="-dark-sidebar-white d-flex items-center text-17 lh-1 fw-500">
