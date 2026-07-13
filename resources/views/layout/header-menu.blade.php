@@ -12,7 +12,7 @@
 {{--            <a data-barba href="{{ route("news") }}" style="font-weight: bolder">NEWS</a>--}}
 {{--        </li>--}}
 
-        {{ //route('candidates') }}
+
 
         <li>
             <a href="#" style="font-weight: bolder">LIST OF SUCCESSFUL CANDIDATES</a>
