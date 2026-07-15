@@ -262,6 +262,13 @@ class HomeController extends Controller
         return view("news", compact('session'));
     }
 
+    public function requirements()
+    {
+        $session = Session::where('status',1)->first();
+
+        return view("requirement", compact('session'));
+    }
+
     public function howtoapply()
     {
         $session = Session::where('status',1)->first();

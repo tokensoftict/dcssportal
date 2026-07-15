@@ -306,9 +306,10 @@
                               Directorate of Command Schools Services
                           </h1>
                             -->
-                          <h5 data-anim-child="slide-up delay-2" class="masthead__title">
-
-                          </h5>
+                          <br/>
+                          <p data-anim-child="slide-up delay-2" class="masthead__title">
+                              THE LIST OF SUCCESSFUL CANDIDATES SHORTLISTED FOR INTERVIEW IS OUT. THE FINAL SELECTION INTERVIEW FOR THE SUCCESSFUL CANDIDATES IS SCHEDULED TO BE HELD FROM MONDAY, 3 AUGUST TO WEDNESDAY, 5 AUGUST 2026, IN ALL COMMAND SECONDARY SCHOOLS NATIONWIDE.
+                          </p>
 
                           <p data-anim-child="slide-up delay-3" class="mt-5">
 
@@ -372,7 +373,7 @@
 @section('top_news')
     <div class="d-flex items-center text-white py-10 border-bottom-light" style="background-color: #00004b;">
         <marquee behavior="alternate" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="padding: 5px 1px"> <a href="#" style="color: white; font-weight: bold; text-transform: uppercase">
-
+                THE LIST OF SUCCESSFUL CANDIDATES SHORTLISTED FOR INTERVIEW IS OUT. THE FINAL SELECTION INTERVIEW FOR THE SUCCESSFUL CANDIDATES IS SCHEDULED TO BE HELD FROM MONDAY, 3 AUGUST TO WEDNESDAY, 5 AUGUST 2026, IN ALL COMMAND SECONDARY SCHOOLS NATIONWIDE.
                 <span style="background-color: red; padding: 5px 10px; margin-left: 5px; margin-right: 5px">
  </span><span style="color: BLACK"></span></a>
         </marquee>

@@ -41,6 +41,8 @@ Route::get('/contact', ['as'=>'contact',"uses"=>'HomeController@contact']);
 
 Route::get('/candidates', ['as'=>'candidates',"uses"=>'HomeController@candidates']);
 
+Route::get('/requirements', ['as'=>'requirements',"uses"=>'HomeController@requirements']);
+
 Route::get('/interview_status', ['as'=>'interview-status',"uses"=>'HomeController@interview_status']);
 
 Route::post("/registerprocess",['as'=>'registerprocess', "uses"=>"HomeController@registerprocess"]);

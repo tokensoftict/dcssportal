@@ -15,7 +15,10 @@
 
 
         <li>
-            <a href="#" style="font-weight: bolder">LIST OF SUCCESSFUL CANDIDATES</a>
+            <a href="{{ route("candidates") }}" style="font-weight: bolder">LIST OF SUCCESSFUL CANDIDATES</a>
+        </li>
+        <li>
+            <a href="{{ route("requirements") }}" style="font-weight: bolder">REQUIREMENTS FOR INTERVIEW</a>
         </li>
         <!--
         <li>
