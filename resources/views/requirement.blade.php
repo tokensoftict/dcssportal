@@ -4,7 +4,7 @@
 @section('content')
     <section data-anim-wrap class="masthead -type-5" >
 
-        <div class="pl-45 pr-30" style="height: 100vh">
+        <div class="pl-45 pr-30">
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-lg-7 mt-2 offset-lg-3 col-12">
