@@ -173,7 +173,7 @@
         </td>
         <td>
             <span class="label">Interview Date:</span><br>
-            WILL BE COMMUNICATED
+            MONDAY, 3RD AUGUST TO WEDNESDAY, 5TH AUGUST 2026
         </td>
     </tr>
 </table>
