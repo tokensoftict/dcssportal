@@ -39,7 +39,7 @@
                         <p>
                             2. Candidates who fail to provide documents listed in paragraph 1a (1-9) are to be interviewed as children of civilians. In addition, all candidates are to pay the sum of Two Thousand Naira (N2,500.00) only, non-refundable interview fee at their centres.
                         </p>
-                        <a href="{{ route("candidates") }}">Click here for the list of successful candidates.</a>
+                        <a href="{{ route("candidates") }}">Click here for the list of successful candidates for interview.</a>
                     </div>
 
                 </div>
