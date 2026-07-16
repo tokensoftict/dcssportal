@@ -1,5 +1,5 @@
 <div class="menu js-navList">
-    <ul class="menu__nav text-dark-1 ml-50 xl:ml-30 -is-active" style="font-size: 13px;">
+    <ul class="menu__nav text-dark-1 ml-50 xl:ml-30 -is-active" style="font-size: 12px;">
 
         <li>
             <a data-barba href="{{ route("index") }}" style="font-weight: bolder">HOME</a>
