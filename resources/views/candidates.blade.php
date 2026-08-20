@@ -9,7 +9,7 @@
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="text-center text-24 text-red-1">LIST OF CANDIDATES FOR INTERVIEW INTO JSS1 IN COMMAND SECONDARY SCHOOLS 2026/2027 ACADEMIC SESSION.</h2>
+                        <h2 class="text-center text-24 text-red-1">ADMISSION LIST FOR JSS1 INTAKE INTO COMMAND SECONDARY SCHOOLS, 2026/2027 ACADEMIC SESSION</h2>
                         <br/>
                         <div class="row mt-2">
                             <div class="col-lg-4 col-12">

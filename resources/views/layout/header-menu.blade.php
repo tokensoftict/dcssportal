@@ -8,19 +8,20 @@
 {{--        <li>--}}
 {{--            <a data-barba href="{{ route("howtoapply") }}" style="font-weight: bolder">HOW TO APPLY</a>--}}
 {{--        </li>--}}
-{{--       <li>--}}
-{{--            <a data-barba href="{{ route("news") }}" style="font-weight: bolder">NEWS</a>--}}
-{{--        </li>--}}
+       <li>
+            <a data-barba href="{{ route("news") }}" style="font-weight: bolder">NEWS</a>
+        </li>
 
 
 
         <li>
-            <a href="{{ route("candidates") }}" style="font-weight: bolder">LIST OF SUCCESSFUL CANDIDATES FOR INTERVIEW</a>
+            <a href="{{ route("candidates") }}" style="font-weight: bolder">LIST OF SUCCESSFUL CANDIDATES INTO JSS 1</a>
         </li>
+        <!--
         <li>
             <a href="{{ route("requirements") }}" style="font-weight: bolder">REQUIREMENTS FOR INTERVIEW</a>
         </li>
-        <!--
+
         <li>
             <a data-barba href="{{ route("interview-status") }}" style="font-weight: bolder">SUCCESSFUL CANDIDATES</a>
         </li>
@@ -33,6 +34,9 @@
 -->
         <li>
             <a data-barba href="{{ route("contact") }}" style="font-weight: bolder">OUR CONTACT</a>
+        </li>
+        <li>
+            <a data-barba href="{{ route("news") }}" style="font-weight: bolder">NEWS</a>
         </li>
     </ul>
 </div>
