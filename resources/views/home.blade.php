@@ -297,8 +297,8 @@
                           </div>
 
                           <h1 data-anim-child="slide-up delay-2" class="masthead__title">
-                              Welcome to
-                              Directorate of Command Schools Services
+                              JSS1 ADMISSION SELECTION INTERVIEW RESULTS — 2026/2027 ACADEMIC
+                              SESSION
                           </h1>
                           <!--
                           <h1 data-anim-child="slide-up delay-2" class="masthead__title">
@@ -308,11 +308,15 @@
                             -->
                           <br/>
                           <p data-anim-child="slide-up delay-2" class="masthead__title">
-                              THE LIST OF SUCCESSFUL CANDIDATES SHORTLISTED FOR INTERVIEW IS OUT. THE FINAL SELECTION INTERVIEW FOR THE SUCCESSFUL CANDIDATES IS SCHEDULED TO BE HELD FROM MONDAY, 3 AUGUST TO WEDNESDAY, 5 AUGUST 2026, IN ALL COMMAND SECONDARY SCHOOLS NATIONWIDE.
+                              This is to inform you that the result of the Selection Interview for admission into Command Secondary
+                              Schools&#39; Junior Secondary School (JSS1), 2026/2027 Academic Session, has been released.
+
                           </p>
 
                           <p data-anim-child="slide-up delay-3" class="mt-5">
-
+                              Successful candidates are requested to check their names at their schools of choice and at NA Divisional
+                              Education Services&#39; offices at Divisions&#39; Headquarters. Emails have also been sent to all successful candidates
+                              via the addresses provided on their application forms.
                           </p>
 
                           @if(  time() > strtotime($session->registration_begins) && time() < strtotime($session->registration_ends))
