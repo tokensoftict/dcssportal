@@ -8,7 +8,7 @@
             <div class="row y-gap-50 items-center">
                 <div class="row">
                     <div class="col-lg-9 mt-50 offset-lg-2 col-12">
-                        <h3>JSS1 ADMISSION SELECTION INTERVIEW RESULTS — 2026/2027 ACADEMIC SESSION</h3>
+                        <h3 align="center">JSS1 ADMISSION SELECTION INTERVIEW RESULTS — 2026/2027 ACADEMIC SESSION</h3>
                         <br/>
                         <p>This is to inform you that the result of the Selection Interview for admission into Command Secondary
                             Schools&#39; Junior Secondary School (JSS1), 2026/2027 Academic Session, has been released.
